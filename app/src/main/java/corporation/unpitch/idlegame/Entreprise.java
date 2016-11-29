@@ -19,7 +19,7 @@ public class Entreprise extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.entrepriseihm);
 
         recruter = (Button)findViewById(R.id.recruter);
         entreprise = (Button)findViewById(R.id.entreprise);

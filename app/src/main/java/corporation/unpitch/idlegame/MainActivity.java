@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener lienRecrutement = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            System.out.println("Ca rentre la");
             Intent recruter = new Intent (MainActivity.this, Recruter.class); // on declare la nouvelle activite reliee au bouton
             startActivity (recruter); //on demarre l'activite
         }
