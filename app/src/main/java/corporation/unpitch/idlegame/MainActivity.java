@@ -1,5 +1,5 @@
 package corporation.unpitch.idlegame;
-
+//test synchro git
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
