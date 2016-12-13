@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
-    ImageButton incrementer = null;
+    Button incrementer = null;
     Button recruter = null;
     Button entreprise = null;
     Button inventaire = null;
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // On récupère toutes les vues dont on a besoin
-        incrementer = (ImageButton)findViewById(R.id.imageButton);
+        incrementer = (Button)findViewById(R.id.imageButton);
         recruter = (Button)findViewById(R.id.recruter);
         entreprise = (Button)findViewById(R.id.entreprise);
         inventaire = (Button)findViewById(R.id.inventaire);
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         incrementer.setOnClickListener(incrementerListener);
         recruter.setOnClickListener(lienRecrutement);
         entreprise.setOnClickListener(lienEntreprise);
-        inventaire.setOnClickListener(incrementerListener);
+        inventaire.setOnClickListener(lienInventaire);
     }
     private View.OnClickListener incrementerListener = new View.OnClickListener() {
         @Override
@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener lienRecrutement = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            System.out.println("Ca rentre la");
             Intent recruter = new Intent (MainActivity.this, Recruter.class); // on declare la nouvelle activite reliee au bouton
             startActivity (recruter); //on demarre l'activite
         }
@@ -63,6 +62,14 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             Intent entreprise = new Intent (MainActivity.this, Entreprise.class); // on declare la nouvelle activite reliee au bouton
             startActivity (entreprise); //on demarre l'activite
+        }
+
+    };
+    private View.OnClickListener lienInventaire = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent inventaire = new Intent (MainActivity.this, Inventaire.class); // on declare la nouvelle activite reliee au bouton
+            startActivity (inventaire); //on demarre l'activite
         }
 
     };

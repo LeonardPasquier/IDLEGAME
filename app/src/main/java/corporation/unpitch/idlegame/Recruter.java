@@ -28,7 +28,7 @@ public class Recruter extends AppCompatActivity{
         recruter.setOnClickListener(lienRecrutement);
         entreprise.setOnClickListener(lienEntreprise);
         inventaire.setOnClickListener(lienInventaire);
-    };
+    }
 
     private View.OnClickListener lienRecrutement = new View.OnClickListener() {
         @Override
@@ -49,7 +49,7 @@ public class Recruter extends AppCompatActivity{
     private View.OnClickListener lienInventaire = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent inventaire = new Intent (Recruter.this, Entreprise.class); // on declare la nouvelle activite reliee au bouton
+            Intent inventaire = new Intent (Recruter.this, Inventaire.class); // on declare la nouvelle activite reliee au bouton
             startActivity (inventaire); //on demarre l'activite
         }
 
