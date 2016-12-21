@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // On récupère toutes les vues dont on a besoin
-        incrementer = (Button)findViewById(R.id.imageButton);
+        incrementer = (Button)findViewById(R.id.boutonClavier);
         recruter = (Button)findViewById(R.id.recruter);
         entreprise = (Button)findViewById(R.id.entreprise);
         inventaire = (Button)findViewById(R.id.inventaire);

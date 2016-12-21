@@ -54,4 +54,8 @@ public class Recruter extends AppCompatActivity{
         }
 
     };
+    @Override
+    public void onBackPressed(){
+            this.finish();
+    }
 }

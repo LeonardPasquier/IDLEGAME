@@ -54,4 +54,8 @@ public class Entreprise extends AppCompatActivity{
         }
 
     };
+    @Override
+    public void onBackPressed(){
+        this.finish();
+    }
 }
