@@ -17,7 +17,7 @@
         </activity>
         <activity android:name=".Entreprise"></activity>
         <activity android:name=".Recruter"></activity>
-        <!--<activity android:name=".Inventaire"></activity>-->
+        <activity android:name=".Inventaire"></activity>
     </application>
 
 </manifest>

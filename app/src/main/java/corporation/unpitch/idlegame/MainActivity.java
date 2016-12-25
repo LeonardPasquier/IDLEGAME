@@ -1,5 +1,5 @@
 package corporation.unpitch.idlegame;
-//test synchro git
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Button entreprise = null;
     Button inventaire = null;
     TextView compteurLignes = null;
+    TextView compteurArgent = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +29,25 @@ public class MainActivity extends AppCompatActivity {
         entreprise = (Button)findViewById(R.id.entreprise);
         inventaire = (Button)findViewById(R.id.inventaire);
         compteurLignes = (TextView)findViewById(R.id.compteurLignes);
+        compteurArgent = (TextView) findViewById(R.id.compteurArgent);
 
         // On attribue un listener adapté aux vues qui en ont besoin
         incrementer.setOnClickListener(incrementerListener);
         recruter.setOnClickListener(lienRecrutement);
         entreprise.setOnClickListener(lienEntreprise);
         inventaire.setOnClickListener(lienInventaire);
+
+        try {
+            //on charge le fichier de sauvegarde
+            Donnees donnees = Charger.chargerObjet();
+            //On affecte les differentes variables du fichier de donnees presentes dans la fenetre
+            compteurLignes.setText(donnees.getLignes_de_code_courantes());
+            compteurArgent.setText(donnees.getArgent());
+
+        }
+        catch (Exception ex){
+            System.out.println("erreur lors du chargement du fichier");
+        }
     }
     private View.OnClickListener incrementerListener = new View.OnClickListener() {
         @Override
