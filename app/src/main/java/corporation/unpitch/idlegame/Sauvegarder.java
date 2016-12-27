@@ -18,7 +18,7 @@ public class Sauvegarder{
     static void sauvegarder(Context ctx){
         Donnees donnees = new Donnees(); //On cree la classe de donnees a enregistrer
         donnees.setLignes_de_code_total("05");
-        donnees.setLignes_de_code_courantes("03");
+        donnees.setLignes_de_code_courantes("03" );
         donnees.setArgent("99999£");
         donnees.setArgent_total("78787878£");
         donnees.setNombre_dev_e("10");
