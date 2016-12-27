@@ -18,6 +18,8 @@
         <activity android:name=".Entreprise"></activity>
         <activity android:name=".Recruter"></activity>
         <activity android:name=".Inventaire"></activity>
+
+        <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE"></uses-permission>
     </application>
 
 </manifest>

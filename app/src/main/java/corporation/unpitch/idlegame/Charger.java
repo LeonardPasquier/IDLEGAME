@@ -1,5 +1,6 @@
 package corporation.unpitch.idlegame;
 
+import android.content.Context;
 import android.util.Log;
 
 import java.io.FileInputStream;
@@ -10,10 +11,10 @@ import java.io.ObjectInputStream;
  */
 
 public class Charger {
-    public static Donnees chargerObjet(){//La methode chargerObjet va retourner un objet de type Donnees
+    public static Donnees chargerObjet(Context ctx){//La methode chargerObjet va retourner un objet de type Donnees
         try
         {
-            FileInputStream fis = new FileInputStream(Sauvegarder.nom_fichier);
+            FileInputStream fis = ctx.openFileInput(Sauvegarder.nom_fichier);
             ObjectInputStream ois = new ObjectInputStream(fis);
             Donnees donnees = (Donnees) ois.readObject(); //le (Donnees) permet au ois.readObject de savoir que l'objet lu sera du type Donnees
             return donnees;

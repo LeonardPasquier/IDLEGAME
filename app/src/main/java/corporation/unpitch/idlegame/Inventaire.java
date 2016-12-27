@@ -57,6 +57,5 @@ public class Inventaire extends AppCompatActivity{
             startActivity (inventaire); //on demarre l'activite
             finish(); //permet de supprimer l'activite courante de la liste d'activités, et donc de retourner à l'accueil quand on clique sur retour
         }
-//l
     };
 }

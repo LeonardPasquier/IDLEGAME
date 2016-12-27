@@ -8,6 +8,8 @@ import android.widget.Button; //yolo
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.io.File;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -39,27 +41,22 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             //on charge le fichier de sauvegarde
-            Donnees donnees = Charger.chargerObjet();
+            Donnees donnees = Charger.chargerObjet(this);
             //On affecte les differentes variables du fichier de donnees presentes dans la fenetre
             compteurLignes.setText(donnees.getLignes_de_code_courantes());
             compteurArgent.setText(donnees.getArgent());
-
         }
         catch (Exception ex){
             System.out.println("erreur lors du chargement du fichier");
         }
+
     }
     private View.OnClickListener incrementerListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            CharSequence csb;
-            csb = compteurLignes.getText();
-            String sb;
-            sb = String.valueOf(csb);
-            int ib;
-            ib = Integer.parseInt(sb);
+            int ib = CompteurLigneCourant();
             ib = ib+1;
-            csb = String.valueOf(ib);
+            String csb = String.valueOf(ib);
             compteurLignes.setText(csb);
         }
         };
@@ -87,4 +84,22 @@ public class MainActivity extends AppCompatActivity {
         }
 
     };
+    @Override
+    public void onBackPressed(){
+
+        Sauvegarder.sauvegarder(this);
+        this.finish();
+    }
+
+    public int CompteurLigneCourant(){
+        CharSequence csb = compteurLignes.getText();
+        String str = String.valueOf(csb);
+        int ib;
+        ib = Integer.parseInt(str);
+        return ib;
+    }
+    public static String getCompteurLigneCourant(){
+        String valeur = "03";
+        return valeur;
+    }
 }
