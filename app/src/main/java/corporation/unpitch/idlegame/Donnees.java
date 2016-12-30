@@ -53,34 +53,34 @@ public class Donnees implements Serializable {
 
     //Puis les getter pour récupérer leur valeur depuis une autre classe
     public String getLignes_de_code_courantes(){
-        return lignes_de_code_courantes;
+        return this.lignes_de_code_courantes;
     }
 
     public String getLignes_de_code_total(){
-        return lignes_de_code_total;
+        return this.lignes_de_code_total;
     }
 
     public String getArgent(){
-        return argent;
+        return this.argent;
     }
 
     public String getArgent_total(){
-        return argent_total;
+        return this.argent_total;
     }
 
     public String getProjet_courant(){
-        return projet_courant;
+        return this.projet_courant;
     }
 
     public String getNombre_dev_j(){
-        return nombre_dev_j;
+        return this.nombre_dev_j;
     }
 
     public String getNombre_dev_e(){
-        return nombre_dev_e;
+        return this.nombre_dev_e;
     }
 
     public String getNombre_dev_s(){
-        return nombre_dev_s;
+        return this.nombre_dev_s;
     }
 }
