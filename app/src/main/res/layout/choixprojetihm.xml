@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fenetre">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/envelop_projet1">
+
+        <TextView
+            android:text="RPG1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nom_projet1" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="138dp"
+            android:id="@+id/projet1">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="182dp"
+                android:layout_height="match_parent"
+                android:id="@+id/lay_descriptprojet1">
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="131dp"
+                    android:id="@+id/descriptionprojet1"
+                    tools:text="Réalisation d'un petit jeu de rôle où une princesse doit aller délivrer un chevalier enfermé dans un donjon .Le joueur devra réaliser quelques quêtes avant d'atteindre son but.  " />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lay_resum_projet1">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lay_resum_prec_projet1">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="92dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lay_legende_projet1">
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/difficulte_projet1"
+                            tools:text="Difficulté :" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cat_projet1"
+                            tools:text="Branche :" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/obj_projet1"
+                            tools:text="Objectif :" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/rec_projet1"
+                            tools:text="Récompense :" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/debloque_projet1"
+                            tools:text="Débloque :" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lay_contenu_projet1">
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView35"
+                            tools:text="Facile" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView34"
+                            tools:text="Jeux vidéo" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView33"
+                            tools:text="400 lignes" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView32"
+                            tools:text="200$" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView31"
+                            tools:text="Petit FPS" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:text="Accepter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/acc_projet1" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="156dp"
+        android:id="@+id/envelop_projet2">
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nom_projet2"
+            tools:text="Démineur" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="138dp"
+            android:id="@+id/projet2">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="182dp"
+                android:layout_height="match_parent"
+                android:id="@+id/lay_descriptprojet2">
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="131dp"
+                    android:id="@+id/descriptionprojet2"
+                    tools:text="Réalisez le très célèbre jeux démineur" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lay_resum_projet2">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lay_resum_prec_projet2">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="92dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lay_legende_projet2">
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/difficulte_projet2"
+                            tools:text="Difficulté :" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cat_projet2"
+                            tools:text="Branche :" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/obj_projet2"
+                            tools:text="Objectif :" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/rec_projet2"
+                            tools:text="Récompense :" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/debloque_projet2"
+                            tools:text="Débloque :" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lay_contenu_projet2">
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cont_diff_projet2"
+                            tools:text="Moyen" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cont_branche_projet2"
+                            tools:text="Jeux vidéo" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cont_objectif_projet2"
+                            tools:text="1000 lignes" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cont_recompense_projet2"
+                            tools:text="350$" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cont_debloque_projet2"
+                            tools:text="Corridor" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:text="Accepter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/acc_projet2" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/envelop_projet3">
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nom_projet3"
+            tools:text="Gestion aquarium" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="138dp"
+            android:id="@+id/projet3">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="182dp"
+                android:layout_height="match_parent"
+                android:id="@+id/lay_descriptprojet3">
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="131dp"
+                    android:id="@+id/descriptionprojet3"
+                    tools:text="Réalisez une base de données permettant à notre client de gérer son stock d'aquarium et de poissons mutants tirant des lasers par les branchies." />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lay_resum_projet3">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lay_resum_prec_projet3">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="92dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lay_legende_projet3">
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/difficulte_projet3"
+                            tools:text="Difficulté :" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cat_projet3"
+                            tools:text="Branche :" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/obj_projet3"
+                            tools:text="Objectif :" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/rec_projet3"
+                            tools:text="Récompense :" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/debloque_projet3"
+                            tools:text="Débloque :" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lay_contenu_projet3">
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cont_diff_projet3"
+                            tools:text="Difficile" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cont_branche_projet3"
+                            tools:text="Gestion" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cont_objectif_projet3"
+                            tools:text="3000 lignes" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cont_recompense_projet3"
+                            tools:text="666$" />
+
+                        <TextView
+                            android:text="TextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cont_debloque_projet3"
+                            tools:text="Gestion mairie" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:text="Accepter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/acc_projet3" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

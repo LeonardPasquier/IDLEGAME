@@ -18,8 +18,9 @@
         <activity android:name=".Entreprise"></activity>
         <activity android:name=".Recruter"></activity>
         <activity android:name=".Inventaire"></activity>
+        <activity android:name=".ChoixProjet"></activity>
 
-        <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE"></uses-permission>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
     </application>
 
 </manifest>

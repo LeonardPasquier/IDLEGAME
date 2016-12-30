@@ -12,7 +12,7 @@ import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    Button parametres = null;
     Button incrementer = null;
     Button recruter = null;
     Button entreprise = null;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             //on charge le fichier de sauvegarde
-            Donnees donnees = Charger.chargerObjet(this);
+            Donnees donnees = Charger.chargerObjet(this, Sauvegarder.nom_fichier);
             //On affecte les differentes variables du fichier de donnees presentes dans la fenetre
             compteurLignes.setText(donnees.getLignes_de_code_courantes());
             compteurArgent.setText(donnees.getArgent());
