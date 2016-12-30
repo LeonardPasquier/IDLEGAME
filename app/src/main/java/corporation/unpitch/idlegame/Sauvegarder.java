@@ -15,7 +15,8 @@ import java.lang.String;
 public class Sauvegarder{
     static String nom_fichier = "sauvegarde";
 
-    static void sauvegarder(Context ctx){
+    static void sauvegarder(Context ctx, Donnees donnees){
+/*
         Donnees donnees = new Donnees(); //On cree la classe de donnees a enregistrer
         donnees.setLignes_de_code_total("05");
         donnees.setLignes_de_code_courantes("03" );
@@ -24,9 +25,10 @@ public class Sauvegarder{
         donnees.setNombre_dev_e("10");
         donnees.setNombre_dev_j("50");
         donnees.setNombre_dev_s("3");
-        donnees.setProjet_courant("8");
+        donnees.setProjet_courant("8");*/
         try
         {
+
             FileOutputStream fos = ctx.openFileOutput("sauvegarde", Context.MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(donnees);

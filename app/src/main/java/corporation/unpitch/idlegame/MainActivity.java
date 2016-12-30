@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     Button inventaire = null;
     TextView compteurLignes = null;
     TextView compteurArgent = null;
+    Donnees donnees = new Donnees(); //On cree la classe de donnees a enregistrer
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
     };
     @Override
     public void onBackPressed(){
-
-        Sauvegarder.sauvegarder(this);
+        donnees.setLignes_de_code_courantes(String.valueOf(CompteurLigneCourant()));
+        Sauvegarder.sauvegarder(this, donnees);
         this.finish();
     }
 
