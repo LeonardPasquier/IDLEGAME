@@ -14,8 +14,9 @@ public class Projet implements Serializable{
     String branche = "";
     String difficulte = "";
     String gainfinal = "";
-    String methode_gain_final = "";
+    String methode_gain_final = "";//OS = d'un coup, CON = continu, BO = les deux
     String projet_suivant = "";
+    String projet_suivant_id = "";
     String description = "";
 
     //On fait les setter
@@ -46,6 +47,9 @@ public class Projet implements Serializable{
     public void setDescription(String description){
         this.description = description;
     }
+    public void setProjetSuivantID(String id){
+        this.projet_suivant_id = id;
+    }
 
     //On fait les getter
     public String getprojectId(){
@@ -74,6 +78,9 @@ public class Projet implements Serializable{
     }
     public String getDescription(){
         return this.description;
+    }
+    public String getProjetSuivantId(){
+        return this.projet_suivant_id;
     }
 
 }

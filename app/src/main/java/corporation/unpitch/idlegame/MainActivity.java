@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             //on charge le fichier de sauvegarde
-            Donnees donnees = Charger.chargerObjet(this, Sauvegarder.nom_fichier);
+            Donnees donnees = Charger.chargerDonnee(this, "sauvegarder");
             //On affecte les differentes variables du fichier de donnees presentes dans la fenetre
             compteurLignes.setText(donnees.getLignes_de_code_courantes());
             compteurArgent.setText(donnees.getArgent());
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener incrementerListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            int ib = CompteurLigneCourant();
+            int ib = getCompteurLigneCourant();
             ib = ib+1;
             String csb = String.valueOf(ib);
             compteurLignes.setText(csb);
@@ -87,20 +87,17 @@ public class MainActivity extends AppCompatActivity {
     };
     @Override
     public void onBackPressed(){
-        donnees.setLignes_de_code_courantes(String.valueOf(CompteurLigneCourant()));
-        Sauvegarder.sauvegarder(this, donnees);
+        donnees.setLignes_de_code_courantes(String.valueOf(getCompteurLigneCourant()));
+        Sauvegarder.sauvegarder(this, donnees, "sauvegarder");
         this.finish();
     }
 
-    public int CompteurLigneCourant(){
+    public int getCompteurLigneCourant(){
         CharSequence csb = compteurLignes.getText();
         String str = String.valueOf(csb);
         int ib;
         ib = Integer.parseInt(str);
         return ib;
     }
-    public static String getCompteurLigneCourant(){
-        String valeur = "03";
-        return valeur;
-    }
+
 }

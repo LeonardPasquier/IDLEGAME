@@ -13,18 +13,35 @@ import java.lang.String;
  */
 
 public class Sauvegarder{
-    static String nom_fichier = "sauvegarde";
 
-    static void sauvegarder(Context ctx, Donnees donnees){
+    static void sauvegarder(Context ctx, Donnees donnees, String nom_fichier){
 
         try
         {
 
-            FileOutputStream fos = ctx.openFileOutput("sauvegarde", Context.MODE_PRIVATE);
+            FileOutputStream fos = ctx.openFileOutput(nom_fichier, Context.MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(donnees);
             oos.close();
-            System.out.println("sauvegarde effectuee");
+            System.out.println("sauvegarde donnees effectuee");
+        }
+        catch(Exception ex)
+        {
+            Log.v("SerializationError-s : ",ex.getMessage()); //Erreur pendant la serialization
+            ex.printStackTrace();
+        }
+    }
+
+    static void sauvegarder(Context ctx, Projet projet, String nom_fichier){
+
+        try
+        {
+
+            FileOutputStream fos = ctx.openFileOutput(nom_fichier, Context.MODE_PRIVATE);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(projet);
+            oos.close();
+            System.out.println("sauvegarde projet effectuee");
         }
         catch(Exception ex)
         {
