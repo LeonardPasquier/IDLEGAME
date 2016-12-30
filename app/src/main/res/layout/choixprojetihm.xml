@@ -30,7 +30,7 @@
                 android:id="@+id/lay_descriptprojet1">
 
                 <TextView
-                    android:text="TextView"
+                    android:text="Réalisation d'un petit jeu de rôle où une princesse doit aller délivrer un chevalier enfermé dans un donjon .Le joueur devra réaliser quelques quêtes avant d'atteindre son but.  "
                     android:layout_width="match_parent"
                     android:layout_height="131dp"
                     android:id="@+id/descriptionprojet1"
@@ -56,35 +56,35 @@
                         android:id="@+id/lay_legende_projet1">
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Difficulté :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/difficulte_projet1"
                             tools:text="Difficulté :" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Branche :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/cat_projet1"
                             tools:text="Branche :" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Objectif :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/obj_projet1"
                             tools:text="Objectif :" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Récompense :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/rec_projet1"
                             tools:text="Récompense :" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Débloque :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/debloque_projet1"
@@ -98,35 +98,35 @@
                         android:id="@+id/lay_contenu_projet1">
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Facile"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/textView35"
                             tools:text="Facile" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Jeux vidéo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/textView34"
                             tools:text="Jeux vidéo" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="400 lignes"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/textView33"
                             tools:text="400 lignes" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="200$"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/textView32"
                             tools:text="200$" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Petit FPS"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/textView31"
@@ -154,7 +154,7 @@
         android:id="@+id/envelop_projet2">
 
         <TextView
-            android:text="TextView"
+            android:text="Démineur"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/nom_projet2"
@@ -173,7 +173,7 @@
                 android:id="@+id/lay_descriptprojet2">
 
                 <TextView
-                    android:text="TextView"
+                    android:text="Réalisez le très célèbre jeux démineur"
                     android:layout_width="match_parent"
                     android:layout_height="131dp"
                     android:id="@+id/descriptionprojet2"
@@ -199,35 +199,35 @@
                         android:id="@+id/lay_legende_projet2">
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Difficulté :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/difficulte_projet2"
                             tools:text="Difficulté :" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Branche :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/cat_projet2"
                             tools:text="Branche :" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Objectif :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/obj_projet2"
                             tools:text="Objectif :" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Récompense :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/rec_projet2"
                             tools:text="Récompense :" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Débloque :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/debloque_projet2"
@@ -241,35 +241,35 @@
                         android:id="@+id/lay_contenu_projet2">
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Moyen"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/cont_diff_projet2"
                             tools:text="Moyen" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Jeux vidéo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/cont_branche_projet2"
                             tools:text="Jeux vidéo" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="1000 lignes"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/cont_objectif_projet2"
                             tools:text="1000 lignes" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="350$"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/cont_recompense_projet2"
                             tools:text="350$" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Corridor"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/cont_debloque_projet2"
@@ -297,7 +297,7 @@
         android:id="@+id/envelop_projet3">
 
         <TextView
-            android:text="TextView"
+            android:text="Gestion aquarium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/nom_projet3"
@@ -316,7 +316,7 @@
                 android:id="@+id/lay_descriptprojet3">
 
                 <TextView
-                    android:text="TextView"
+                    android:text="Réalisez une base de données permettant à notre client de gérer son stock d'aquarium et de poissons mutants tirant des lasers par les branchies."
                     android:layout_width="match_parent"
                     android:layout_height="131dp"
                     android:id="@+id/descriptionprojet3"
@@ -342,35 +342,35 @@
                         android:id="@+id/lay_legende_projet3">
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Difficulté :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/difficulte_projet3"
                             tools:text="Difficulté :" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Branche :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/cat_projet3"
                             tools:text="Branche :" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Objectif :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/obj_projet3"
                             tools:text="Objectif :" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Récompense :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/rec_projet3"
                             tools:text="Récompense :" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Débloque :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/debloque_projet3"
@@ -384,35 +384,35 @@
                         android:id="@+id/lay_contenu_projet3">
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Difficile"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/cont_diff_projet3"
                             tools:text="Difficile" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Gestion"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/cont_branche_projet3"
                             tools:text="Gestion" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="3000 lignes"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/cont_objectif_projet3"
                             tools:text="3000 lignes" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="666$"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/cont_recompense_projet3"
                             tools:text="666$" />
 
                         <TextView
-                            android:text="TextView"
+                            android:text="Gestion mairie"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/cont_debloque_projet3"

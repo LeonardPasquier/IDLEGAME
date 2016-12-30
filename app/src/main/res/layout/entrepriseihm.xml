@@ -25,7 +25,7 @@
             android:layout_weight="0.97" />
 
         <Button
-            android:text="Button"
+            android:text="PROJETS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/choix_projet"
