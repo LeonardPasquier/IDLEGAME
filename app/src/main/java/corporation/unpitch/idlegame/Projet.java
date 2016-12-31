@@ -52,34 +52,34 @@ public class Projet implements Serializable{
     }
 
     //On fait les getter
-    public String getprojectId(){
+    String getprojectId(){
         return this.id;
     }
-    public String getNom(){
+    String getNom(){
         return this.nom;
     }
-    public String getObjectif(){
+    String getObjectif(){
         return this.objectif;
     }
-    public String getBranche(){
+    String getBranche(){
         return this.branche;
     }
-    public String getDifficulte(){
+    String getDifficulte(){
         return this.difficulte;
     }
-    public String getGainFinal(){
+    String getGainFinal(){
         return this.gainfinal;
     }
-    public String getMethode_Gain_Final(){
+    String getMethode_Gain_Final(){
         return this.methode_gain_final;
     }
-    public String getProjet_suivant(){
+    String getProjet_suivant(){
         return this.projet_suivant;
     }
-    public String getDescription(){
+    String getDescription(){
         return this.description;
     }
-    public String getProjetSuivantId(){
+    String getProjetSuivantId(){
         return this.projet_suivant_id;
     }
 

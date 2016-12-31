@@ -63,8 +63,9 @@ public class Entreprise extends AppCompatActivity{
     private View.OnClickListener lienChoixProjet = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent inventaire = new Intent (Entreprise.this, ChoixProjet.class); // on declare la nouvelle activite reliee au bouton
-            startActivity (inventaire); //on demarre l'activite
+            Intent choixprojet = new Intent (Entreprise.this, ChoixProjet.class); // on declare la nouvelle activite reliee au bouton
+            startActivity (choixprojet); //on demarre l'activite
+
             finish(); //permet de supprimer l'activite courante de la liste d'activités, et donc de retourner à l'accueil quand on clique sur retour
         }
 

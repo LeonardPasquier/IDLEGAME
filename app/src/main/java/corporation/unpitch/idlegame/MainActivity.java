@@ -1,5 +1,6 @@
 package corporation.unpitch.idlegame;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,7 +20,9 @@ public class MainActivity extends AppCompatActivity {
     Button inventaire = null;
     TextView compteurLignes = null;
     TextView compteurArgent = null;
-    Donnees donnees = new Donnees(); //On cree la classe de donnees a enregistrer
+    TextView projetCourant = null;
+    static Donnees donnees = new Donnees(); //On cree la classe de donnees a enregistrer
+    static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         inventaire = (Button)findViewById(R.id.inventaire);
         compteurLignes = (TextView)findViewById(R.id.compteurLignes);
         compteurArgent = (TextView) findViewById(R.id.compteurArgent);
+        projetCourant = (TextView) findViewById(R.id.projet_en_cours);
 
         // On attribue un listener adapté aux vues qui en ont besoin
         incrementer.setOnClickListener(incrementerListener);
@@ -42,10 +46,17 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             //on charge le fichier de sauvegarde
-            Donnees donnees = Charger.chargerDonnee(this, "sauvegarder");
+            Donnees data = Charger.chargerDonnee(this, "sauvegarder");
             //On affecte les differentes variables du fichier de donnees presentes dans la fenetre
-            compteurLignes.setText(donnees.getLignes_de_code_courantes());
-            compteurArgent.setText(donnees.getArgent());
+            compteurLignes.setText(data.getLignes_de_code_courantes());
+            projetCourant.setText(data.getProjet_courant_general());
+            compteurArgent.setText(data.getArgent());
+            //Si aucun projet n'est affecté, alors on amène directement la personne sur le menu de choix de projet.
+            if (data.getProjet_courant_general()== "null"){
+                Intent choixprojet = new Intent (MainActivity.this, ChoixProjet.class);
+                startActivity(choixprojet);
+            }
+            donnees = data;
         }
         catch (Exception ex){
             System.out.println("erreur lors du chargement du fichier");
@@ -65,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent recruter = new Intent (MainActivity.this, Recruter.class); // on declare la nouvelle activite reliee au bouton
+            //recruter.putExtra(valeurs, donnees);
             startActivity (recruter); //on demarre l'activite
         }
 
@@ -73,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent entreprise = new Intent (MainActivity.this, Entreprise.class); // on declare la nouvelle activite reliee au bouton
+            //entreprise.putExtra(valeurs, donnees);
             startActivity (entreprise); //on demarre l'activite
         }
 
@@ -81,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent inventaire = new Intent (MainActivity.this, Inventaire.class); // on declare la nouvelle activite reliee au bouton
+            //inventaire.putExtra(valeurs, donnees);
             startActivity (inventaire); //on demarre l'activite
         }
 
@@ -88,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         donnees.setLignes_de_code_courantes(String.valueOf(getCompteurLigneCourant()));
+        donnees.setProjet_courant_general("RPG1");
         Sauvegarder.sauvegarder(this, donnees, "sauvegarder");
         this.finish();
     }

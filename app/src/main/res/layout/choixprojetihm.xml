@@ -12,7 +12,7 @@
         android:id="@+id/envelop_projet1">
 
         <TextView
-            android:text="RPG1"
+            android:text="zbeubzbeub"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/nom_projet1" />
@@ -101,35 +101,35 @@
                             android:text="Facile"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView35"
+                            android:id="@+id/cont_diff_projet1"
                             tools:text="Facile" />
 
                         <TextView
                             android:text="Jeux vidéo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView34"
+                            android:id="@+id/cont_branche_projet1"
                             tools:text="Jeux vidéo" />
 
                         <TextView
                             android:text="400 lignes"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView33"
+                            android:id="@+id/cont_objectif_projet1"
                             tools:text="400 lignes" />
 
                         <TextView
                             android:text="200$"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView32"
+                            android:id="@+id/cont_recompense_projet1"
                             tools:text="200$" />
 
                         <TextView
                             android:text="Petit FPS"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView31"
+                            android:id="@+id/cont_debloque_projet1"
                             tools:text="Petit FPS" />
                     </LinearLayout>
                 </LinearLayout>
@@ -154,11 +154,11 @@
         android:id="@+id/envelop_projet2">
 
         <TextView
-            android:text="Démineur"
+            android:text="zbib zbib"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/nom_projet2"
-            tools:text="Démineur" />
+            tools:text="zbiub zbib" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -297,11 +297,10 @@
         android:id="@+id/envelop_projet3">
 
         <TextView
-            android:text="Gestion aquarium"
+            android:text="zzeefd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/nom_projet3"
-            tools:text="Gestion aquarium" />
+            android:id="@+id/nom_projet3" />
 
         <LinearLayout
             android:orientation="horizontal"
