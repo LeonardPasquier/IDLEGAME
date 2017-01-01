@@ -10,6 +10,7 @@ import java.io.ObjectInputStream;
  * Created by Un Pitch on 25/12/2016.
  */
 
+
 public class Charger {
 
     //Si on veut charger des donnees de sauvegarde

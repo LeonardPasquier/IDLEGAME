@@ -28,7 +28,6 @@
             android:id="@+id/textNomEntreprise" />
 
         <TextView
-            android:text="Projet en cours"
             android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

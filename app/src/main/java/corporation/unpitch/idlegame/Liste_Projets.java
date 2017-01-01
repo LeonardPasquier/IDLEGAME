@@ -20,9 +20,9 @@ public class Liste_Projets {
         facile1.setGainfinal("200$");
         facile1.setMethode_gain_final("OS");
         facile1.setNom("RPG1");
-        facile1.setObjectif("400 lignes");
+        facile1.setObjectif(100);
         facile1.setProjet_suivant("Petit FPS");
-        facile1.setProjetSuivantID("facile2");
+        facile1.setProjetSuivantID("moyen1");
         return facile1;
     }
     static Projet moyen1(){
@@ -34,7 +34,7 @@ public class Liste_Projets {
         moyen1.setGainfinal("350$");
         moyen1.setMethode_gain_final("OS");
         moyen1.setNom("Démineur");
-        moyen1.setObjectif("1000 lignes");
+        moyen1.setObjectif(1000);
         moyen1.setProjet_suivant("Corridor");
         moyen1.setProjetSuivantID("moyen2");
         return moyen1;
@@ -48,7 +48,7 @@ public class Liste_Projets {
         difficile1.setGainfinal("500$");
         difficile1.setMethode_gain_final("OS");
         difficile1.setNom("Gestion aquarium");
-        difficile1.setObjectif("3000 lignes");
+        difficile1.setObjectif(3000);
         difficile1.setProjet_suivant("Gestion mairie");
         difficile1.setProjetSuivantID("difficile2");
         return difficile1;

@@ -2,6 +2,8 @@ package corporation.unpitch.idlegame;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.io.File;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,10 +23,12 @@ public class MainActivity extends AppCompatActivity {
     Button inventaire = null;
     TextView compteurLignes = null;
     TextView compteurArgent = null;
-    TextView projetCourant = null;
+    static TextView projetCourant = null;
     static Donnees donnees = new Donnees(); //On cree la classe de donnees a enregistrer
-    static Context context;
+    static int objectif = 10000;
 
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,25 +56,30 @@ public class MainActivity extends AppCompatActivity {
             compteurLignes.setText(data.getLignes_de_code_courantes());
             projetCourant.setText(data.getProjet_courant_general());
             compteurArgent.setText(data.getArgent());
-            //Si aucun projet n'est affecté, alors on amène directement la personne sur le menu de choix de projet.
-            if (data.getProjet_courant_general()== "null"){
-                Intent choixprojet = new Intent (MainActivity.this, ChoixProjet.class);
-                startActivity(choixprojet);
-            }
             donnees = data;
         }
         catch (Exception ex){
             System.out.println("erreur lors du chargement du fichier");
         }
 
+        //Si aucun projet n'est affecté, alors on amène directement la personne sur le menu de choix de projet.
+        if (Objects.equals(donnees.getProjet_courant_general(), "rien")){
+            System.out.println("Toto je rentre ici");
+            Intent choixprojet = new Intent (MainActivity.this, ChoixProjet.class);
+            startActivity(choixprojet);
+        }
     }
     private View.OnClickListener incrementerListener = new View.OnClickListener() {
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         public void onClick(View v) {
             int ib = getCompteurLigneCourant();
             ib = ib+1;
             String csb = String.valueOf(ib);
             compteurLignes.setText(csb);
+            if (ib == objectif){
+                objectifatteint();
+            }
         }
         };
     private View.OnClickListener lienRecrutement = new View.OnClickListener() {
@@ -99,13 +109,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     };
-    @Override
-    public void onBackPressed(){
-        donnees.setLignes_de_code_courantes(String.valueOf(getCompteurLigneCourant()));
-        donnees.setProjet_courant_general("RPG1");
-        Sauvegarder.sauvegarder(this, donnees, "sauvegarder");
-        this.finish();
-    }
 
     public int getCompteurLigneCourant(){
         CharSequence csb = compteurLignes.getText();
@@ -114,5 +117,49 @@ public class MainActivity extends AppCompatActivity {
         ib = Integer.parseInt(str);
         return ib;
     }
+
+    //Si le nombre de lignes de code fixées comme objectif ont bien êtées atteintes, alors...
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public void objectifatteint(){
+        //On reset le compteur de lignes courantes
+        compteurLignes.setText("0");
+        //On affiche un message de félicitations
+
+        //On actualise les projets courants, de manière à passer par exemple de facile1 à facile2
+        actprojetcourant();
+        //on reset le projet courant general
+        donnees.setProjet_courant_general("rien");
+        //Puis on renvoie vers la page du choix des projets
+        System.out.println("lalala "+donnees.getProjet_courant_facile());
+        Intent choixprojet = new Intent (MainActivity.this, ChoixProjet.class);
+        startActivity(choixprojet);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public void actprojetcourant(){
+        System.out.println("lololo "+donnees.getProjet_courant_facile());
+        Projet courant = Liste_Projets.getProjet(donnees.getProjet_courant_general());
+        if (Objects.equals(courant.getDifficulte(), "Facile")){
+            donnees.setProjet_courant_facile(courant.getProjet_suivant());
+            System.out.println("lilili "+donnees.getProjet_courant_facile());
+        }
+        if (Objects.equals(courant.getDifficulte(), "Moyen")){
+            donnees.setProjet_courant_moyen(courant.getProjet_suivant());
+        }
+        if (Objects.equals(courant.getDifficulte(), "Difficile")){
+            donnees.setProjet_courant_difficile(courant.getProjet_suivant());
+        }
+        else {
+            System.out.println("La classe de projets de "+courant.getprojectId()+" : erreur dans difficulte.");
+        }
+    }
+
+    @Override
+    public void onBackPressed(){
+        donnees.setLignes_de_code_courantes(String.valueOf(getCompteurLigneCourant()));
+        Sauvegarder.sauvegarder(this, donnees, "sauvegarder");
+        this.finish();
+    }
+
 
 }

@@ -10,7 +10,7 @@ public class Projet implements Serializable{
 
     String id = "";
     String nom = "";
-    String objectif = "";
+    int objectif;
     String branche = "";
     String difficulte = "";
     String gainfinal = "";
@@ -26,7 +26,7 @@ public class Projet implements Serializable{
     public void setNom(String nom){
         this.nom = nom;
     }
-    public void setObjectif(String objectif){
+    public void setObjectif(int objectif){
         this.objectif = objectif;
     }
     public void setBranche(String branche){
@@ -58,7 +58,7 @@ public class Projet implements Serializable{
     String getNom(){
         return this.nom;
     }
-    String getObjectif(){
+    int getObjectif(){
         return this.objectif;
     }
     String getBranche(){

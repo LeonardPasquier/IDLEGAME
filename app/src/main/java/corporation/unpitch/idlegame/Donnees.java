@@ -12,7 +12,7 @@ class Donnees implements Serializable {
     private String lignes_de_code_total ="null";
     private String argent = "null";
     private String argent_total="null";
-    private String projet_courant_general ="null";
+    private String projet_courant_general ="rien";
     private String projet_courant_facile = "facile1";
     private String projet_courant_moyen ="moyen1";
     private String projet_courant_difficile ="difficile1";

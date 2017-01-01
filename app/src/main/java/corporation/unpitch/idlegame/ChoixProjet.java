@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 /**
  * Created by Un Pitch on 30/12/2016.
  */
@@ -88,15 +90,15 @@ public class ChoixProjet extends AppCompatActivity {
         cont_debloque_projet2 = (TextView) findViewById(R.id.cont_debloque_projet2);
         cont_debloque_projet3 = (TextView) findViewById(R.id.cont_debloque_projet3);
 
-        if (MainActivity.donnees.getProjet_courant_general()=="null"){
+        if (Objects.equals(MainActivity.donnees.getProjet_courant_general(), "rien")){
             //Rendre les boutons visibles
             accept_projet1.setVisibility(View.VISIBLE);
             accept_projet2.setVisibility(View.VISIBLE);
             accept_projet3.setVisibility(View.VISIBLE);
             //Affecter les listener
-            accept_projet1.setOnClickListener(accepterProjet);
-            accept_projet2.setOnClickListener(accepterProjet);
-            accept_projet3.setOnClickListener(accepterProjet);
+            accept_projet1.setOnClickListener(accepterProjetFacile);
+            accept_projet2.setOnClickListener(accepterProjetMoyen);
+            accept_projet3.setOnClickListener(accepterProjetDifficile);
         }
 
 
@@ -117,9 +119,12 @@ public class ChoixProjet extends AppCompatActivity {
         cont_branche_projet1.setText(projet1.getBranche());
         cont_branche_projet2.setText(projet2.getBranche());
         cont_branche_projet3.setText(projet3.getBranche());
-        cont_objectif_projet1.setText(projet1.getObjectif());
-        cont_objectif_projet2.setText(projet2.getObjectif());
-        cont_objectif_projet3.setText(projet3.getObjectif());
+        String objp1 = (String.valueOf(projet1.getObjectif())+" lignes");
+        String objp2 = (String.valueOf(projet2.getObjectif())+" lignes");
+        String objp3 = (String.valueOf(projet3.getObjectif())+" lignes");
+        cont_objectif_projet1.setText(objp1);
+        cont_objectif_projet2.setText(objp2);
+        cont_objectif_projet3.setText(objp3);
         cont_recompense_projet1.setText(projet1.getGainFinal());
         cont_recompense_projet2.setText(projet2.getGainFinal());
         cont_recompense_projet3.setText(projet3.getGainFinal());
@@ -128,15 +133,41 @@ public class ChoixProjet extends AppCompatActivity {
         cont_debloque_projet3.setText(projet3.getProjet_suivant());
 
     }
-    private View.OnClickListener accepterProjet = new View.OnClickListener() {
+    private View.OnClickListener accepterProjetFacile = new View.OnClickListener() {
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         public void onClick(View v) {
-            Projet courant = Liste_Projets.facile1();
+            Projet courant = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_facile());
             MainActivity.donnees.setProjet_courant_general(courant.getNom());
             System.out.println("Choix projet acceptP"+courant.getNom());
+            MainActivity.projetCourant.setText(courant.getNom());
+            MainActivity.objectif = courant.getObjectif();
             onBackPressed();
         }
-
+    };
+    private View.OnClickListener accepterProjetMoyen = new View.OnClickListener() {
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+        @Override
+        public void onClick(View v) {
+            Projet courant = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_moyen());
+            MainActivity.donnees.setProjet_courant_general(courant.getNom());
+            System.out.println("Choix projet acceptP"+courant.getNom());
+            MainActivity.projetCourant.setText(courant.getNom());
+            MainActivity.objectif = courant.getObjectif();
+            onBackPressed();
+        }
+    };
+    private View.OnClickListener accepterProjetDifficile = new View.OnClickListener() {
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+        @Override
+        public void onClick(View v){
+            Projet courant = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_difficile());
+            MainActivity.donnees.setProjet_courant_general(courant.getNom());
+            System.out.println("Choix projet acceptP"+courant.getNom());
+            MainActivity.projetCourant.setText(courant.getNom());
+            MainActivity.objectif = courant.getObjectif();
+            onBackPressed();
+        }
     };
     @Override
     public void onBackPressed(){
