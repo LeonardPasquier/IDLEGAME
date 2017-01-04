@@ -1,7 +1,7 @@
 package corporation.unpitch.idlegame;
 
 /**
- * Created by maxime on 04/01/2017.
+ * Created by Maxime on 04/01/2017.
  *
  * La classe item permet d'instaurer les éléments de la fenêtre Inventaire
  */

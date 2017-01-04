@@ -1,7 +1,7 @@
 package corporation.unpitch.idlegame;
 
 /**
- * Created by maxime on 04/01/2017.
+ * Created by Maxime on 04/01/2017.
  *
  * La classe Recrue permet d'instaurer les personnes qui seront recrutées par l'entreprise
  */
@@ -11,10 +11,10 @@ public class Recrue {
     private int prix;
     private String desc;
     private String adrImage;
-    private int coeff;
+    private double coeff;
 
     //Constructeurs de Recrue. Vide, complet, ou sans image.
-    public Recrue (String parNom, int parPrix, String parDesc, String parAdrImg, int parCoeff){
+    public Recrue (String parNom, int parPrix, String parDesc, String parAdrImg, double parCoeff){
         nom = parNom;
         prix = parPrix;
         desc = parDesc;
@@ -22,7 +22,7 @@ public class Recrue {
         coeff = parCoeff;
     }
 
-    public Recrue (String parNom, int parPrix, String parDesc, int parCoeff){
+    public Recrue (String parNom, int parPrix, String parDesc, double parCoeff){
         nom = parNom;
         prix = parPrix;
         desc = parDesc;
@@ -50,7 +50,7 @@ public class Recrue {
     public void setAdrImage(String parAdrImage){
         adrImage=parAdrImage;
     }
-    public void setCoeff (int parcoeff){
+    public void setCoeff (double parcoeff){
         coeff = parcoeff;
     }
     //getters de la classe item
@@ -66,7 +66,7 @@ public class Recrue {
     public String getAdrImg (){
         return adrImage;
     }
-    public int getCoeff(){
+    public double getCoeff(){
         return coeff;
     }
 }
