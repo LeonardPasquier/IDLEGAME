@@ -139,10 +139,7 @@ public class ChoixProjet extends AppCompatActivity {
         public void onClick(View v) {
             Projet courant = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_facile());
             MainActivity.donnees.setProjet_courant_general(courant.getNom());
-            System.out.println("Choix projet acceptP"+courant.getNom());
-            MainActivity.projetCourant.setText(courant.getNom());
-            MainActivity.objectif = courant.getObjectif();
-            onBackPressed();
+            acceptation_generale(courant);
         }
     };
     private View.OnClickListener accepterProjetMoyen = new View.OnClickListener() {
@@ -151,10 +148,7 @@ public class ChoixProjet extends AppCompatActivity {
         public void onClick(View v) {
             Projet courant = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_moyen());
             MainActivity.donnees.setProjet_courant_general(courant.getNom());
-            System.out.println("Choix projet acceptP"+courant.getNom());
-            MainActivity.projetCourant.setText(courant.getNom());
-            MainActivity.objectif = courant.getObjectif();
-            onBackPressed();
+            acceptation_generale(courant);
         }
     };
     private View.OnClickListener accepterProjetDifficile = new View.OnClickListener() {
@@ -162,13 +156,17 @@ public class ChoixProjet extends AppCompatActivity {
         @Override
         public void onClick(View v){
             Projet courant = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_difficile());
-            MainActivity.donnees.setProjet_courant_general(courant.getNom());
-            System.out.println("Choix projet acceptP"+courant.getNom());
-            MainActivity.projetCourant.setText(courant.getNom());
-            MainActivity.objectif = courant.getObjectif();
-            onBackPressed();
+            acceptation_generale(courant);
         }
     };
+    public void acceptation_generale(Projet courant){
+        MainActivity.donnees.setProjet_courant_general(courant.getNom());
+        MainActivity.donnees.setProjet_courant_general_id(courant.getprojectId());
+        System.out.println("Choix projet acceptP"+courant.getNom());
+        MainActivity.projetCourant.setText(courant.getNom());
+        MainActivity.objectif = courant.getObjectif();
+        onBackPressed();
+    }
     @Override
     public void onBackPressed(){
         this.finish();

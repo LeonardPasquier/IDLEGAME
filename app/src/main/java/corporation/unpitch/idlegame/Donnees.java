@@ -13,6 +13,7 @@ class Donnees implements Serializable {
     private String argent = "null";
     private String argent_total="null";
     private String projet_courant_general ="rien";
+    private String projet_courant_general_id = "";
     private String projet_courant_facile = "facile1";
     private String projet_courant_moyen ="moyen1";
     private String projet_courant_difficile ="difficile1";
@@ -64,6 +65,7 @@ class Donnees implements Serializable {
     void setNombre_dev_s(String nombre_dev_s){
         this.nombre_dev_s = nombre_dev_s;
     }
+    void setProjet_courant_general_id (String projet_courant_general_id){this.projet_courant_general_id=projet_courant_general_id;}
 
     //Puis les getter pour récupérer leur valeur depuis une autre classe
     String getLignes_de_code_courantes(){
@@ -109,4 +111,5 @@ class Donnees implements Serializable {
     String getNombre_dev_s(){
         return this.nombre_dev_s;
     }
+    String getProjet_courant_general_id(){ return this.projet_courant_general_id;}
 }

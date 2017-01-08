@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             int ib = getCompteurLigneCourant();
-            ib = ib+1;
+            ib = ib+10;
             String csb = String.valueOf(ib);
             compteurLignes.setText(csb);
             if (ib == objectif){
@@ -137,17 +137,18 @@ public class MainActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void actprojetcourant(){
-        System.out.println("lololo "+donnees.getProjet_courant_facile());
-        Projet courant = Liste_Projets.getProjet(donnees.getProjet_courant_general());
+        Projet courant = Liste_Projets.getProjet(donnees.getProjet_courant_general_id());
+        System.out.println("lololo "+courant.getDifficulte());
         if (Objects.equals(courant.getDifficulte(), "Facile")){
-            donnees.setProjet_courant_facile(courant.getProjet_suivant());
+            donnees.setProjet_courant_facile(courant.getProjetSuivantId());
             System.out.println("lilili "+donnees.getProjet_courant_facile());
         }
         if (Objects.equals(courant.getDifficulte(), "Moyen")){
-            donnees.setProjet_courant_moyen(courant.getProjet_suivant());
+            donnees.setProjet_courant_moyen(courant.getProjetSuivantId());
         }
         if (Objects.equals(courant.getDifficulte(), "Difficile")){
-            donnees.setProjet_courant_difficile(courant.getProjet_suivant());
+            System.out.println("lulululu");
+            donnees.setProjet_courant_difficile(courant.getProjetSuivantId());
         }
         else {
             System.out.println("La classe de projets de "+courant.getprojectId()+" : erreur dans difficulte.");

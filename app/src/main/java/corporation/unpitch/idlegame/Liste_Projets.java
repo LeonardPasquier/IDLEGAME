@@ -22,7 +22,7 @@ public class Liste_Projets {
         facile1.setNom("RPG1");
         facile1.setObjectif(100);
         facile1.setProjet_suivant("Petit FPS");
-        facile1.setProjetSuivantID("moyen1");
+        facile1.setProjetSuivantID("difficile1");
         return facile1;
     }
     static Projet moyen1(){
