@@ -96,16 +96,16 @@ public class ChoixProjet extends AppCompatActivity {
             accept_projet2.setVisibility(View.VISIBLE);
             accept_projet3.setVisibility(View.VISIBLE);
             //Affecter les listener
-            accept_projet1.setOnClickListener(accepterProjetFacile);
-            accept_projet2.setOnClickListener(accepterProjetMoyen);
-            accept_projet3.setOnClickListener(accepterProjetDifficile);
+            accept_projet1.setOnClickListener(accepterProjetjeux_video);
+            accept_projet2.setOnClickListener(accepterProjetsite_web);
+            accept_projet3.setOnClickListener(accepterProjetlogiciel);
         }
 
 
         //On récupère les 3 projets à afficher
-        Projet projet1 = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_facile());
-        Projet projet2 = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_moyen());
-        Projet projet3 = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_difficile());
+        Projet projet1 = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_jeux_video());
+        Projet projet2 = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_site_web());
+        Projet projet3 = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_logiciel());
         //Enfin, on remplit les TextView avec les valeurs des differents projets
         nom_projet1.setText(projet1.getNom());
         nom_projet2.setText(projet2.getNom());
@@ -133,29 +133,29 @@ public class ChoixProjet extends AppCompatActivity {
         cont_debloque_projet3.setText(projet3.getProjet_suivant());
 
     }
-    private View.OnClickListener accepterProjetFacile = new View.OnClickListener() {
+    private View.OnClickListener accepterProjetjeux_video = new View.OnClickListener() {
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         public void onClick(View v) {
-            Projet courant = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_facile());
+            Projet courant = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_jeux_video());
             MainActivity.donnees.setProjet_courant_general(courant.getNom());
             acceptation_generale(courant);
         }
     };
-    private View.OnClickListener accepterProjetMoyen = new View.OnClickListener() {
+    private View.OnClickListener accepterProjetsite_web = new View.OnClickListener() {
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         public void onClick(View v) {
-            Projet courant = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_moyen());
+            Projet courant = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_site_web());
             MainActivity.donnees.setProjet_courant_general(courant.getNom());
             acceptation_generale(courant);
         }
     };
-    private View.OnClickListener accepterProjetDifficile = new View.OnClickListener() {
+    private View.OnClickListener accepterProjetlogiciel = new View.OnClickListener() {
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         public void onClick(View v){
-            Projet courant = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_difficile());
+            Projet courant = Liste_Projets.getProjet(MainActivity.donnees.getProjet_courant_logiciel());
             acceptation_generale(courant);
         }
     };

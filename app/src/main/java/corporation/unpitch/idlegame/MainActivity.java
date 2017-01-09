@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     Button incrementer = null;
     Button recruter = null;
     Button entreprise = null;
+    //test
     Button inventaire = null;
     TextView compteurLignes = null;
     TextView compteurArgent = null;
@@ -125,33 +126,33 @@ public class MainActivity extends AppCompatActivity {
         compteurLignes.setText("0");
         //On affiche un message de félicitations
 
-        //On actualise les projets courants, de manière à passer par exemple de facile1 à facile2
+        //On actualise les projets courants, de manière à passer par exemple de jeux_video1 à jeux_video2
         actprojetcourant();
         //on reset le projet courant general
         donnees.setProjet_courant_general("rien");
         //Puis on renvoie vers la page du choix des projets
-        System.out.println("lalala "+donnees.getProjet_courant_facile());
+        System.out.println("lalala "+donnees.getProjet_courant_jeux_video());
         Intent choixprojet = new Intent (MainActivity.this, ChoixProjet.class);
         startActivity(choixprojet);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void actprojetcourant(){
-        Projet courant = Liste_Projets.getProjet(donnees.getProjet_courant_general_id());
-        System.out.println("lololo "+courant.getDifficulte());
-        if (Objects.equals(courant.getDifficulte(), "Facile")){
-            donnees.setProjet_courant_facile(courant.getProjetSuivantId());
-            System.out.println("lilili "+donnees.getProjet_courant_facile());
+        Projet courant = Liste_Projets.getProjet(donnees.getProjet_courant_general());
+        System.out.println("lololo "+courant.getBranche());
+        System.out.println("lilili "+courant.getProjet_suivant());
+        if (Objects.equals(courant.getBranche(), "Jeux videos")){
+            donnees.setProjet_courant_jeux_video(courant.getProjet_suivant());
         }
-        if (Objects.equals(courant.getDifficulte(), "Moyen")){
-            donnees.setProjet_courant_moyen(courant.getProjetSuivantId());
+        if (Objects.equals(courant.getBranche(), "Sites Web")){
+            donnees.setProjet_courant_site_web(courant.getProjet_suivant());
         }
-        if (Objects.equals(courant.getDifficulte(), "Difficile")){
+        if (Objects.equals(courant.getBranche(), "Logiciel")){
             System.out.println("lulululu");
-            donnees.setProjet_courant_difficile(courant.getProjetSuivantId());
+            donnees.setProjet_courant_logiciel(courant.getProjet_suivant());
         }
         else {
-            System.out.println("La classe de projets de "+courant.getprojectId()+" : erreur dans difficulte.");
+            System.out.println("blc");
         }
     }
 
