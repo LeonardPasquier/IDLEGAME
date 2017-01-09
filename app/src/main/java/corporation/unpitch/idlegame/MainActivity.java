@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         new Thread (
                 new Runnable(){
                 public void run(){
+                    System.out.println("je rentre dans le thread");
                     int lignes = donnees.getLignes_de_code_courantes();
                     int nombre_dev_j = donnees.getNombre_dev_j();
                     int nombre_dev_e = donnees.getNombre_dev_e();
@@ -97,10 +98,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             int ib = getCompteurLigneCourant();
-            ib = ib+10;
+            ib = ib+1;
             String csb = String.valueOf(ib);
             compteurLignes.setText(csb);
-            if (ib == objectif){
+            if (ib >= objectif){
                 objectifatteint();
             }
         }

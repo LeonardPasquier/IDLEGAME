@@ -14,15 +14,15 @@ class Donnees implements Serializable {
     private int argent_total=0;
     private String projet_courant_general ="rien";
     private String projet_courant_general_id = "";
-    private String projet_courant_jeux_video = "jeux_video1";
-    private String projet_courant_site_web ="site_web1";
-    private String projet_courant_logiciel ="logiciel1";
+    private String projet_courant_jeux_video = "Wyrm Quest";
+    private String projet_courant_site_web ="Le site du 1";
+    private String projet_courant_logiciel ="Letter Office";
     private int nombre_dev_j= 1;
-    private int nombre_dev_e=1;
-    private int nombre_dev_s=1;
-    private int nombre_chef_projet_j= 1;
-    private int nombre_chef_projet_e=1;
-    private int nombre_chef_projet_s=1;
+    private int nombre_dev_e= 0;
+    private int nombre_dev_s= 0;
+    private int nombre_chef_projet_j= 0;
+    private int nombre_chef_projet_e= 0;
+    private int nombre_chef_projet_s= 0;
 
     //On fait les setter pour leur affecter une valeur depuis une autre classe
     void setLignes_de_code_courantes(int lignes_de_code_courantes){
