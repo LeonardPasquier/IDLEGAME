@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Si aucun projet n'est affecté, alors on amène directement la personne sur le menu de choix de projet.
         if (Objects.equals(donnees.getProjet_courant_general(), "rien")){
-            System.out.println("Toto je rentre ici");
             Intent choixprojet = new Intent (MainActivity.this, ChoixProjet.class);
             startActivity(choixprojet);
         }
@@ -76,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
         new Thread (
                 new Runnable(){
                 public void run(){
-                    System.out.println("je rentre dans le thread");
                     int lignes = donnees.getLignes_de_code_courantes();
                     int nombre_dev_j = donnees.getNombre_dev_j();
                     int nombre_dev_e = donnees.getNombre_dev_e();
@@ -84,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     int nombre_chef_projet_j = donnees.getNombre_chef_projet_j();
                     int nombre_chef_projet_e = donnees.getNombre_chef_projet_e();
                     int nombre_chef_projet_s = donnees.getNombre_chef_projet_s();
-                    Incrementation_automatique.attendre(nombre_dev_j, nombre_dev_e, nombre_dev_s, nombre_chef_projet_j, nombre_chef_projet_e, nombre_chef_projet_s, myActivity);
+                    Incrementation_automatique.attendre(myActivity);
 
 
                 }
@@ -162,8 +160,6 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void actprojetcourant(){
         Projet courant = Liste_Projets.getProjet(donnees.getProjet_courant_general());
-        System.out.println("lololo "+courant.getBranche());
-        System.out.println("lilili "+courant.getProjet_suivant());
         if (Objects.equals(courant.getBranche(), "Jeux videos")){
             donnees.setProjet_courant_jeux_video(courant.getProjet_suivant());
         }
@@ -171,7 +167,6 @@ public class MainActivity extends AppCompatActivity {
             donnees.setProjet_courant_site_web(courant.getProjet_suivant());
         }
         if (Objects.equals(courant.getBranche(), "Logiciel")){
-            System.out.println("lulululu");
             donnees.setProjet_courant_logiciel(courant.getProjet_suivant());
         }
         else {

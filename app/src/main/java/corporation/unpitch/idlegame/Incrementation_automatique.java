@@ -12,24 +12,21 @@ import java.util.TimerTask;
 public class Incrementation_automatique {
 
     static int maligne=0;
-    public static void attendre(int nombre_dev_j, int nombre_dev_e, int nombre_dev_s, int nombre_chef_projet_j, int nombre_chef_projet_e, int nombre_chef_projet_s, final MainActivity myActivity){
-        System.out.println("coucou");
-        final int devj = nombre_dev_j;
-        final int deve = nombre_dev_e;
-        final int devs = nombre_dev_s;
-        final int chefj = nombre_chef_projet_j;
-        final int chefe = nombre_chef_projet_e;
-        final int chefs = nombre_chef_projet_s;
+    public static void attendre(final MainActivity myActivity){
+        final int devj = MainActivity.donnees.getNombre_dev_j();
+        final int deve = MainActivity.donnees.getNombre_dev_e();
+        final int devs = MainActivity.donnees.getNombre_dev_s();
+        final int chefj = MainActivity.donnees.getNombre_chef_projet_j();
+        final int chefe = MainActivity.donnees.getNombre_chef_projet_e();
+        final int chefs = MainActivity.donnees.getNombre_chef_projet_s();
 
         Timer timer = new Timer();
         TimerTask myTask = new TimerTask() {
             @Override
             public void run() {
-                System.out.println("timer");
                 int lignes = myActivity.getCompteurLigneCourant();
                 int nombre_lignes = 0;
                 nombre_lignes = Mult_dev(devj, deve, devs);
-                System.out.println("nombre lignes : " + nombre_lignes);
                 nombre_lignes = Mult_chef_projet(nombre_lignes, chefj, chefe, chefs);
                 maligne = nombre_lignes;
                 System.out.println(maligne);
@@ -41,7 +38,6 @@ public class Incrementation_automatique {
                     @Override
                     public void run() {
                         int yata = compteur + lignes;
-                        System.out.println("lama" + yata);
                         myActivity.compteurLignes.setText(String.valueOf(yata));
                     }
                 };
