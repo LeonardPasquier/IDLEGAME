@@ -10,14 +10,15 @@ public class Projet implements Serializable{
 
     String id = "";
     String nom = "";
-    int objectif;
+    int objectif = 0;
     String branche = "";
+    String description = "";
     String difficulte = "";
     String gainfinal = "";
+    //Gain direct / gain courant
     String methode_gain_final = "";//OS = d'un coup, CON = continu, BO = les deux
     String projet_suivant = "";
     String projet_suivant_id = "";
-    String description = "";
 
     //On fait les setter
     public void setprojectId(String id){

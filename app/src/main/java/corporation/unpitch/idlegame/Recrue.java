@@ -11,10 +11,10 @@ public class Recrue {
     private int prix;
     private String desc;
     private String adrImage;
-    private double coeff;
+    private int coeff;
 
     //Constructeurs de Recrue. Vide, complet, ou sans image.
-    public Recrue (String parNom, int parPrix, String parDesc, String parAdrImg, double parCoeff){
+    public Recrue (String parNom, int parPrix, String parDesc, String parAdrImg, int parCoeff){
         nom = parNom;
         prix = parPrix;
         desc = parDesc;
@@ -22,7 +22,7 @@ public class Recrue {
         coeff = parCoeff;
     }
 
-    public Recrue (String parNom, int parPrix, String parDesc, double parCoeff){
+    public Recrue (String parNom, int parPrix, String parDesc, int parCoeff){
         nom = parNom;
         prix = parPrix;
         desc = parDesc;
@@ -50,7 +50,7 @@ public class Recrue {
     public void setAdrImage(String parAdrImage){
         adrImage=parAdrImage;
     }
-    public void setCoeff (double parcoeff){
+    public void setCoeff (int parcoeff){
         coeff = parcoeff;
     }
     //getters de la classe item
@@ -66,7 +66,7 @@ public class Recrue {
     public String getAdrImg (){
         return adrImage;
     }
-    public double getCoeff(){
+    public int getCoeff(){
         return coeff;
     }
 }

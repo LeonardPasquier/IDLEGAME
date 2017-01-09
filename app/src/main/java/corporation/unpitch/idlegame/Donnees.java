@@ -14,9 +14,9 @@ class Donnees implements Serializable {
     private String argent_total="null";
     private String projet_courant_general ="rien";
     private String projet_courant_general_id = "";
-    private String projet_courant_jeux_video = "Wyrm Quest";
-    private String projet_courant_site_web ="Le site du 1";
-    private String projet_courant_logiciel ="Letter Office";
+    private String projet_courant_facile = "facile1";
+    private String projet_courant_moyen ="moyen1";
+    private String projet_courant_difficile ="difficile1";
     private String nombre_dev_j="null";
     private String nombre_dev_e="null";
     private String nombre_dev_s="null";
@@ -42,16 +42,16 @@ class Donnees implements Serializable {
         this.projet_courant_general = projet_courant_general;
     }
 
-    void setProjet_courant_jeux_video(String projet_courant_jeux_video){
-        this.projet_courant_jeux_video = projet_courant_jeux_video;
+    void setProjet_courant_facile(String projet_courant_facile){
+        this.projet_courant_facile = projet_courant_facile;
     }
 
-    void setProjet_courant_site_web(String projet_courant_site_web){
-        this.projet_courant_site_web = projet_courant_site_web;
+    void setProjet_courant_moyen(String projet_courant_moyen){
+        this.projet_courant_moyen = projet_courant_moyen;
     }
 
-    void setProjet_courant_logiciel(String projet_courant_logiciel){
-        this.projet_courant_logiciel = projet_courant_logiciel;
+    void setProjet_courant_difficile(String projet_courant_difficile){
+        this.projet_courant_difficile = projet_courant_difficile;
     }
 
     void setNombre_dev_j(String nombre_dev_j){
@@ -88,16 +88,16 @@ class Donnees implements Serializable {
         return this.projet_courant_general;
     }
 
-    String getProjet_courant_jeux_video(){
-        return this.projet_courant_jeux_video;
+    String getProjet_courant_facile(){
+        return this.projet_courant_facile;
     }
 
-    String getProjet_courant_site_web(){
-        return this.projet_courant_site_web;
+    String getProjet_courant_moyen(){
+        return this.projet_courant_moyen;
     }
 
-    String getProjet_courant_logiciel(){
-        return this.projet_courant_logiciel;
+    String getProjet_courant_difficile(){
+        return this.projet_courant_difficile;
     }
 
     String getNombre_dev_j(){

@@ -96,27 +96,27 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:text="Recruter"
-                android:textSize="12dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/recruter"
-                android:layout_weight="1" />
-
-            <Button
                 android:text="Mon entreprise"
                 android:textSize="12dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/entreprise" />
+                android:layout_height="match_parent"
+                android:id="@+id/entreprise"
+                android:layout_width="108dp" />
 
             <Button
-                android:text="Inventaire"
+                android:text="Recruter"
                 android:textSize="12dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/recruter"
+                tools:text="Ressources Humaines"
+                android:layout_width="108dp" />
+
+            <Button
+                android:text="Mon Inventaire"
+                android:textSize="12dp"
+                android:layout_height="match_parent"
                 android:id="@+id/inventaire"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:layout_width="108dp" />
 
         </LinearLayout>
 

@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import java.io.File;
 import java.util.Objects;
+import java.util.logging.Handler;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,6 +70,27 @@ public class MainActivity extends AppCompatActivity {
             Intent choixprojet = new Intent (MainActivity.this, ChoixProjet.class);
             startActivity(choixprojet);
         }
+        final MainActivity myActivity = this;
+
+
+        new Thread (
+                new Runnable(){
+                public void run(){
+                    int lignes = donnees.getLignes_de_code_courantes();
+                    int nombre_dev_j = donnees.getNombre_dev_j();
+                    int nombre_dev_e = donnees.getNombre_dev_e();
+                    int nombre_dev_s = donnees.getNombre_dev_s();
+                    int nombre_chef_projet_j = donnees.getNombre_chef_projet_j();
+                    int nombre_chef_projet_e = donnees.getNombre_chef_projet_e();
+                    int nombre_chef_projet_s = donnees.getNombre_chef_projet_s();
+                    Incrementation_automatique.attendre(nombre_dev_j, nombre_dev_e, nombre_dev_s, nombre_chef_projet_j, nombre_chef_projet_e, nombre_chef_projet_s, myActivity);
+
+
+                }
+
+
+        }).start();
+
     }
     private View.OnClickListener incrementerListener = new View.OnClickListener() {
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -156,9 +178,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     @Override
     public void onBackPressed(){
-        donnees.setLignes_de_code_courantes(String.valueOf(getCompteurLigneCourant()));
+        donnees.setLignes_de_code_courantes(getCompteurLigneCourant());
         Sauvegarder.sauvegarder(this, donnees, "sauvegarder");
         this.finish();
     }
