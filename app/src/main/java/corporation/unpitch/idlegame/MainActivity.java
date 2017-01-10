@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     int nombre_chef_projet_j = donnees.getNombre_chef_projet_j();
                     int nombre_chef_projet_e = donnees.getNombre_chef_projet_e();
                     int nombre_chef_projet_s = donnees.getNombre_chef_projet_s();
-                    Incrementation_automatique.attendre(myActivity);
+                    Incrementation_automatique.attendre(myActivity, objectif);
 
                 }
 
@@ -142,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
     //Si le nombre de lignes de code fixées comme objectif ont bien êtées atteintes, alors...
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void objectifatteint(){
+        System.out.println("coucou");
         //On reset le compteur de lignes courantes
         compteurLignes.setText("0");
         //On affiche un message de félicitations

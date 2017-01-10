@@ -1,6 +1,8 @@
 package corporation.unpitch.idlegame;
 
 import android.app.Activity;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -12,7 +14,7 @@ import java.util.TimerTask;
 public class Incrementation_automatique {
 
     static int maligne=0;
-    public static void attendre(final MainActivity myActivity){
+    public static void attendre(final MainActivity myActivity, final int objectif){
         final int devj = MainActivity.donnees.getNombre_dev_j();
         final int deve = MainActivity.donnees.getNombre_dev_e();
         final int devs = MainActivity.donnees.getNombre_dev_s();
@@ -29,16 +31,19 @@ public class Incrementation_automatique {
                 nombre_lignes = Mult_dev(devj, deve, devs);
                 nombre_lignes = Mult_chef_projet(nombre_lignes, chefj, chefe, chefs);
                 maligne = nombre_lignes;
-                System.out.println(maligne);
 
-                myActivity.runOnUiThread(createRunnableForUI(nombre_lignes, lignes));
+                myActivity.runOnUiThread(createRunnableForUI(nombre_lignes, lignes, objectif));
             }
-            private Runnable createRunnableForUI (final int compteur, final int lignes){
+            private Runnable createRunnableForUI (final int compteur, final int lignes, final int objectif){
                 return new Runnable() {
+                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                     @Override
                     public void run() {
                         int yata = compteur + lignes;
                         myActivity.compteurLignes.setText(String.valueOf(yata));
+                        if (yata >= objectif){
+                            myActivity.objectifatteint();
+                        }
                     }
                 };
             }

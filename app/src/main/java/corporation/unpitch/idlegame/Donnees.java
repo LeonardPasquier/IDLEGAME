@@ -10,14 +10,14 @@ class Donnees implements Serializable {
     //On déclare les variables à sauvegarder
     private int lignes_de_code_courantes =0;
     private int lignes_de_code_total =0;
-    private int argent = 0;
-    private int argent_total=0;
+    private int argent = 999;
+    private int argent_total=999;
     private String projet_courant_general ="rien";
     private String projet_courant_general_id = "";
     private String projet_courant_jeux_video = "Wyrm Quest";
     private String projet_courant_site_web ="Le site du 1";
     private String projet_courant_logiciel ="Letter Office";
-    private int nombre_dev_j= 1;
+    private int nombre_dev_j= 0;
     private int nombre_dev_e= 0;
     private int nombre_dev_s= 0;
     private int nombre_chef_projet_j= 0;
