@@ -9,8 +9,9 @@ package corporation.unpitch.idlegame;
 
 public class Liste_Item {
 
-    static Item Antivirus = new Item("Antivirus",15000,"Permet de ne pas être atteint par les virus");
-    static Item Ordinateur = new Item("Ordinateur",350,"Augmente le nombre de lignes de codes crées par les développeurs");
-    static Item serveur = new Item("Serveurs",150000,"Je ne sais pas encore a quoi ca peut servir");
+    static Item antivirus = new Item("Antivirus",15000,"Permet de ne pas être atteint par les virus ou réduire leur durée");
+    static Item ordinateur = new Item("Ordinateur",350,"Augmente le nombre de lignes de codes crées par les développeurs");
+    static Item serveur = new Item("Serveurs",150000,"Je ne sais pas encore a quoi ca peut servir mais ca peut etre cool");
+
 
 }

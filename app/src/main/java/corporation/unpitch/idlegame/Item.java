@@ -8,36 +8,36 @@ package corporation.unpitch.idlegame;
 
 public class Item {
     private String nom;
-    private int prix;
+    private double prix;
     private String desc;
     private String adrImage;
 
 //Constructeurs d'Item. Vide, complet, ou sans image.
-    public Item (String parNom, int parPrix, String parDesc, String parAdrImg){
+    public Item (String parNom, double parPrix, String parDesc, String parAdrImg){
         nom = parNom;
         prix = parPrix;
         desc = parDesc;
-        adrImage=parAdrImg;
+        adrImage="res/drawable/icone_android.png";
     }
 
-    public Item (String parNom, int parPrix, String parDesc){
+    public Item (String parNom, double parPrix, String parDesc){
         nom = parNom;
         prix = parPrix;
         desc = parDesc;
-        adrImage="null";
+        adrImage="res/drawable/icone_android.png";
     }
 
     public Item (){
         nom = "null";
         prix = Integer.parseInt("null");
         desc = "null";
-        adrImage="null";
+        adrImage="res/drawable/icone_android.png";
     }
 //setters de la classe item
     public void setNom (String parNom){
         nom = parNom;
     }
-    public void setPrix (int parPrix){
+    public void setPrix (double parPrix){
         prix = parPrix;
     }
     public void setDesc(String parDesc){
@@ -50,7 +50,7 @@ public class Item {
     public String getNom (){
         return nom;
     }
-    public int getPrix (){
+    public double getPrix (){
         return prix;
     }
     public String getDesc (){

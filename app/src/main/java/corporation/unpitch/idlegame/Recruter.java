@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import static corporation.unpitch.idlegame.Liste_Recrue.*;
+
 /**
  * Created by Un Pitch on 03/11/2016.
  */
@@ -16,6 +18,9 @@ public class Recruter extends AppCompatActivity{
     Button entreprise = null;
     Button inventaire = null;
 
+    Button recrue1 = null;
+    Button recrue2 = null;
+    Button recrue3 = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +30,17 @@ public class Recruter extends AppCompatActivity{
         entreprise = (Button)findViewById(R.id.entreprise);
         inventaire = (Button)findViewById(R.id.inventaire);
 
+        recrue1 = (Button)findViewById(R.id.recrue1);
+        recrue2 = (Button)findViewById(R.id.recrue2);
+        recrue3 = (Button)findViewById(R.id.recrue3);
+
         recruter.setOnClickListener(lienRecrutement);
         entreprise.setOnClickListener(lienEntreprise);
         inventaire.setOnClickListener(lienInventaire);
+
+        recrue1.setText(developpeur.getNom() + "\n\n Prix : " + developpeur.getPrix() + "\n" + developpeur.getDesc());
+        recrue2.setText(chefProjet.getNom() + "\n\n Prix : " + chefProjet.getPrix() + "\n" + chefProjet.getDesc());
+        recrue3.setText(comptable.getNom() + "\n\n Prix : " + comptable.getPrix() + "\n" + comptable.getDesc());
     }
 
     private View.OnClickListener lienRecrutement = new View.OnClickListener() {

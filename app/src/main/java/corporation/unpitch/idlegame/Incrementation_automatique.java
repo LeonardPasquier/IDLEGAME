@@ -47,17 +47,13 @@ public class Incrementation_automatique {
 
     }
     private static int Mult_dev(int j, int e, int s){
-        System.out.println("tic");
         int n;
         n = j*1+e*10+s*50; //le junior produit 1/s, l'expert 10/s, le senor 50/s
-        System.out.println(n);
 
         return n; //on renvoie le nombre a additionne, qui sera ensuite
     }
     private static int Mult_chef_projet(int n, int j, int e, int s){
-        System.out.println(n);
         int x = 0;
-        System.out.println("n : "+ n);
         while (x<j){
             n = n+n;
             x ++;

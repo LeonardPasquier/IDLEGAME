@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import static corporation.unpitch.idlegame.Liste_Item.*;
+
 /**
  * Created by Helicose on 03/11/2016.
  */
@@ -16,20 +18,31 @@ public class Inventaire extends AppCompatActivity{
     Button entreprise = null;
     Button inventaire = null;
 
+    Button item_1 = null;
+    Button item_2 = null;
+    Button item_3 = null;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inventaireihm);
-
+        //On récupère les vues du menu
         recruter = (Button)findViewById(R.id.recruter);
         entreprise = (Button)findViewById(R.id.entreprise);
         inventaire = (Button)findViewById(R.id.inventaire);
+        //Les vues de l'interface de l'inventaire
+        item_1 = (Button)findViewById(R.id.item1);
+        item_2 = (Button)findViewById(R.id.item2);
+        item_3 = (Button)findViewById(R.id.item3);
 
         recruter.setOnClickListener(lienRecrutement);
         entreprise.setOnClickListener(lienEntreprise);
         //inventaire.setOnClickListener(lienInventaire);
 
-
+        item_1.setText(antivirus.getNom() + "\n\nPrix : " + antivirus.getPrix() + "\n" + antivirus.getDesc());
+        item_2.setText(ordinateur.getNom() + "\n\nPrix : " + ordinateur.getPrix() + "\n" + ordinateur.getDesc());
+        item_3.setText(serveur.getNom() + "\n\nPrix : " + serveur.getPrix() + "\n" + serveur.getDesc());
     }
 
     private View.OnClickListener lienRecrutement = new View.OnClickListener() {
