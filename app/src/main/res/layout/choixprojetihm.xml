@@ -56,13 +56,6 @@
                         android:id="@+id/lay_legende_projet1">
 
                         <TextView
-                            android:text="Difficulté :"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/difficulte_projet1"
-                            tools:text="Difficulté :" />
-
-                        <TextView
                             android:text="Branche :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -77,11 +70,11 @@
                             tools:text="Objectif :" />
 
                         <TextView
-                            android:text="Récompense :"
+                            android:text="Gain :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/rec_projet1"
-                            tools:text="Récompense :" />
+                            tools:text="Gain :" />
 
                         <TextView
                             android:text="Débloque :"
@@ -97,12 +90,6 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/lay_contenu_projet1">
 
-                        <TextView
-                            android:text="Facile"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/cont_diff_projet1"
-                            tools:text="Facile" />
 
                         <TextView
                             android:text="Jeux vidéo"
@@ -199,13 +186,6 @@
                         android:id="@+id/lay_legende_projet2">
 
                         <TextView
-                            android:text="Difficulté :"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/difficulte_projet2"
-                            tools:text="Difficulté :" />
-
-                        <TextView
                             android:text="Branche :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -220,11 +200,11 @@
                             tools:text="Objectif :" />
 
                         <TextView
-                            android:text="Récompense :"
+                            android:text="Gain :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/rec_projet2"
-                            tools:text="Récompense :" />
+                            tools:text="Gain :" />
 
                         <TextView
                             android:text="Débloque :"
@@ -240,12 +220,6 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/lay_contenu_projet2">
 
-                        <TextView
-                            android:text="Moyen"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/cont_diff_projet2"
-                            tools:text="Moyen" />
 
                         <TextView
                             android:text="Jeux vidéo"
@@ -340,12 +314,6 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/lay_legende_projet3">
 
-                        <TextView
-                            android:text="Difficulté :"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/difficulte_projet3"
-                            tools:text="Difficulté :" />
 
                         <TextView
                             android:text="Branche :"
@@ -362,11 +330,11 @@
                             tools:text="Objectif :" />
 
                         <TextView
-                            android:text="Récompense :"
+                            android:text="Gain :"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/rec_projet3"
-                            tools:text="Récompense :" />
+                            tools:text="Gain :" />
 
                         <TextView
                             android:text="Débloque :"
@@ -382,12 +350,6 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/lay_contenu_projet3">
 
-                        <TextView
-                            android:text="Difficile"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/cont_diff_projet3"
-                            tools:text="Difficile" />
 
                         <TextView
                             android:text="Gestion"

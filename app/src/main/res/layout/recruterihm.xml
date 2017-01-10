@@ -3,55 +3,95 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <TextView
+        android:text="Recruter du personnel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <RelativeLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="1">
 
-        <TextView
-            android:text="Recruter du personnel"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView2"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linearLayout">
 
-        <Button
-            android:text="Item 1"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
 
-            android:textSize="12dp"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:id="@+id/recrue1"
-            android:layout_weight="0.335"
-            android:drawableLeft="@drawable/icone_android"
+                <Button
+                    android:text="Recrue 1"
+                    android:textSize="12dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="85dp"
+                    android:id="@+id/recrue1"
+                    android:drawableLeft="@drawable/icone_android"
 
-            />
+                    />
 
-        <Button
-            android:text="Item 2"
-            android:textSize="12dp"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:id="@+id/recrue2"
-            android:layout_weight="0.335"
-            android:drawableLeft="@drawable/icone_android"
-            />
+                <Button
+                    android:text="Recrue 2"
+                    android:textSize="12dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="89dp"
+                    android:id="@+id/recrue2"
+                    android:layout_weight="0.335"
+                    android:drawableLeft="@drawable/icone_android"
+                    />
 
-        <Button
-            android:text="Item 2"
-            android:textSize="12dp"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:id="@+id/recrue3"
-            android:layout_weight="0.335"
-            android:drawableLeft="@drawable/icone_android"
-            />
+                <Button
+                    android:text="Recrue 3"
+                    android:textSize="12dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="89dp"
+                    android:id="@+id/recrue3"
+                    android:drawableLeft="@drawable/icone_android"
+                    />
+
+                <Button
+                    android:text="Recrue 4"
+                    android:textSize="12dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="89dp"
+                    android:id="@+id/recrue4"
+                    android:drawableLeft="@drawable/icone_android"
+                    />
+                <Button
+                    android:text="Recrue 5"
+                    android:textSize="12dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="89dp"
+                    android:id="@+id/recrue5"
+                    android:drawableLeft="@drawable/icone_android"
+                    />
+                <Button
+                    android:text="Recrue 6"
+                    android:textSize="12dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="89dp"
+                    android:id="@+id/recrue6"
+                    android:drawableLeft="@drawable/icone_android"
+                    />
+
+            </LinearLayout>
+
+        </ScrollView>
+
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/linearLayout">
 
             <Button
                 android:text="Recruter"
@@ -78,5 +118,6 @@
                 android:layout_weight="1" />
 
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
+
 </LinearLayout>

@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             Donnees data = Charger.chargerDonnee(this, "sauvegarder");
             //On affecte les differentes variables du fichier de donnees presentes dans la fenetre
             compteurLignes.setText(data.getLignes_de_code_courantes());
-            projetCourant.setText(data.getProjet_courant_general());
+            projetCourant.setText("Projet en cours : " + data.getProjet_courant_general());
             compteurArgent.setText(data.getArgent());
             donnees = data;
         }
@@ -83,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
                     int nombre_chef_projet_e = donnees.getNombre_chef_projet_e();
                     int nombre_chef_projet_s = donnees.getNombre_chef_projet_s();
                     Incrementation_automatique.attendre(myActivity);
-
 
                 }
 

@@ -28,6 +28,7 @@
             android:id="@+id/textNomEntreprise" />
 
         <TextView
+            android:text="Projet en cours : "
             android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -96,6 +97,14 @@
             android:layout_height="wrap_content">
 
             <Button
+                android:text="Recruter"
+                android:textSize="12dp"
+                android:layout_height="match_parent"
+                android:id="@+id/recruter"
+                tools:text="Recruter"
+                android:layout_width="108dp" />
+
+            <Button
                 android:text="Mon entreprise"
                 android:textSize="12dp"
                 android:layout_height="match_parent"
@@ -103,15 +112,7 @@
                 android:layout_width="108dp" />
 
             <Button
-                android:text="Recruter"
-                android:textSize="12dp"
-                android:layout_height="match_parent"
-                android:id="@+id/recruter"
-                tools:text="Ressources Humaines"
-                android:layout_width="108dp" />
-
-            <Button
-                android:text="Mon Inventaire"
+                android:text="Inventaire"
                 android:textSize="12dp"
                 android:layout_height="match_parent"
                 android:id="@+id/inventaire"

@@ -21,6 +21,8 @@ public class Recruter extends AppCompatActivity{
     Button recrue1 = null;
     Button recrue2 = null;
     Button recrue3 = null;
+    Button recrue4 = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,14 +35,16 @@ public class Recruter extends AppCompatActivity{
         recrue1 = (Button)findViewById(R.id.recrue1);
         recrue2 = (Button)findViewById(R.id.recrue2);
         recrue3 = (Button)findViewById(R.id.recrue3);
+        recrue4 = (Button)findViewById(R.id.recrue4);
 
         recruter.setOnClickListener(lienRecrutement);
         entreprise.setOnClickListener(lienEntreprise);
         inventaire.setOnClickListener(lienInventaire);
 
-        recrue1.setText(developpeur.getNom() + "\n\n Prix : " + developpeur.getPrix() + "\n" + developpeur.getDesc());
-        recrue2.setText(chefProjet.getNom() + "\n\n Prix : " + chefProjet.getPrix() + "\n" + chefProjet.getDesc());
-        recrue3.setText(comptable.getNom() + "\n\n Prix : " + comptable.getPrix() + "\n" + comptable.getDesc());
+        recrue1.setText(developpeur.getNom() + "\n Prix : " + developpeur.getPrix() + "\n" + developpeur.getDesc());
+        recrue2.setText(chefProjet.getNom() + "\n Prix : " + chefProjet.getPrix() + "\n" + chefProjet.getDesc());
+        recrue3.setText(comptable.getNom() + "\n Prix : " + comptable.getPrix() + "\n" + comptable.getDesc());
+        recrue4.setText(adminReseau.getNom() + "\n Prix : " + adminReseau.getPrix() + "\n" + adminReseau.getDesc());
     }
 
     private View.OnClickListener lienRecrutement = new View.OnClickListener() {

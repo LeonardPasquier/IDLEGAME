@@ -32,16 +32,16 @@ public class Inventaire extends AppCompatActivity{
         entreprise = (Button)findViewById(R.id.entreprise);
         inventaire = (Button)findViewById(R.id.inventaire);
         //Les vues de l'interface de l'inventaire
-        item_1 = (Button)findViewById(R.id.item1);
-        item_2 = (Button)findViewById(R.id.item2);
-        item_3 = (Button)findViewById(R.id.item3);
+        item_1 = (Button)findViewById(R.id.item1_1);
+        item_2 = (Button)findViewById(R.id.item2_1);
+        item_3 = (Button)findViewById(R.id.item3_1);
 
         recruter.setOnClickListener(lienRecrutement);
         entreprise.setOnClickListener(lienEntreprise);
         //inventaire.setOnClickListener(lienInventaire);
 
-        item_1.setText(antivirus.getNom() + "\n\nPrix : " + antivirus.getPrix() + "\n" + antivirus.getDesc());
-        item_2.setText(ordinateur.getNom() + "\n\nPrix : " + ordinateur.getPrix() + "\n" + ordinateur.getDesc());
+        item_1.setText(ordinateur.getNom() + "\n\nPrix : " + ordinateur.getPrix() + "\n" + ordinateur.getDesc());
+        item_2.setText(antivirus.getNom() + "\n\nPrix : " + antivirus.getPrix() + "\n" + antivirus.getDesc());
         item_3.setText(serveur.getNom() + "\n\nPrix : " + serveur.getPrix() + "\n" + serveur.getDesc());
     }
 

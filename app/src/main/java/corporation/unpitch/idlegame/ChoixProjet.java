@@ -31,10 +31,6 @@ public class ChoixProjet extends AppCompatActivity {
     TextView descriptionprojet1 = null;
     TextView descriptionprojet2 = null;
     TextView descriptionprojet3 = null;
-    //La zone de texte de la difficulté
-    TextView cont_diff_projet1 = null;
-    TextView cont_diff_projet2 = null;
-    TextView cont_diff_projet3 = null;
     //La zone de texte de la catégorie
     TextView cont_branche_projet1 = null;
     TextView cont_branche_projet2 = null;
@@ -59,6 +55,7 @@ public class ChoixProjet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choixprojetihm);
+        this.
 
 
         //On récupère les vues
@@ -74,9 +71,6 @@ public class ChoixProjet extends AppCompatActivity {
         descriptionprojet1 = (TextView) findViewById(R.id.descriptionprojet1);
         descriptionprojet2 = (TextView) findViewById(R.id.descriptionprojet2);
         descriptionprojet3 = (TextView) findViewById(R.id.descriptionprojet3);
-        cont_diff_projet1 = (TextView) findViewById(R.id.cont_diff_projet1);
-        cont_diff_projet2 = (TextView) findViewById(R.id.cont_diff_projet2);
-        cont_diff_projet3 = (TextView) findViewById(R.id.cont_diff_projet3);
         cont_branche_projet1 = (TextView) findViewById(R.id.cont_branche_projet1);
         cont_branche_projet2 = (TextView) findViewById(R.id.cont_branche_projet2);
         cont_branche_projet3 = (TextView) findViewById(R.id.cont_branche_projet3);
@@ -113,9 +107,6 @@ public class ChoixProjet extends AppCompatActivity {
         descriptionprojet1.setText(projet1.getDescription());
         descriptionprojet2.setText(projet2.getDescription());
         descriptionprojet3.setText(projet3.getDescription());
-        cont_diff_projet1.setText(projet1.getDifficulte());
-        cont_diff_projet2.setText(projet2.getDifficulte());
-        cont_diff_projet3.setText(projet3.getDifficulte());
         cont_branche_projet1.setText(projet1.getBranche());
         cont_branche_projet2.setText(projet2.getBranche());
         cont_branche_projet3.setText(projet3.getBranche());
@@ -162,7 +153,6 @@ public class ChoixProjet extends AppCompatActivity {
     public void acceptation_generale(Projet courant){
         MainActivity.donnees.setProjet_courant_general(courant.getNom());
         MainActivity.donnees.setProjet_courant_general_id(courant.getprojectId());
-        System.out.println("Choix projet acceptP"+courant.getNom());
         MainActivity.projetCourant.setText(courant.getNom());
         MainActivity.objectif = courant.getObjectif();
         onBackPressed();
