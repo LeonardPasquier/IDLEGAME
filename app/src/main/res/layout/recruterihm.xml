@@ -27,6 +27,14 @@
                 android:orientation="vertical"
                 >
 
+                <TextView
+                    android:text="Développeurs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textDev"
+                    android:gravity="center"
+                />
+
                 <Button
                     android:text="Recrue 1"
                     android:textSize="12dp"
@@ -56,6 +64,14 @@
                     android:drawableLeft="@drawable/icone_android"
                     />
 
+                <TextView
+                    android:text="Chefs de projet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textChefs"
+                    android:gravity="center"
+                    />
+
                 <Button
                     android:text="Recrue 4"
                     android:textSize="12dp"
@@ -78,6 +94,76 @@
                     android:layout_width="fill_parent"
                     android:layout_height="89dp"
                     android:id="@+id/recrue6"
+                    android:drawableLeft="@drawable/icone_android"
+                    />
+
+                <TextView
+                    android:text="Comptables"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textComptable"
+                    android:gravity="center"
+                    />
+
+                <Button
+                    android:text="Recrue 7"
+                    android:textSize="12dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="89dp"
+                    android:id="@+id/recrue7"
+                    android:drawableLeft="@drawable/icone_android"
+                    />
+
+                <Button
+                    android:text="Recrue 8"
+                    android:textSize="12dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="89dp"
+                    android:id="@+id/recrue8"
+                    android:drawableLeft="@drawable/icone_android"
+                    />
+
+                <Button
+                    android:text="Recrue 9"
+                    android:textSize="12dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="89dp"
+                    android:id="@+id/recrue9"
+                    android:drawableLeft="@drawable/icone_android"
+                    />
+
+                <TextView
+                    android:text="Admin. réseaux"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textAdmin"
+                    android:gravity="center"
+                    />
+
+                <Button
+                    android:text="Recrue 10"
+                    android:textSize="12dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="89dp"
+                    android:id="@+id/recrue10"
+                    android:drawableLeft="@drawable/icone_android"
+                    />
+
+                <Button
+                    android:text="Recrue11"
+                    android:textSize="12dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="89dp"
+                    android:id="@+id/recrue11"
+                    android:drawableLeft="@drawable/icone_android"
+                    />
+
+                <Button
+                    android:text="Recrue 12"
+                    android:textSize="12dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="89dp"
+                    android:id="@+id/recrue12"
                     android:drawableLeft="@drawable/icone_android"
                     />
 

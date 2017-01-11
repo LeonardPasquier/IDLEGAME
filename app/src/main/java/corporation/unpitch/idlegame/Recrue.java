@@ -8,10 +8,11 @@ package corporation.unpitch.idlegame;
 
 public class Recrue {
     private String nom;
-    private int prix;
+    static int prix;
     private String desc;
     private String adrImage;
-    private int coeff;
+    static int coeff;
+    static int possede = 0;
 
     //Constructeurs de Recrue. Vide, complet, ou sans image.
     public Recrue (String parNom, int parPrix, String parDesc, String parAdrImg, int parCoeff){
@@ -20,6 +21,7 @@ public class Recrue {
         desc = parDesc;
         adrImage=parAdrImg;
         coeff = parCoeff;
+
     }
 
     public Recrue (String parNom, int parPrix, String parDesc, int parCoeff){
@@ -50,9 +52,10 @@ public class Recrue {
     public void setAdrImage(String parAdrImage){
         adrImage=parAdrImage;
     }
-    public void setCoeff (int parcoeff){
-        coeff = parcoeff;
+    public void setCoeff (int parCoeff){
+        coeff = parCoeff;
     }
+    public void setPossede (int parPossede){ possede = parPossede;}
     //getters de la classe item
     public String getNom (){
         return nom;
@@ -69,4 +72,5 @@ public class Recrue {
     public int getCoeff(){
         return coeff;
     }
+    public int getPossede(){ return possede; }
 }
