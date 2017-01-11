@@ -26,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
     TextView compteurLignes = null;
     TextView compteurArgent = null;
     static TextView projetCourant = null;
+    static boolean presence_fichier = true;
     static Donnees donnees = new Donnees(); //On cree la classe de donnees a enregistrer
-    static int objectif = 10000;
-
+    static int objectif = 999999999;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -53,19 +53,31 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             //on charge le fichier de sauvegarde
-            Donnees data = Charger.chargerDonnee(this, "sauvegarder");
-            //On affecte les differentes variables du fichier de donnees presentes dans la fenetre
-            compteurLignes.setText(data.getLignes_de_code_courantes());
-            projetCourant.setText("Projet en cours : " + data.getProjet_courant_general());
-            compteurArgent.setText(data.getArgent());
-            donnees = data;
+            Donnees data = new Donnees();
+            data = Charger.chargerDonnee(this, "sauver");
+            if (data != null){
+                donnees = data;
+            }
         }
         catch (Exception ex){
+            presence_fichier = false;
             System.out.println("erreur lors du chargement du fichier");
+        }
+        
+        try {
+            //On affecte les differentes variables du fichier de donnees presentes dans la fenetre
+            System.out.println(donnees.getProjet_courant_general());
+            compteurLignes.setText(String.valueOf(donnees.getLignes_de_code_courantes()));
+            projetCourant.setText(donnees.getProjet_courant_general());
+            compteurArgent.setText(String.valueOf(donnees.getArgent()));
+            objectif = Liste_Projets.getProjet(donnees.getProjet_courant_general()).getObjectif();
+        }
+        catch(Exception exc){
+            System.out.println("Erreur lors de l'affectation des variables sauvées aux champs.");
         }
 
         //Si aucun projet n'est affecté, alors on amène directement la personne sur le menu de choix de projet.
-        if (Objects.equals(donnees.getProjet_courant_general(), "rien")){
+        if (!presence_fichier){
             Intent choixprojet = new Intent (MainActivity.this, ChoixProjet.class);
             startActivity(choixprojet);
         }
@@ -75,14 +87,7 @@ public class MainActivity extends AppCompatActivity {
         new Thread (
                 new Runnable(){
                 public void run(){
-                    int lignes = donnees.getLignes_de_code_courantes();
-                    int nombre_dev_j = donnees.getNombre_dev_j();
-                    int nombre_dev_e = donnees.getNombre_dev_e();
-                    int nombre_dev_s = donnees.getNombre_dev_s();
-                    int nombre_chef_projet_j = donnees.getNombre_chef_projet_j();
-                    int nombre_chef_projet_e = donnees.getNombre_chef_projet_e();
-                    int nombre_chef_projet_s = donnees.getNombre_chef_projet_s();
-                    Incrementation_automatique.attendre(myActivity, objectif);
+                    Incrementation_automatique.attendre(myActivity);
 
                 }
 
@@ -98,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
             ib = ib+1;
             String csb = String.valueOf(ib);
             compteurLignes.setText(csb);
+            donnees.setLignes_de_code_courantes(getCompteurLigneCourant());
             if (ib >= objectif){
                 objectifatteint();
             }
@@ -142,17 +148,17 @@ public class MainActivity extends AppCompatActivity {
     //Si le nombre de lignes de code fixées comme objectif ont bien êtées atteintes, alors...
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void objectifatteint(){
-        System.out.println("coucou");
         //On reset le compteur de lignes courantes
         compteurLignes.setText("0");
         //On affiche un message de félicitations
 
+        //on rend l'argent aux abonnés
+        donnees.setArgent(donnees.getArgent()+Liste_Projets.getProjet(donnees.getProjet_courant_general()).getGainFinal());
         //On actualise les projets courants, de manière à passer par exemple de jeux_video1 à jeux_video2
         actprojetcourant();
         //on reset le projet courant general
-        donnees.setProjet_courant_general("rien");
+        donnees.setProjet_courant_general("null");
         //Puis on renvoie vers la page du choix des projets
-        System.out.println("lalala "+donnees.getProjet_courant_jeux_video());
         Intent choixprojet = new Intent (MainActivity.this, ChoixProjet.class);
         startActivity(choixprojet);
     }
@@ -174,11 +180,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void actualiserAffichage(){
+        compteurLignes.setText(String.valueOf(donnees.getLignes_de_code_courantes()));
+        projetCourant.setText(donnees.getProjet_courant_general());
+        compteurArgent.setText(String.valueOf(donnees.getArgent()));
+    }
 
     @Override
     public void onBackPressed(){
         donnees.setLignes_de_code_courantes(getCompteurLigneCourant());
-        Sauvegarder.sauvegarder(this, donnees, "sauvegarder");
+        System.out.println(getCompteurLigneCourant());
+        Sauvegarder.sauvegarder(this, donnees, "sauver");
         this.finish();
     }
 

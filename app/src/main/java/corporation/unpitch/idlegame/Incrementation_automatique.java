@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 
+import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -14,35 +15,43 @@ import java.util.TimerTask;
 public class Incrementation_automatique {
 
     static int maligne=0;
-    public static void attendre(final MainActivity myActivity, final int objectif){
-        final int devj = MainActivity.donnees.getNombre_dev_j();
-        final int deve = MainActivity.donnees.getNombre_dev_e();
-        final int devs = MainActivity.donnees.getNombre_dev_s();
-        final int chefj = MainActivity.donnees.getNombre_chef_projet_j();
-        final int chefe = MainActivity.donnees.getNombre_chef_projet_e();
-        final int chefs = MainActivity.donnees.getNombre_chef_projet_s();
+    public static void attendre(final MainActivity myActivity){
+
 
         Timer timer = new Timer();
         TimerTask myTask = new TimerTask() {
             @Override
             public void run() {
+                final int devj = MainActivity.donnees.getNombre_dev_j();
+                final int deve = MainActivity.donnees.getNombre_dev_e();
+                final int devs = MainActivity.donnees.getNombre_dev_s();
+                final int chefj = MainActivity.donnees.getNombre_chef_projet_j();
+                final int chefe = MainActivity.donnees.getNombre_chef_projet_e();
+                final int chefs = MainActivity.donnees.getNombre_chef_projet_s();
+                final int argent = MainActivity.donnees.getArgent();
+                final int objectif = MainActivity.objectif;
                 int lignes = myActivity.getCompteurLigneCourant();
                 int nombre_lignes = 0;
                 nombre_lignes = Mult_dev(devj, deve, devs);
                 nombre_lignes = Mult_chef_projet(nombre_lignes, chefj, chefe, chefs);
                 maligne = nombre_lignes;
 
-                myActivity.runOnUiThread(createRunnableForUI(nombre_lignes, lignes, objectif));
+                myActivity.runOnUiThread(createRunnableForUI(nombre_lignes, lignes, objectif, argent));
             }
-            private Runnable createRunnableForUI (final int compteur, final int lignes, final int objectif){
+            private Runnable createRunnableForUI (final int compteur, final int lignes, final int objectif, final int argent){
                 return new Runnable() {
                     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                     @Override
                     public void run() {
-                        int yata = compteur + lignes;
-                        myActivity.compteurLignes.setText(String.valueOf(yata));
-                        if (yata >= objectif){
-                            myActivity.objectifatteint();
+                        if (!Objects.equals(MainActivity.donnees.getProjet_courant_general(), "null")) {
+                            int yata = compteur + lignes;
+                            myActivity.compteurLignes.setText(String.valueOf(yata));
+                            myActivity.compteurArgent.setText(String.valueOf(argent));
+                            MainActivity.donnees.setLignes_de_code_courantes(myActivity.getCompteurLigneCourant());
+                            System.out.println(objectif);
+                            if (yata >= objectif) {
+                                myActivity.objectifatteint();
+                            }
                         }
                     }
                 };

@@ -59,7 +59,6 @@ public class Recruter extends AppCompatActivity{
         entreprise.setOnClickListener(lienEntreprise);
         inventaire.setOnClickListener(lienInventaire);
 
-        System.out.println(developpeurJunior.getPrix());
         recrue1.setText(developpeurJunior.getNom() + "\n Prix : 500" + "\n" + developpeurJunior.getDesc() + "\n Actuellement possédés : " + developpeurJunior.getPossede());
         recrue2.setText(developpeurExpert.getNom() + "\n Prix : 4500" + "\n" + developpeurExpert.getDesc());
         recrue3.setText(developpeurSenior.getNom() + "\n Prix : 20000" + "\n" + developpeurSenior.getDesc());
@@ -106,17 +105,23 @@ public class Recruter extends AppCompatActivity{
         }
 
     };
-    @Override
-    public void onBackPressed(){
-            this.finish();
-    }
+
 
     private View.OnClickListener lienDevJunior = new View.OnClickListener(){
         @Override
         public void onClick(View v){
-            developpeurJunior.possede+=1;
-            recrue1.setText(developpeurJunior.getNom() + "\n Prix : 500" + "\n" + developpeurJunior.getDesc() + "\n Actuellement possédés : " + developpeurJunior.getPossede());
+            if (MainActivity.donnees.getArgent() >= 750) {
+                developpeurJunior.possede += 1;
+                recrue1.setText(developpeurJunior.getNom() + "\n Prix : 500" + "\n" + developpeurJunior.getDesc() + "\n Actuellement possédés : " + developpeurJunior.getPossede());
+                MainActivity.donnees.setNombre_dev_j(MainActivity.donnees.getNombre_dev_j()+1);
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-750);
+
+            }
 
         }
     };
+    @Override
+    public void onBackPressed(){
+        this.finish();
+    }
 }

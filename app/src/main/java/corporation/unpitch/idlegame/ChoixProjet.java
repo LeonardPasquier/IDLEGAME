@@ -84,7 +84,7 @@ public class ChoixProjet extends AppCompatActivity {
         cont_debloque_projet2 = (TextView) findViewById(R.id.cont_debloque_projet2);
         cont_debloque_projet3 = (TextView) findViewById(R.id.cont_debloque_projet3);
 
-        if (Objects.equals(MainActivity.donnees.getProjet_courant_general(), "rien")){
+        if (Objects.equals(MainActivity.donnees.getProjet_courant_general(), "null")){
             //Rendre les boutons visibles
             accept_projet1.setVisibility(View.VISIBLE);
             accept_projet2.setVisibility(View.VISIBLE);
@@ -116,9 +116,9 @@ public class ChoixProjet extends AppCompatActivity {
         cont_objectif_projet1.setText(objp1);
         cont_objectif_projet2.setText(objp2);
         cont_objectif_projet3.setText(objp3);
-        cont_recompense_projet1.setText(projet1.getGainFinal());
-        cont_recompense_projet2.setText(projet2.getGainFinal());
-        cont_recompense_projet3.setText(projet3.getGainFinal());
+        cont_recompense_projet1.setText(String.valueOf(projet1.getGainFinal()));
+        cont_recompense_projet2.setText(String.valueOf(projet2.getGainFinal()));
+        cont_recompense_projet3.setText(String.valueOf(projet3.getGainFinal()));
         cont_debloque_projet1.setText(projet1.getProjet_suivant());
         cont_debloque_projet2.setText(projet2.getProjet_suivant());
         cont_debloque_projet3.setText(projet3.getProjet_suivant());
@@ -153,6 +153,7 @@ public class ChoixProjet extends AppCompatActivity {
     public void acceptation_generale(Projet courant){
         MainActivity.donnees.setProjet_courant_general(courant.getNom());
         MainActivity.donnees.setProjet_courant_general_id(courant.getprojectId());
+        MainActivity.donnees.setLignes_de_code_courantes(0);
         MainActivity.projetCourant.setText(courant.getNom());
         MainActivity.objectif = courant.getObjectif();
         onBackPressed();

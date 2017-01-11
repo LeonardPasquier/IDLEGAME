@@ -14,7 +14,7 @@ public class Projet implements Serializable{
     String branche = "";
     String description = "";
     String difficulte = "";
-    String gainfinal = "";
+    int gainfinal = 0;
     //Gain direct / gain courant
     String methode_gain_final = "";//OS = d'un coup, CON = continu, BO = les deux
     String projet_suivant = "";
@@ -36,7 +36,7 @@ public class Projet implements Serializable{
     public void setDifficulte(String difficulte){
         this.difficulte = difficulte;
     }
-    public void setGainfinal(String gainfinal){
+    public void setGainfinal(int gainfinal){
         this.gainfinal = gainfinal;
     }
     public void setMethode_gain_final(String methode_gain_final){
@@ -68,7 +68,7 @@ public class Projet implements Serializable{
     String getDifficulte(){
         return this.difficulte;
     }
-    String getGainFinal(){
+    int getGainFinal(){
         return this.gainfinal;
     }
     String getMethode_Gain_Final(){

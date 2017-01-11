@@ -19,6 +19,7 @@ class Sauvegarder{
         try
         {
 
+            System.out.println(donnees.getArgent());
             FileOutputStream fos = ctx.openFileOutput(nom_fichier, Context.MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(donnees);

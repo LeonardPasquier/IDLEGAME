@@ -16,7 +16,7 @@ public class Liste_Projets {
         JeuVideo1.setprojectId("JeuVideo1");
         JeuVideo1.setBranche("Jeux videos");
         JeuVideo1.setDescription("Réalisation d'un petit jeu de rôle dans un monde fantastique envahit par des monstres.");
-        JeuVideo1.setGainfinal("250$");
+        JeuVideo1.setGainfinal(250);
         JeuVideo1.setMethode_gain_final("OS");
         JeuVideo1.setNom("Wyrm Quest");
         JeuVideo1.setObjectif(750);
@@ -30,7 +30,7 @@ public class Liste_Projets {
         JeuVideo2.setprojectId("JeuVideo2");
         JeuVideo2.setBranche("Jeux videos");
         JeuVideo2.setDescription("Réalisation d'un petit jeu de plateforme, un maçon italien et barbu se baladant à travers différents mondes pour secourir une princesse.");
-        JeuVideo2.setGainfinal("550$");
+        JeuVideo2.setGainfinal(550);
         JeuVideo2.setMethode_gain_final("OS");
         JeuVideo2.setNom("Juan platforming");
         JeuVideo2.setObjectif(1500);
@@ -44,7 +44,7 @@ public class Liste_Projets {
         JeuVideo3.setprojectId("JeuVideo3");
         JeuVideo3.setBranche("Jeux videos");
         JeuVideo3.setDescription("Réalisation d'un FPS (First Person Shooter), un jeu de guerre multijoueur joué par équipe de cinq contre cinq.");
-        JeuVideo3.setGainfinal("1200$");
+        JeuVideo3.setGainfinal(1200);
         JeuVideo3.setMethode_gain_final("OS");
         JeuVideo3.setNom("Call of Global");
         JeuVideo3.setObjectif(5000);
@@ -58,7 +58,7 @@ public class Liste_Projets {
         JeuVideo4.setprojectId("JeuVideo4");
         JeuVideo4.setBranche("Jeux videos");
         JeuVideo4.setDescription("Réalisation d'un jeu de foot,jouable en solo et en multijoueur, regroupant les équipes du monde entier.");
-        JeuVideo4.setGainfinal("1750$");
+        JeuVideo4.setGainfinal(1750);
         JeuVideo4.setMethode_gain_final("OS");
         JeuVideo4.setNom("Pro football amelioration");
         JeuVideo4.setObjectif(8500);
@@ -72,7 +72,7 @@ public class Liste_Projets {
         JeuVideo5.setprojectId("JeuVideo5");
         JeuVideo5.setBranche("Jeux videos");
         JeuVideo5.setDescription("Réalisation d'un MOBA (Multiplayer Online Battle Arena), il relit deux univers bien connu.");
-        JeuVideo5.setGainfinal("2300$");
+        JeuVideo5.setGainfinal(2300);
         JeuVideo5.setMethode_gain_final("OS");
         JeuVideo5.setNom("World of Legends");
         JeuVideo5.setObjectif(12000);
@@ -85,7 +85,7 @@ public class Liste_Projets {
         SiteWeb1.setprojectId("SiteWeb1");
         SiteWeb1.setBranche("Sites Web");
         SiteWeb1.setDescription("Réalisation d'un site regroupant des cours et tutos sur l'informatique en général");
-        SiteWeb1.setGainfinal("250$");
+        SiteWeb1.setGainfinal(250);
         SiteWeb1.setMethode_gain_final("OS");
         SiteWeb1.setNom("Le site du 1");
         SiteWeb1.setObjectif(750);
@@ -99,7 +99,7 @@ public class Liste_Projets {
         SiteWeb2.setprojectId("SiteWeb2");
         SiteWeb2.setBranche("Sites Web");
         SiteWeb2.setDescription("Réalisation d'un site de téléchargement (légale) de films, series ou musiques.");
-        SiteWeb2.setGainfinal("550$");
+        SiteWeb2.setGainfinal(550);
         SiteWeb2.setMethode_gain_final("OS");
         SiteWeb2.setNom("UltraUpload");
         SiteWeb2.setObjectif(1500);
@@ -113,7 +113,7 @@ public class Liste_Projets {
         SiteWeb3.setprojectId("SiteWeb3");
         SiteWeb3.setBranche("Sites Web");
         SiteWeb3.setDescription("Réalisation d'un site regroupant toute sorte de données enregistrées par des utilisateurs, qui peuvent être conculter");
-        SiteWeb3.setGainfinal("1200$");
+        SiteWeb3.setGainfinal(1200);
         SiteWeb3.setMethode_gain_final("OS");
         SiteWeb3.setNom("6Fun");
         SiteWeb3.setObjectif(5000);
@@ -127,7 +127,7 @@ public class Liste_Projets {
         SiteWeb4.setprojectId("SiteWeb4");
         SiteWeb4.setBranche("Sites Web");
         SiteWeb4.setDescription("Réalisation d'un site d'écoute et de partage de musique en ligne");
-        SiteWeb4.setGainfinal("1750$");
+        SiteWeb4.setGainfinal(1750);
         SiteWeb4.setMethode_gain_final("OS");
         SiteWeb4.setNom("Onzzer");
         SiteWeb4.setObjectif(8500);
@@ -141,7 +141,7 @@ public class Liste_Projets {
         SiteWeb5.setprojectId("SiteWeb5");
         SiteWeb5.setBranche("Sites Web");
         SiteWeb5.setDescription("Réalisation d'un site d'information, un petit journal du quotidien");
-        SiteWeb5.setGainfinal("2300$");
+        SiteWeb5.setGainfinal(2300);
         SiteWeb5.setMethode_gain_final("OS");
         SiteWeb5.setNom("luffy garot");
         SiteWeb5.setObjectif(12000);
@@ -155,7 +155,7 @@ public class Liste_Projets {
         Logiciel1.setprojectId("Logiciel1");
         Logiciel1.setBranche("Logiciel");
         Logiciel1.setDescription("Réalisez un éditeur de texte revolutionnaire.");
-        Logiciel1.setGainfinal("250$");
+        Logiciel1.setGainfinal(250);
         Logiciel1.setMethode_gain_final("OS");
         Logiciel1.setNom("Letter Office");
         Logiciel1.setObjectif(750);
@@ -169,7 +169,7 @@ public class Liste_Projets {
         Logiciel2.setprojectId("Logiciel2");
         Logiciel2.setBranche("Logiciel");
         Logiciel2.setDescription("Réalisez un outil de conception de conception orientée objet.");
-        Logiciel2.setGainfinal("550$");
+        Logiciel2.setGainfinal(550);
         Logiciel2.setMethode_gain_final("OS");
         Logiciel2.setNom("GalaxyUML");
         Logiciel2.setObjectif(1500);
@@ -183,7 +183,7 @@ public class Liste_Projets {
         Logiciel3.setprojectId("Logiciel3");
         Logiciel3.setBranche("Logiciel");
         Logiciel3.setDescription("Réalisez un outil qui fait à la fois éditeur de texte et prise de note");
-        Logiciel3.setGainfinal("1200$");
+        Logiciel3.setGainfinal(1200);
         Logiciel3.setMethode_gain_final("OS");
         Logiciel3.setNom("Post it --");
         Logiciel3.setObjectif(5000);
@@ -197,7 +197,7 @@ public class Liste_Projets {
         Logiciel4.setprojectId("Logiciel4");
         Logiciel4.setBranche("Logiciel");
         Logiciel4.setDescription("Réalisez un navigateur internet encore jamais vu");
-        Logiciel4.setGainfinal("1750$");
+        Logiciel4.setGainfinal(1750);
         Logiciel4.setMethode_gain_final("OS");
         Logiciel4.setNom("WindWolf");
         Logiciel4.setObjectif(8500);
@@ -211,7 +211,7 @@ public class Liste_Projets {
         Logiciel5.setprojectId("Logiciel5");
         Logiciel5.setBranche("Logiciel");
         Logiciel5.setDescription("Réalisez un logiciel de télé-conférence");
-        Logiciel5.setGainfinal("2300$");
+        Logiciel5.setGainfinal(2300);
         Logiciel5.setMethode_gain_final("OS");
         Logiciel5.setNom("Skypiea");
         Logiciel5.setObjectif(12000);
