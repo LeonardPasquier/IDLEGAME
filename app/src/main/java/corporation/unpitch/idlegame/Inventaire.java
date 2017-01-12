@@ -40,10 +40,48 @@ public class Inventaire extends AppCompatActivity{
         entreprise.setOnClickListener(lienEntreprise);
         //inventaire.setOnClickListener(lienInventaire);
 
-        item_1.setText(ordinateur.getNom() + "\n\nPrix : " + ordinateur.getPrix() + "\n" + ordinateur.getDesc());
-        item_2.setText(antivirus.getNom() + "\n\nPrix : " + antivirus.getPrix() + "\n" + antivirus.getDesc());
-        item_3.setText(serveur.getNom() + "\n\nPrix : " + serveur.getPrix() + "\n" + serveur.getDesc());
+        String possede_ordi = "";
+        if (MainActivity.donnees.getValeur_du_clic() > 1){
+            possede_ordi = "POSSEDE \n";
+        }
+
+        item_1.setText(possede_ordi + ordinateur.getNom() + "\n\nPrix : 350" + "\n" + ordinateur.getDesc());
+        item_2.setText(antivirus.getNom() + "\n\nPrix : 15.000" + "\n" + antivirus.getDesc());
+        item_3.setText(serveur.getNom() + "\n\nPrix : 150.000" + "\n" + serveur.getDesc());
+
+        item_1.setOnClickListener(lienOrdinateur);
     }
+    private View.OnClickListener lienOrdinateur = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (MainActivity.donnees.getArgent() >= 350) {
+                item_1.setText("POSSEDE" + "\n" + ordinateur.getNom() + "\nPrix : 350" + "\n" + ordinateur.getDesc());
+                MainActivity.donnees.setValeur_du_clic(MainActivity.donnees.getValeur_du_clic()+1);
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 350);
+
+            }
+        }
+    };
+    private View.OnClickListener lienAntivirus = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (MainActivity.donnees.getArgent() >= 15000) {
+                item_2.setText(antivirus.getNom() + "\n\nPrix : 15.000" + "\n" + antivirus.getDesc());
+                //MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 750);
+
+            }
+        }
+    };
+    private View.OnClickListener lienServeur = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (MainActivity.donnees.getArgent() >= 150000) {
+                item_3.setText(serveur.getNom() + "\n\nPrix : 150.000" + "\n" + serveur.getDesc());
+                //MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 750);
+
+            }
+        }
+    };
 
     private View.OnClickListener lienRecrutement = new View.OnClickListener() {
         @Override

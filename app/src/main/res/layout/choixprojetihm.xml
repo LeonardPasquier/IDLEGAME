@@ -125,7 +125,9 @@
                     android:text="Accepter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/acc_projet1" />
+                    android:id="@+id/acc_projet1"
+                    android:layout_weight="1"/>
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -255,7 +257,9 @@
                     android:text="Accepter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/acc_projet2" />
+                    android:id="@+id/acc_projet2"
+                    android:layout_weight="1"/>
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -385,7 +389,9 @@
                     android:text="Accepter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/acc_projet3" />
+                    android:id="@+id/acc_projet3"
+                    android:layout_weight="1"/>
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textLignesDeCode"
-                android:layout_weight="0.53"
+                android:layout_weight="1"
                 android:layout_gravity="center"
                 android:textAlignment="center" />
 
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             app:srcCompat="@android:drawable/ic_lock_idle_alarm"
             android:id="@+id/boutonClavier"
-            android:layout_weight="0.99" />
+            android:layout_weight="1" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -102,14 +102,17 @@
                 android:layout_height="match_parent"
                 android:id="@+id/recruter"
                 tools:text="Recruter"
-                android:layout_width="108dp" />
+                android:layout_width="108dp"
+                android:layout_weight="1"/>
 
             <Button
                 android:text="Mon entreprise"
                 android:textSize="12dp"
                 android:layout_height="match_parent"
                 android:id="@+id/entreprise"
-                android:layout_width="108dp" />
+                android:layout_width="108dp"
+                android:layout_weight="1"/>
+
 
             <Button
                 android:text="Inventaire"

@@ -55,8 +55,6 @@ public class ChoixProjet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choixprojetihm);
-        this.
-
 
         //On récupère les vues
         accept_projet1 = (Button)findViewById(R.id.acc_projet1);

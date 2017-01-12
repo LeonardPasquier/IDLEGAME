@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Si aucun projet n'est affecté, alors on amène directement la personne sur le menu de choix de projet.
-        if (!presence_fichier){
+        if (Objects.equals(MainActivity.donnees.getProjet_courant_general(), "null")){
             Intent choixprojet = new Intent (MainActivity.this, ChoixProjet.class);
             startActivity(choixprojet);
         }
@@ -99,11 +99,15 @@ public class MainActivity extends AppCompatActivity {
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         public void onClick(View v) {
+            //On recupere la valeur du compteur de lignes courant
             int ib = getCompteurLigneCourant();
-            ib = ib+1;
+            //On l'incrémente
+            ib = ib+donnees.getValeur_du_clic();
             String csb = String.valueOf(ib);
+            //On affiche la nouvelle valeur à l'ecran
             compteurLignes.setText(csb);
             donnees.setLignes_de_code_courantes(getCompteurLigneCourant());
+            //Si l'objectif est atteint, alors on appelle la fonction objectifatteint
             if (ib >= objectif){
                 objectifatteint();
             }
@@ -113,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent recruter = new Intent (MainActivity.this, Recruter.class); // on declare la nouvelle activite reliee au bouton
-            //recruter.putExtra(valeurs, donnees);
             startActivity (recruter); //on demarre l'activite
         }
 
@@ -122,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent entreprise = new Intent (MainActivity.this, Entreprise.class); // on declare la nouvelle activite reliee au bouton
-            //entreprise.putExtra(valeurs, donnees);
             startActivity (entreprise); //on demarre l'activite
         }
 
@@ -131,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent inventaire = new Intent (MainActivity.this, Inventaire.class); // on declare la nouvelle activite reliee au bouton
-            //inventaire.putExtra(valeurs, donnees);
             startActivity (inventaire); //on demarre l'activite
         }
 
@@ -180,11 +181,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void actualiserAffichage(){
+   /* public void actualiserAffichage(){
         compteurLignes.setText(String.valueOf(donnees.getLignes_de_code_courantes()));
         projetCourant.setText(donnees.getProjet_courant_general());
         compteurArgent.setText(String.valueOf(donnees.getArgent()));
-    }
+    }*/
 
     @Override
     public void onBackPressed(){

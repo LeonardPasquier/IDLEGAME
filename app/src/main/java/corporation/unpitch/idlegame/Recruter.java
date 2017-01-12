@@ -60,8 +60,8 @@ public class Recruter extends AppCompatActivity{
         inventaire.setOnClickListener(lienInventaire);
 
         recrue1.setText(developpeurJunior.getNom() + "\n Prix : 500" + "\n" + developpeurJunior.getDesc() + "\n Actuellement possédés : " + developpeurJunior.getPossede());
-        recrue2.setText(developpeurExpert.getNom() + "\n Prix : 4500" + "\n" + developpeurExpert.getDesc());
-        recrue3.setText(developpeurSenior.getNom() + "\n Prix : 20000" + "\n" + developpeurSenior.getDesc());
+        recrue2.setText(developpeurExpert.getNom() + "\n Prix : 4500" + "\n" + developpeurExpert.getDesc() + "\n Actuellement possédés : " + developpeurExpert.getPossede());
+        recrue3.setText(developpeurSenior.getNom() + "\n Prix : 20000" + "\n" + developpeurSenior.getDesc() + "\n Actuellement possédés : " + developpeurSenior.getPossede());
         //recrue4.setText(chefProjet.getNom() + " Junior \n Prix : " + chefProjet.getPrix() + "\n" + chefProjet.getDesc());
         recrue4.setText("Niveau Junior prochainement");
         recrue5.setText("Niveau Expert prochainement");
@@ -76,6 +76,8 @@ public class Recruter extends AppCompatActivity{
         recrue12.setText("Niveau Senior prochainement");
 
         recrue1.setOnClickListener(lienDevJunior);
+        recrue2.setOnClickListener(lienDevExpert);
+        recrue3.setOnClickListener(lienDevSenior);
     }
 
     private View.OnClickListener lienRecrutement = new View.OnClickListener() {
@@ -111,10 +113,33 @@ public class Recruter extends AppCompatActivity{
         @Override
         public void onClick(View v){
             if (MainActivity.donnees.getArgent() >= 750) {
-                developpeurJunior.possede += 1;
-                recrue1.setText(developpeurJunior.getNom() + "\n Prix : 500" + "\n" + developpeurJunior.getDesc() + "\n Actuellement possédés : " + developpeurJunior.getPossede());
+                recrue1.setText(developpeurJunior.getNom() + "\n Prix : 500" + "\n" + developpeurJunior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_dev_j());
                 MainActivity.donnees.setNombre_dev_j(MainActivity.donnees.getNombre_dev_j()+1);
                 MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-750);
+
+            }
+
+        }
+    };
+    private View.OnClickListener lienDevExpert = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            if (MainActivity.donnees.getArgent() >= 4500) {
+                recrue2.setText(developpeurExpert.getNom() + "\n Prix : 4500" + "\n" + developpeurExpert.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_dev_e());
+                MainActivity.donnees.setNombre_dev_e(MainActivity.donnees.getNombre_dev_e()+1);
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-4500);
+
+            }
+
+        }
+    };
+    private View.OnClickListener lienDevSenior = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            if (MainActivity.donnees.getArgent() >= 20000) {
+                recrue3.setText(developpeurSenior.getNom() + "\n Prix : 20000" + "\n" + developpeurSenior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_dev_s());
+                MainActivity.donnees.setNombre_dev_s(MainActivity.donnees.getNombre_dev_s()+1);
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-20000);
 
             }
 

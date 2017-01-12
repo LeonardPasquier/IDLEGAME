@@ -10,8 +10,8 @@ class Donnees implements Serializable {
     //On déclare les variables à sauvegarder
     private int lignes_de_code_courantes = 0;
     private int lignes_de_code_total = 0;
-    private int argent = 0;
-    private int argent_total= 0;
+    private int argent = 999999999;
+    private int argent_total= 999999999;
     private String projet_courant_general ="null";
     private String projet_courant_general_id = "";
     private String projet_courant_jeux_video = "Wyrm Quest";
@@ -23,6 +23,8 @@ class Donnees implements Serializable {
     private int nombre_chef_projet_j= 0;
     private int nombre_chef_projet_e= 0;
     private int nombre_chef_projet_s= 0;
+    private int valeur_du_clic = 1;
+
 
     //On fait les setter pour leur affecter une valeur depuis une autre classe
     void setLignes_de_code_courantes(int lignes_de_code_courantes){
@@ -82,7 +84,10 @@ class Donnees implements Serializable {
     }
     
     void setProjet_courant_general_id (String projet_courant_general_id){this.projet_courant_general_id=projet_courant_general_id;}
-    
+
+    void setValeur_du_clic(int i){
+        this.valeur_du_clic = i;
+    }
     
 
     //Puis les getter pour récupérer leur valeur depuis une autre classe
@@ -143,4 +148,6 @@ class Donnees implements Serializable {
     }
     
     String getProjet_courant_general_id(){ return this.projet_courant_general_id;}
+
+    int getValeur_du_clic(){return this.valeur_du_clic;}
 }
