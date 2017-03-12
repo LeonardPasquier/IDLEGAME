@@ -10,8 +10,8 @@ class Donnees implements Serializable {
     //On déclare les variables à sauvegarder
     private int lignes_de_code_courantes = 0;
     private int lignes_de_code_total = 0;
-    private int argent = 999999999;
-    private int argent_total= 999999999;
+    private int argent = 750;
+    private int argent_total= 750;
     private String projet_courant_general ="null";
     private String projet_courant_general_id = "";
     private String projet_courant_jeux_video = "Wyrm Quest";
@@ -24,6 +24,8 @@ class Donnees implements Serializable {
     private int nombre_chef_projet_e= 0;
     private int nombre_chef_projet_s= 0;
     private int valeur_du_clic = 1;
+    private String nom_entreprise = "";
+    private String nom_joueur = "";
 
 
     //On fait les setter pour leur affecter une valeur depuis une autre classe
@@ -58,6 +60,9 @@ class Donnees implements Serializable {
     void setProjet_courant_logiciel(String projet_courant_logiciel){
         this.projet_courant_logiciel = projet_courant_logiciel;
     }
+    void setnom_entreprise(String nom_entreprise){
+        this.nom_entreprise = nom_entreprise;
+    }
 
     void setNombre_dev_j(int nombre_dev_j){
         this.nombre_dev_j = nombre_dev_j;
@@ -88,6 +93,8 @@ class Donnees implements Serializable {
     void setValeur_du_clic(int i){
         this.valeur_du_clic = i;
     }
+
+    void setNom_joueur (String s) { this.nom_joueur = s;}
     
 
     //Puis les getter pour récupérer leur valeur depuis une autre classe
@@ -146,8 +153,12 @@ class Donnees implements Serializable {
     int getNombre_chef_projet_s(){
         return this.nombre_chef_projet_s;
     }
-    
+
     String getProjet_courant_general_id(){ return this.projet_courant_general_id;}
 
     int getValeur_du_clic(){return this.valeur_du_clic;}
+
+    String getNom_entreprise(){ return this.nom_entreprise;}
+
+    String getNom_joueur() { return this.nom_joueur;}
 }

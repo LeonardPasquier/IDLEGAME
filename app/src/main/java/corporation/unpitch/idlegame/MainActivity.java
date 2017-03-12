@@ -25,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
     Button inventaire = null;
     TextView compteurLignes = null;
     TextView compteurArgent = null;
+    static TextView nom_entreprise = null;
     static TextView projetCourant = null;
-    static boolean presence_fichier = true;
+    static boolean presence_fichier = false;
     static Donnees donnees = new Donnees(); //On cree la classe de donnees a enregistrer
     static int objectif = 999999999;
 
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         compteurLignes = (TextView)findViewById(R.id.compteurLignes);
         compteurArgent = (TextView) findViewById(R.id.compteurArgent);
         projetCourant = (TextView) findViewById(R.id.projet_en_cours);
+        nom_entreprise = (TextView) findViewById(R.id.textNomEntreprise);
 
         // On attribue un listener adapté aux vues qui en ont besoin
         incrementer.setOnClickListener(incrementerListener);
@@ -57,13 +59,19 @@ public class MainActivity extends AppCompatActivity {
             data = Charger.chargerDonnee(this, "sauver");
             if (data != null){
                 donnees = data;
+                presence_fichier = true;
+
             }
         }
         catch (Exception ex){
-            presence_fichier = false;
             System.out.println("erreur lors du chargement du fichier");
         }
-        
+
+        if (!presence_fichier){
+            Intent introduction = new Intent (MainActivity.this, Introduction.class);
+            startActivity(introduction);
+        }
+
         try {
             //On affecte les differentes variables du fichier de donnees presentes dans la fenetre
             System.out.println(donnees.getProjet_courant_general());
@@ -71,13 +79,14 @@ public class MainActivity extends AppCompatActivity {
             projetCourant.setText(donnees.getProjet_courant_general());
             compteurArgent.setText(String.valueOf(donnees.getArgent()));
             objectif = Liste_Projets.getProjet(donnees.getProjet_courant_general()).getObjectif();
+            nom_entreprise.setText(String.valueOf(donnees.getNom_entreprise()));
         }
         catch(Exception exc){
             System.out.println("Erreur lors de l'affectation des variables sauvées aux champs.");
         }
 
         //Si aucun projet n'est affecté, alors on amène directement la personne sur le menu de choix de projet.
-        if (Objects.equals(MainActivity.donnees.getProjet_courant_general(), "null")){
+        if (Objects.equals(MainActivity.donnees.getProjet_courant_general(), "null") && presence_fichier){
             Intent choixprojet = new Intent (MainActivity.this, ChoixProjet.class);
             startActivity(choixprojet);
         }
@@ -154,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
         //On affiche un message de félicitations
 
         //on rend l'argent aux abonnés
+        System.out.println(Liste_Projets.getProjet(donnees.getProjet_courant_general()).getGainFinal());
         donnees.setArgent(donnees.getArgent()+Liste_Projets.getProjet(donnees.getProjet_courant_general()).getGainFinal());
         //On actualise les projets courants, de manière à passer par exemple de jeux_video1 à jeux_video2
         actprojetcourant();

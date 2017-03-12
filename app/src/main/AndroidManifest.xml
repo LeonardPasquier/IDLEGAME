@@ -17,17 +17,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Entreprise" android:screenOrientation="portrait">
-
+        <activity android:name=".Entreprise"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Recruter"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".Inventaire"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".ChoixProjet"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Recruter"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Inventaire"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChoixProjet"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Introduction"
+            android:screenOrientation="portrait" />
 
-        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     </application>
 
 </manifest>
