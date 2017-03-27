@@ -10,8 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Objects;
+
+import static android.widget.Toast.LENGTH_SHORT;
 
 /**
  * Created by Un Pitch on 30/12/2016.
@@ -47,6 +50,8 @@ public class ChoixProjet extends AppCompatActivity {
     TextView cont_debloque_projet1 = null;
     TextView cont_debloque_projet2 = null;
     TextView cont_debloque_projet3 = null;
+
+    boolean projet_choisi = true;
 
 
 
@@ -91,6 +96,7 @@ public class ChoixProjet extends AppCompatActivity {
             accept_projet1.setOnClickListener(accepterProjetjeux_video);
             accept_projet2.setOnClickListener(accepterProjetsite_web);
             accept_projet3.setOnClickListener(accepterProjetlogiciel);
+            projet_choisi = false;
         }
 
 
@@ -149,6 +155,7 @@ public class ChoixProjet extends AppCompatActivity {
         }
     };
     public void acceptation_generale(Projet courant){
+        projet_choisi = true;
         MainActivity.donnees.setProjet_courant_general(courant.getNom());
         MainActivity.donnees.setProjet_courant_general_id(courant.getprojectId());
         MainActivity.donnees.setLignes_de_code_courantes(0);
@@ -158,6 +165,13 @@ public class ChoixProjet extends AppCompatActivity {
     }
     @Override
     public void onBackPressed(){
-        this.finish();
+        if (!projet_choisi){
+
+            Toast toast = Toast.makeText(getApplicationContext(), "Veuillez choisir un projet.", LENGTH_SHORT);
+            toast.show();
+        }
+        else {
+            this.finish();
+        }
     }
 }

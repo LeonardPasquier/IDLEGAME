@@ -4,7 +4,9 @@ package corporation.unpitch.idlegame;
  * Created by Un Pitch on 04/03/2017.
  */
 import android.content.Intent;
+import android.os.Build;
 import android.support.annotation.MainThread;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Layout;
@@ -13,6 +15,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Objects;
+
+import static android.widget.Toast.LENGTH_SHORT;
 
 public class Introduction  extends AppCompatActivity implements View.OnClickListener{
 
@@ -77,15 +84,26 @@ public class Introduction  extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void onClickValider(View v) {
         String enterprise_name = nom_ent.getText().toString();
         String player_name = nom_joueur.getText().toString();
-        MainActivity.donnees.setnom_entreprise(enterprise_name);
-        MainActivity.donnees.setNom_joueur(player_name);
-        MainActivity.nom_entreprise.setText(enterprise_name);
-        Intent choix_projet = new Intent (Introduction.this, ChoixProjet.class);
-        startActivity(choix_projet);
-        finish();
+        if (Objects.equals(enterprise_name, "")){
+            Toast toast = Toast.makeText(getApplicationContext(), "Veuillez rentrer un nom d'entreprise", LENGTH_SHORT);
+            toast.show();
+        }
+        else if (Objects.equals(player_name, "")){
+            Toast toast = Toast.makeText(getApplicationContext(), "Veuillez rentrer un nom de joueur", LENGTH_SHORT);
+            toast.show();
+        }
+        else {
+            MainActivity.donnees.setnom_entreprise(enterprise_name);
+            MainActivity.donnees.setNom_joueur(player_name);
+            MainActivity.nom_entreprise.setText(enterprise_name);
+            Intent choix_projet = new Intent (Introduction.this, ChoixProjet.class);
+            startActivity(choix_projet);
+            finish();
+        }
     }
 
     @Override

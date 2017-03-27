@@ -45,7 +45,7 @@ public class Inventaire extends AppCompatActivity{
             possede_ordi = "POSSEDE \n";
         }
 
-        item_1.setText(possede_ordi + ordinateur.getNom() + "\n\nPrix : 350" + "\n" + ordinateur.getDesc());
+        item_1.setText(possede_ordi + ordinateur.getNom() + "\n\nPrix : 350" + "\n" + ordinateur.getDesc() + "\n Actuellement possédés :" + MainActivity.donnees.getNombre_ordinateurs_faibles());
         item_2.setText(antivirus.getNom() + "\n\nPrix : 15.000" + "\n" + antivirus.getDesc());
         item_3.setText(serveur.getNom() + "\n\nPrix : 150.000" + "\n" + serveur.getDesc());
 
@@ -55,9 +55,10 @@ public class Inventaire extends AppCompatActivity{
         @Override
         public void onClick(View v) {
             if (MainActivity.donnees.getArgent() >= 350) {
-                item_1.setText("POSSEDE" + "\n" + ordinateur.getNom() + "\nPrix : 350" + "\n" + ordinateur.getDesc());
                 MainActivity.donnees.setValeur_du_clic(MainActivity.donnees.getValeur_du_clic()+1);
                 MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 350);
+                MainActivity.donnees.setNombre_ordinateurs_faibles(MainActivity.donnees.getNombre_ordinateurs_faibles()+1);
+                item_1.setText("POSSEDE" + "\n" + ordinateur.getNom() + "\nPrix : 350" + "\n" + ordinateur.getDesc() + "\n Actuellement possédés :" + MainActivity.donnees.getNombre_ordinateurs_faibles());
 
             }
         }

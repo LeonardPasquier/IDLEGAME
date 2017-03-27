@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     static TextView projetCourant = null;
     static boolean presence_fichier = false;
     static Donnees donnees = new Donnees(); //On cree la classe de donnees a enregistrer
-    static int objectif = 999999999;
+    static float objectif = 999999999;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             //On recupere la valeur du compteur de lignes courant
-            int ib = getCompteurLigneCourant();
+            float ib = getCompteurLigneCourant();
             //On l'incrémente
             ib = ib+donnees.getValeur_du_clic();
             String csb = String.valueOf(ib);
@@ -147,11 +147,11 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
-    public int getCompteurLigneCourant(){
+    public float getCompteurLigneCourant(){
         CharSequence csb = compteurLignes.getText();
         String str = String.valueOf(csb);
-        int ib;
-        ib = Integer.parseInt(str);
+        float ib;
+        ib = Float.parseFloat(str);
         return ib;
     }
 
