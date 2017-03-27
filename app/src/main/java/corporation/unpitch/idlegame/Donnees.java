@@ -8,10 +8,10 @@ import java.io.Serializable;
 
 class Donnees implements Serializable {
     //On déclare les variables à sauvegarder
-    private int lignes_de_code_courantes = 0;
-    private int lignes_de_code_total = 0;
-    private int argent = 750;
-    private int argent_total= 750;
+    private float lignes_de_code_courantes = 0;
+    private float lignes_de_code_total = 0;
+    private float argent = 750;
+    private float argent_total= 750;
     private String projet_courant_general ="null";
     private String projet_courant_general_id = "";
     private String projet_courant_jeux_video = "Wyrm Quest";
@@ -26,22 +26,23 @@ class Donnees implements Serializable {
     private int valeur_du_clic = 1;
     private String nom_entreprise = "";
     private String nom_joueur = "";
+    private int nombre_ordinateurs_faibles = 0;
 
 
     //On fait les setter pour leur affecter une valeur depuis une autre classe
-    void setLignes_de_code_courantes(int lignes_de_code_courantes){
+    void setLignes_de_code_courantes(float lignes_de_code_courantes){
         this.lignes_de_code_courantes = lignes_de_code_courantes;
     }
 
-    void setLignes_de_code_total(int lignes_de_code_total){
+    void setLignes_de_code_total(float lignes_de_code_total){
         this.lignes_de_code_total = lignes_de_code_total;
     }
 
-    void setArgent(int argent){
+    void setArgent(float argent){
         this.argent = argent;
     }
 
-    void setArgent_total(int argent_total){
+    void setArgent_total(float argent_total){
         this.argent_total = argent_total;
     }
 
@@ -64,53 +65,55 @@ class Donnees implements Serializable {
         this.nom_entreprise = nom_entreprise;
     }
 
-    void setNombre_dev_j(int nombre_dev_j){
+    void setNombre_dev_j( int  nombre_dev_j){
         this.nombre_dev_j = nombre_dev_j;
     }
 
-    void setNombre_dev_e(int nombre_dev_e){
+    void setNombre_dev_e( int  nombre_dev_e){
         this.nombre_dev_e = nombre_dev_e;
     }
 
-    void setNombre_dev_s(int nombre_dev_s){
+    void setNombre_dev_s( int  nombre_dev_s){
         this.nombre_dev_s = nombre_dev_s;
     }
     
-    void setNombre_chef_projet_j(int nombre_chef_projet_j){
+    void setNombre_chef_projet_j( int  nombre_chef_projet_j){
         this.nombre_chef_projet_j = nombre_chef_projet_j;
     }
 
-    void setNombre_chef_projet_e(int nombre_chef_projet_e){
+    void setNombre_chef_projet_e( int  nombre_chef_projet_e){
         this.nombre_chef_projet_e = nombre_chef_projet_e;
     }
 
-    void setNombre_chef_projet_s(int nombre_chef_projet_s){
+    void setNombre_chef_projet_s( int  nombre_chef_projet_s){
         this.nombre_chef_projet_s = nombre_chef_projet_s;
     }
     
     void setProjet_courant_general_id (String projet_courant_general_id){this.projet_courant_general_id=projet_courant_general_id;}
 
-    void setValeur_du_clic(int i){
+    void setValeur_du_clic( int  i){
         this.valeur_du_clic = i;
     }
 
     void setNom_joueur (String s) { this.nom_joueur = s;}
-    
+
+    void setNombre_ordinateurs_faibles(int s) { this.nombre_ordinateurs_faibles = s;}
+
 
     //Puis les getter pour récupérer leur valeur depuis une autre classe
-    int getLignes_de_code_courantes(){
+    float getLignes_de_code_courantes(){
         return this.lignes_de_code_courantes;
     }
 
-    int getLignes_de_code_total(){
+    float getLignes_de_code_total(){
         return this.lignes_de_code_total;
     }
 
-    int getArgent(){
+    float getArgent(){
         return this.argent;
     }
 
-    int getArgent_total(){
+    float getArgent_total(){
         return this.argent_total;
     }
 
@@ -130,35 +133,39 @@ class Donnees implements Serializable {
         return this.projet_courant_logiciel;
     }
 
-    int getNombre_dev_j(){
+     int  getNombre_dev_j(){
         return this.nombre_dev_j;
     }
 
-    int getNombre_dev_e(){
+     int  getNombre_dev_e(){
         return this.nombre_dev_e;
     }
 
-    int getNombre_dev_s(){
+     int  getNombre_dev_s(){
         return this.nombre_dev_s;
     }
     
-    int getNombre_chef_projet_j(){
+     int  getNombre_chef_projet_j(){
         return this.nombre_chef_projet_j;
     }
 
-    int getNombre_chef_projet_e(){
+     int  getNombre_chef_projet_e(){
         return this.nombre_chef_projet_e;
     }
 
-    int getNombre_chef_projet_s(){
+     int  getNombre_chef_projet_s(){
         return this.nombre_chef_projet_s;
     }
 
     String getProjet_courant_general_id(){ return this.projet_courant_general_id;}
 
-    int getValeur_du_clic(){return this.valeur_du_clic;}
+     int  getValeur_du_clic(){return this.valeur_du_clic;}
 
     String getNom_entreprise(){ return this.nom_entreprise;}
 
     String getNom_joueur() { return this.nom_joueur;}
+
+    int getNombre_ordinateurs_faibles(){
+        return this.nombre_ordinateurs_faibles;
+    }
 }
