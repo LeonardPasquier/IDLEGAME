@@ -2,64 +2,170 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/mon_entreprise"
+    android:weightSum="115">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="1">
+        android:layout_weight="30"
+        android:layout_height="0dp" />
 
-        <TextView
-            android:text="Mon entreprise"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView2"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
-        <TextView
-            android:text="Du blabla, du blabla, et encore du blabla"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView6"
-            android:layout_weight="0.97" />
-
-        <Button
-            android:text="PROJETS"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/choix_projet"
-            tools:text="PROJETS" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="56">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="500dp"
+            android:weightSum="1">
 
-            <Button
-                android:text="Recruter"
-                android:textSize="12dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/recruter"
-                android:layout_weight="1" />
-
-            <Button
+            <TextView
                 android:text="Mon entreprise"
-                android:textSize="12dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/entreprise"
-                android:layout_weight="1" />
+                android:id="@+id/textViewNomEntreprise"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-            <Button
-                android:text="Inventaire"
-                android:textSize="12dp"
-                android:layout_width="wrap_content"
+            <TextView
+                android:text="1"
+                android:layout_width="match_parent"
+                android:gravity="left"
                 android:layout_height="wrap_content"
-                android:id="@+id/inventaire"
-                android:layout_weight="1" />
+                android:id="@+id/textViewNomCreateur"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:layout_gravity="left"
+                android:textSize="24sp"
+                android:typeface="normal"
+                />
+
+            <TextView
+                android:text="2"
+                android:layout_width="fill_parent"
+                android:gravity="left"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp"
+                android:typeface="normal"
+                android:id="@+id/textViewArgentTotale"
+                />
+
+            <TextView
+                android:text="3"
+                android:layout_width="match_parent"
+                android:gravity="left"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewLignesDeCodesTotales"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp"
+                android:typeface="normal"
+                />
+
+            <TextView
+                android:text="4"
+                android:layout_width="match_parent"
+                android:gravity="left"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView20"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp"
+                android:typeface="normal"
+                />
+
+            <TextView
+                android:text="5"
+                android:layout_width="match_parent"
+                android:gravity="left"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView19"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp"
+                android:typeface="normal"
+                />
+
+            <TextView
+                android:text="7"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="50dp"
+                android:id="@+id/textView24" />
+
+            <TextView
+                android:text="6"
+                android:layout_width="match_parent"
+                android:gravity="left"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView18"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="24sp"
+                android:typeface="normal"
+                />
+
+            <TextView
+                android:text="8"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="34dp"
+                android:id="@+id/textView23" />
+
+            <TextView
+                android:text="9"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="30dp"
+                android:id="@+id/textView22" />
+
 
         </LinearLayout>
+
+    </ScrollView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/choix_projet"
+        android:background = "@null"
+        android:layout_weight="7"
+        android:layout_height="0dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="12"
+        android:weightSum="3">
+
+        <Button
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/recruter"
+            android:layout_weight="1"
+            android:background = "@null"/>
+
+        <Button
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/entreprise"
+            android:layout_weight="1"
+            android:background = "@null"/>
+
+        <Button
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/inventaire"
+            android:layout_weight="1"
+            android:background = "@null"/>
+
     </LinearLayout>
+
 </LinearLayout>
+
