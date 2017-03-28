@@ -2,35 +2,41 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="115"
+    android:background="@drawable/page_inventaire">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1.05">
+        android:layout_height="0dp"
+        android:layout_weight="70">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:weightSum="1">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
 
             <TextView
                 android:text="Ordinateurs"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textOrdi"
                 android:gravity="center"
                 />
 
             <Button
                 android:text="Item 1_1"
-
                 android:textSize="12dp"
                 android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:id="@+id/item1_1"
-                android:layout_weight="0.100"
-                android:drawableLeft="@drawable/icone_android"
+                android:layout_height="85dp"
+                android:id="@+id/Item1_1"
+                android:background="@drawable/ordi1"
+                android:paddingLeft="100dp"
 
                 />
 
@@ -38,142 +44,138 @@
                 android:text="Item 1_2"
                 android:textSize="12dp"
                 android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:id="@+id/item1_2"
-                android:layout_weight="0.100"
-                android:drawableLeft="@drawable/icone_android"
+                android:layout_height="89dp"
+                android:id="@+id/Item1_2"
+                android:layout_weight="0.335"
+                android:background="@drawable/ordi2"
+                android:paddingLeft="100dp"
                 />
 
             <Button
                 android:text="Item 1_3"
                 android:textSize="12dp"
                 android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:id="@+id/item1_3"
-                android:layout_weight="0.100"
-                android:drawableLeft="@drawable/icone_android"
+                android:layout_height="89dp"
+                android:id="@+id/recrue3"
+                android:background="@drawable/ordi3"
+                android:paddingLeft="100dp"
                 />
 
             <TextView
                 android:text="Antivirus"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textAntivirus"
                 android:gravity="center"
-                />
+            />
 
             <Button
                 android:text="Item 2_1"
-
                 android:textSize="12dp"
                 android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:id="@+id/item2_1"
-                android:layout_weight="0.100"
-                android:drawableLeft="@drawable/icone_android"
-
+                android:layout_height="89dp"
+                android:id="@+id/Item2_1"
+                android:background="@drawable/antivirus1"
+                android:paddingLeft="100dp"
                 />
-
             <Button
                 android:text="Item 2_2"
                 android:textSize="12dp"
                 android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:id="@+id/item2_2"
-                android:layout_weight="0.100"
-                android:drawableLeft="@drawable/icone_android"
+                android:layout_height="89dp"
+                android:id="@+id/Item2_2"
+                android:background="@drawable/antivirus2"
+                android:paddingLeft="100dp"
                 />
-
             <Button
                 android:text="Item 2_3"
                 android:textSize="12dp"
                 android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:id="@+id/item2_3"
-                android:layout_weight="0.100"
-                android:drawableLeft="@drawable/icone_android"
+                android:layout_height="89dp"
+                android:id="@+id/Item2_3"
+                android:background="@drawable/antivirus3"
+                android:paddingLeft="100dp"
                 />
 
             <TextView
                 android:text="Serveurs"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textComptable"
                 android:gravity="center"
                 />
 
             <Button
                 android:text="Item 3_1"
-
                 android:textSize="12dp"
                 android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:id="@+id/item3_1"
-                android:layout_weight="0.100"
-                android:drawableLeft="@drawable/icone_android"
-
+                android:layout_height="89dp"
+                android:id="@+id/Item3_1"
+                android:background="@drawable/serveur1"
+                android:paddingLeft="100dp"
                 />
 
             <Button
                 android:text="Item 3_2"
                 android:textSize="12dp"
                 android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:id="@+id/item3_2"
-                android:layout_weight="0.100"
-                android:drawableLeft="@drawable/icone_android"
+                android:layout_height="89dp"
+                android:id="@+id/Item3_2"
+                android:background="@drawable/serveur2"
+                android:paddingLeft="100dp"
                 />
 
             <Button
                 android:text="Item 3_3"
                 android:textSize="12dp"
                 android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:id="@+id/item3_3"
-                android:layout_weight="0.100"
-                android:drawableLeft="@drawable/icone_android"
+                android:layout_height="89dp"
+                android:id="@+id/Item3_3"
+                android:background="@drawable/serveur3"
+                android:paddingLeft="100dp"
                 />
-
 
 
         </LinearLayout>
 
     </ScrollView>
 
-    <TextView
-        android:text="Mon inventaire"
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:layout_height="0dp"
+        android:layout_weight="3"/>
 
     <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="12"
+        android:weightSum="3">
 
-            <Button
-                android:text="Recruter"
-                android:textSize="12dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/recruter"
-                android:layout_weight="1" />
+        <Button
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/recruter"
+            android:layout_weight="1"
+            android:background = "@null"/>
 
-            <Button
-                android:text="Mon entreprise"
-                android:textSize="12dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/entreprise"
-                android:layout_weight="1" />
+        <Button
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/entreprise"
+            android:layout_weight="1"
+            android:background = "@null"/>
 
-            <Button
-                android:text="Inventaire"
-                android:textSize="12dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/inventaire"
-                android:layout_weight="1" />
+        <Button
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/inventaire"
+            android:layout_weight="1"
+            android:background = "@null"/>
 
-        </LinearLayout>
-    
+    </LinearLayout>
+
 </LinearLayout>

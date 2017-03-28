@@ -32,9 +32,9 @@ public class Inventaire extends AppCompatActivity{
         entreprise = (Button)findViewById(R.id.entreprise);
         inventaire = (Button)findViewById(R.id.inventaire);
         //Les vues de l'interface de l'inventaire
-        item_1 = (Button)findViewById(R.id.item1_1);
-        item_2 = (Button)findViewById(R.id.item2_1);
-        item_3 = (Button)findViewById(R.id.item3_1);
+        item_1 = (Button)findViewById(R.id.Item1_1);
+        item_2 = (Button)findViewById(R.id.Item2_1);
+        item_3 = (Button)findViewById(R.id.Item3_1);
 
         recruter.setOnClickListener(lienRecrutement);
         entreprise.setOnClickListener(lienEntreprise);
