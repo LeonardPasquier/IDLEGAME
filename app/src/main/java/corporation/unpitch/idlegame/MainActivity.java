@@ -200,10 +200,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         donnees.setLignes_de_code_courantes(getCompteurLigneCourant());
-        System.out.println(getCompteurLigneCourant());
         Sauvegarder.sauvegarder(this, donnees, "sauver");
         this.finish();
     }
+    @Override
+    protected void onStop() {
+        donnees.setLignes_de_code_courantes(getCompteurLigneCourant());
+        Sauvegarder.sauvegarder(this, donnees, "sauver");
+        super.onPause();
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        donnees.setLignes_de_code_courantes(getCompteurLigneCourant());
+        Sauvegarder.sauvegarder(this, donnees, "sauver");
+    }
 
 }

@@ -10,7 +10,7 @@ class Donnees implements Serializable {
     //On déclare les variables à sauvegarder
     private float lignes_de_code_courantes = 0;
     private float lignes_de_code_total = 0;
-    private float argent = 750;
+    private float argent = 99999;
     private float argent_total= 750;
     private String projet_courant_general ="null";
     private String projet_courant_general_id = "";
@@ -27,6 +27,8 @@ class Donnees implements Serializable {
     private String nom_entreprise = "";
     private String nom_joueur = "";
     private int nombre_ordinateurs_faibles = 0;
+    private int nombre_ordinateurs_moyens = 0;
+    private int nombre_ordinateurs_badass = 0;
 
 
     //On fait les setter pour leur affecter une valeur depuis une autre classe
@@ -98,6 +100,8 @@ class Donnees implements Serializable {
     void setNom_joueur (String s) { this.nom_joueur = s;}
 
     void setNombre_ordinateurs_faibles(int s) { this.nombre_ordinateurs_faibles = s;}
+    void setNombre_ordinateurs_moyens(int s) { this.nombre_ordinateurs_moyens = s;}
+    void setNombre_ordinateurs_badass(int s) { this.nombre_ordinateurs_badass = s;}
 
 
     //Puis les getter pour récupérer leur valeur depuis une autre classe
@@ -167,5 +171,11 @@ class Donnees implements Serializable {
 
     int getNombre_ordinateurs_faibles(){
         return this.nombre_ordinateurs_faibles;
+    }
+    int getNombre_ordinateurs_moyens(){
+        return this.nombre_ordinateurs_moyens;
+    }
+    int getNombre_ordinateurs_badass(){
+        return this.nombre_ordinateurs_badass;
     }
 }
