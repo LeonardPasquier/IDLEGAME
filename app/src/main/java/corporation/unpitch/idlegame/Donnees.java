@@ -29,6 +29,13 @@ class Donnees implements Serializable {
     private int nombre_ordinateurs_faibles = 0;
     private int nombre_ordinateurs_moyens = 0;
     private int nombre_ordinateurs_badass = 0;
+    private int nombre_antivirus_faibles = 0;
+    private int nombre_antivirus_moyens = 0;
+    private int nombre_antivirus_badass = 0;
+    private int nombre_serveurs_faibles = 0;
+    private int nombre_serveurs_moyens = 0;
+    private int nombre_serveurs_badass = 0;
+    
 
 
     //On fait les setter pour leur affecter une valeur depuis une autre classe
@@ -102,6 +109,12 @@ class Donnees implements Serializable {
     void setNombre_ordinateurs_faibles(int s) { this.nombre_ordinateurs_faibles = s;}
     void setNombre_ordinateurs_moyens(int s) { this.nombre_ordinateurs_moyens = s;}
     void setNombre_ordinateurs_badass(int s) { this.nombre_ordinateurs_badass = s;}
+    void setNombre_antivirus_faibles(int s) { this.nombre_antivirus_faibles = s;}
+    void setNombre_antivirus_moyens(int s) { this.nombre_antivirus_moyens = s;}
+    void setNombre_antivirus_badass(int s) { this.nombre_antivirus_badass = s;}
+    void setNombre_serveurs_faibles(int s) { this.nombre_serveurs_faibles = s;}
+    void setNombre_serveurs_moyens(int s) { this.nombre_serveurs_moyens = s;}
+    void setNombre_serveurs_badass(int s) { this.nombre_serveurs_badass = s;}
 
 
     //Puis les getter pour récupérer leur valeur depuis une autre classe
@@ -177,5 +190,23 @@ class Donnees implements Serializable {
     }
     int getNombre_ordinateurs_badass(){
         return this.nombre_ordinateurs_badass;
+    }
+    int getNombre_antivirus_faibles(){
+        return this.nombre_antivirus_faibles;
+    }
+    int getNombre_antivirus_moyens(){
+        return this.nombre_antivirus_moyens;
+    }
+    int getNombre_antivirus_badass(){
+        return this.nombre_antivirus_badass;
+    }
+    int getNombre_serveurs_faibles(){
+        return this.nombre_serveurs_faibles;
+    }
+    int getNombre_serveurs_moyens(){
+        return this.nombre_serveurs_moyens;
+    }
+    int getNombre_serveurs_badass(){
+        return this.nombre_serveurs_badass;
     }
 }

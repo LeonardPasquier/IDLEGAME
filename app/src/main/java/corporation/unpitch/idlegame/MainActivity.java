@@ -1,11 +1,13 @@
 package corporation.unpitch.idlegame;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button; //yolo
 import android.widget.ImageButton;
@@ -141,8 +143,10 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener lienInventaire = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+
             Intent inventaire = new Intent (MainActivity.this, Inventaire.class); // on declare la nouvelle activite reliee au bouton
             startActivity (inventaire); //on demarre l'activite
+
         }
 
     };
@@ -215,6 +219,22 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         donnees.setLignes_de_code_courantes(getCompteurLigneCourant());
         Sauvegarder.sauvegarder(this, donnees, "sauver");
+    }
+
+    public void afficherVirus(){
+        LayoutInflater inflater = getLayoutInflater();
+        View alertLayout = inflater.inflate(R.layout.layout_virus, null);
+        final TextView virus = (TextView) alertLayout.findViewById(R.id.textView2);
+        final Button tuer = (Button) alertLayout.findViewById(R.id.button2);
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Virus");
+        alert.setView(alertLayout);
+        alert.setCancelable(false);
+
+        AlertDialog dialog = alert.create();
+        dialog.show();
+
     }
 
 }

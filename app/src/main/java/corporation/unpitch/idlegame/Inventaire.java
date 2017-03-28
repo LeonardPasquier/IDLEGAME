@@ -59,7 +59,7 @@ public class Inventaire extends AppCompatActivity{
             item_1.setOnClickListener(itemIndispo);
         }
         else {
-            item_1.setText(ordinateurfaible.getNom() + "\nPrix : 1000" + "\n" + ordinateurfaible.getDesc() + "\n Actuellement possédés :" + MainActivity.donnees.getNombre_ordinateurs_faibles());
+            item_1.setText(ordinateurfaible.getNom() + "\nPrix : 1000" + "\n" + ordinateurfaible.getDesc());
             item_1.setOnClickListener(lienOrdinateur);
         }
         if (MainActivity.donnees.getNombre_ordinateurs_moyens() == 1){
@@ -67,7 +67,7 @@ public class Inventaire extends AppCompatActivity{
             item_1_2.setOnClickListener(itemIndispo);
         }
         else {
-            item_1_2.setText(ordinateurmoyen.getNom() + "\nPrix : 1000" + "\n" + ordinateurmoyen.getDesc() + "\n Actuellement possédés :" + MainActivity.donnees.getNombre_ordinateurs_moyens());
+            item_1_2.setText(ordinateurmoyen.getNom() + "\nPrix : 5500" + "\n" + ordinateurmoyen.getDesc());
             item_1_2.setOnClickListener(lienOrdinateur2);
         }
         if (MainActivity.donnees.getNombre_ordinateurs_badass() == 1){
@@ -75,14 +75,41 @@ public class Inventaire extends AppCompatActivity{
             item_1_3.setOnClickListener(itemIndispo);
         }
         else {
-            item_1_3.setText(ordinateurbadass.getNom() + "\nPrix : 1000" + "\n" + ordinateurbadass.getDesc() + "\n Actuellement possédés :" + MainActivity.donnees.getNombre_ordinateurs_badass());
+            item_1_3.setText(ordinateurbadass.getNom() + "\nPrix : 11000" + "\n" + ordinateurbadass.getDesc());
             item_1_3.setOnClickListener(lienOrdinateur3);
         }
-
-        item_2.setText(antivirus.getNom() + "\n\nPrix : 15.000" + "\n" + antivirus.getDesc());
-        
-        item_3.setText(serveur.getNom() + "\n\nPrix : 150.000" + "\n" + serveur.getDesc());
-
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+        if (MainActivity.donnees.getNombre_antivirus_faibles() == 1){
+            item_2.setText("Vous avez déjà acheté cet antivirus ! Les virus ont un peut moins de chance de vous atteindre.");
+            item_2.setOnClickListener(itemIndispo);
+        }
+        else {
+            item_2.setText(antivirusfaible.getNom() + "\nPrix : 15000" + "\n" + antivirusfaible.getDesc());
+            item_2.setOnClickListener(lienAntivirus);
+        }
+        if (MainActivity.donnees.getNombre_antivirus_moyens() == 1){
+            item_2_2.setText("Vous avez déjà acheté cet antivirus ! Les virus ont moins de chance de vous atteindre.");
+            item_2_2.setOnClickListener(itemIndispo);
+        }
+        else {
+            item_2_2.setText(antivirusmoyen.getNom() + "\nPrix : 30000" + "\n" + antivirusmoyen.getDesc());
+            item_2_2.setOnClickListener(lienAntivirus2);
+        }
+        if (MainActivity.donnees.getNombre_antivirus_badass() == 1){
+            item_2_3.setText("Vous avez déjà acheté cet antivirus ! Les virus n'ont aucune chance de vous atteindre.");
+            item_2_3.setOnClickListener(itemIndispo);
+        }
+        else {
+            item_2_3.setText(antivirusbadass.getNom() + "\nPrix : 45000" + "\n" + antivirusbadass.getDesc());
+            item_2_3.setOnClickListener(lienAntivirus3);
+        }
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+        item_3.setText(serveurfaible.getNom() + "\n\nPrix : 150.000" + "\n" + serveurfaible.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_faibles());
+        item_3_2.setText(serveurmoyen.getNom() + "\n\nPrix : 150.000" + "\n" + serveurmoyen.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_moyens());
+        item_3_3.setText(serveurbadass.getNom() + "\n\nPrix : 150.000" + "\n" + serveurbadass.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_badass());
+        item_3.setOnClickListener(lienServeur);
+        item_3_2.setOnClickListener(lienServeur2);
+        item_3_3.setOnClickListener(lienServeur3);
 
     }
     private View.OnClickListener lienOrdinateur = new View.OnClickListener() {
@@ -94,6 +121,9 @@ public class Inventaire extends AppCompatActivity{
                 MainActivity.donnees.setNombre_ordinateurs_faibles(1);
                 item_1.setText("Vous avez déjà acheté cet ordinateur ! Chaque clic rapporte maintenant "+MainActivity.donnees.getValeur_du_clic()+" lignes de code !");
                 item_1.setOnClickListener(itemIndispo);
+            }
+            else{
+                pasdargent();
             }
         }
     };
@@ -107,6 +137,9 @@ public class Inventaire extends AppCompatActivity{
                 item_1_2.setText("Vous avez déjà acheté cet ordinateur ! Chaque clic rapporte maintenant "+MainActivity.donnees.getValeur_du_clic()+" lignes de code !");
                 item_1_2.setOnClickListener(itemIndispo);
             }
+            else{
+                pasdargent();
+            }
         }
     };
     private View.OnClickListener lienOrdinateur3 = new View.OnClickListener() {
@@ -119,8 +152,100 @@ public class Inventaire extends AppCompatActivity{
                 item_1_3.setText("Vous avez déjà acheté cet ordinateur ! Chaque clic rapporte maintenant "+MainActivity.donnees.getValeur_du_clic()+" lignes de code !");
                 item_1_3.setOnClickListener(itemIndispo);
             }
+            else{
+                pasdargent();
+            }
         }
     };
+
+
+    private View.OnClickListener lienAntivirus = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (MainActivity.donnees.getArgent() >= 15000) {
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-15000);
+                MainActivity.donnees.setNombre_antivirus_faibles(1);
+                item_2.setText("Vous avez déjà acheté cet antivirus ! Les virus ont un peut moins de chance de vous atteindre.");
+                item_2.setOnClickListener(itemIndispo);
+
+            }
+            else{
+                pasdargent();
+            }
+        }
+    };
+    private View.OnClickListener lienAntivirus2 = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (MainActivity.donnees.getArgent() >= 30000) {
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-30000);
+                MainActivity.donnees.setNombre_antivirus_moyens(1);
+                item_2_2.setText("Vous avez déjà acheté cet antivirus ! Les virus ont moins de chance de vous atteindre.");
+                item_2_2.setOnClickListener(itemIndispo);
+
+            }
+            else{
+                pasdargent();
+            }
+        }
+    };
+    private View.OnClickListener lienAntivirus3 = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (MainActivity.donnees.getArgent() >= 45000) {
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-45000);
+                MainActivity.donnees.setNombre_antivirus_badass(1);
+                item_2_3.setText("Vous avez déjà acheté cet antivirus ! Les virus n'ont aucune chance de vous atteindre.");
+                item_2_3.setOnClickListener(itemIndispo);
+            }
+            else{
+                pasdargent();
+            }
+        }
+    };
+
+
+    private View.OnClickListener lienServeur = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (MainActivity.donnees.getArgent() >= 150000) {
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 150000);
+                MainActivity.donnees.setNombre_serveurs_faibles(MainActivity.donnees.getNombre_serveurs_faibles()+1);
+                item_3.setText(serveurfaible.getNom() + "\n\nPrix : 150.000" + "\n" + serveurfaible.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_faibles());
+            }
+            else{
+                pasdargent();
+            }
+        }
+    };
+    private View.OnClickListener lienServeur2 = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (MainActivity.donnees.getArgent() >= 300000) {
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 300000);
+                MainActivity.donnees.setNombre_serveurs_faibles(MainActivity.donnees.getNombre_serveurs_moyens()+1);
+                item_3_2.setText(serveurmoyen.getNom() + "\n\nPrix : 150.000" + "\n" + serveurmoyen.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_moyens());
+            }
+            else{
+                pasdargent();
+            }
+        }
+    };
+    private View.OnClickListener lienServeur3 = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (MainActivity.donnees.getArgent() >= 450000) {
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 450000);
+                MainActivity.donnees.setNombre_serveurs_faibles(MainActivity.donnees.getNombre_serveurs_badass()+1);
+                item_3_3.setText(serveurbadass.getNom() + "\n\nPrix : 150.000" + "\n" + serveurbadass.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_badass());
+            }
+            else{
+                pasdargent();
+            }
+        }
+    };
+
+
     private View.OnClickListener itemIndispo = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -131,26 +256,14 @@ public class Inventaire extends AppCompatActivity{
             toast.show();
         }
     };
-    private View.OnClickListener lienAntivirus = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            if (MainActivity.donnees.getArgent() >= 15000) {
-                item_2.setText(antivirus.getNom() + "\n\nPrix : 15.000" + "\n" + antivirus.getDesc());
-                //MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 750);
 
-            }
-        }
-    };
-    private View.OnClickListener lienServeur = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            if (MainActivity.donnees.getArgent() >= 150000) {
-                item_3.setText(serveur.getNom() + "\n\nPrix : 150.000" + "\n" + serveur.getDesc());
-                //MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 750);
-
-            }
-        }
-    };
+    public void pasdargent(){
+        Context context = getApplicationContext();
+        CharSequence text = "Vous n'avez pas assez d'argent !";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }
 
     private View.OnClickListener lienRecrutement = new View.OnClickListener() {
         @Override
@@ -169,13 +282,5 @@ public class Inventaire extends AppCompatActivity{
             finish(); //permet de supprimer l'activite courante de la liste d'activités, et donc de retourner à l'accueil quand on clique sur retour
         }
 
-    };
-    private View.OnClickListener lienInventaire = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent inventaire = new Intent (Inventaire.this, Inventaire.class); // on declare la nouvelle activite reliee au bouton
-            startActivity (inventaire); //on demarre l'activite
-            finish(); //permet de supprimer l'activite courante de la liste d'activités, et donc de retourner à l'accueil quand on clique sur retour
-        }
     };
 }
