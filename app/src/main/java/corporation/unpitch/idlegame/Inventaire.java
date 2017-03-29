@@ -2,6 +2,7 @@ package corporation.unpitch.idlegame;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +10,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import static corporation.unpitch.idlegame.Liste_Item.*;
+import static corporation.unpitch.idlegame.R.drawable.ordi_principal_2;
+import static corporation.unpitch.idlegame.R.drawable.ordi_principal_3;
+import static corporation.unpitch.idlegame.R.drawable.ordi_principal_4;
+import static corporation.unpitch.idlegame.R.id.principalLayout;
 
 /**
  * Created by Helicose on 03/11/2016.
@@ -121,6 +126,9 @@ public class Inventaire extends AppCompatActivity{
                 MainActivity.donnees.setNombre_ordinateurs_faibles(1);
                 item_1.setText("Vous avez déjà acheté cet ordinateur ! Chaque clic rapporte maintenant "+MainActivity.donnees.getValeur_du_clic()+" lignes de code !");
                 item_1.setOnClickListener(itemIndispo);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    MainActivity.principalLayout.setBackground(getResources().getDrawable(ordi_principal_2));
+                }
             }
             else{
                 pasdargent();
@@ -136,6 +144,9 @@ public class Inventaire extends AppCompatActivity{
                 MainActivity.donnees.setNombre_ordinateurs_moyens(1);
                 item_1_2.setText("Vous avez déjà acheté cet ordinateur ! Chaque clic rapporte maintenant "+MainActivity.donnees.getValeur_du_clic()+" lignes de code !");
                 item_1_2.setOnClickListener(itemIndispo);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    MainActivity.principalLayout.setBackground(getResources().getDrawable(ordi_principal_3));
+                }
             }
             else{
                 pasdargent();
@@ -151,6 +162,9 @@ public class Inventaire extends AppCompatActivity{
                 MainActivity.donnees.setNombre_ordinateurs_badass(1);
                 item_1_3.setText("Vous avez déjà acheté cet ordinateur ! Chaque clic rapporte maintenant "+MainActivity.donnees.getValeur_du_clic()+" lignes de code !");
                 item_1_3.setOnClickListener(itemIndispo);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    MainActivity.principalLayout.setBackground(getResources().getDrawable(ordi_principal_4));
+                }
             }
             else{
                 pasdargent();
@@ -284,3 +298,13 @@ public class Inventaire extends AppCompatActivity{
 
     };
 }
+
+/*
+if(donnees.getNombre_ordinateurs_badass()==1){
+                principalLayout.setBackground(getResources().getDrawable(ordi_principal_4));
+            }else if(donnees.getNombre_ordinateurs_moyens()==1){
+                principalLayout.setBackground(getResources().getDrawable(ordi_principal_3));
+            } else if(donnees.getNombre_ordinateurs_faibles()==1){
+                principalLayout.setBackground(getResources().getDrawable(ordi_principal_2));
+            }
+ */

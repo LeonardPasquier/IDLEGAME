@@ -36,13 +36,13 @@
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="138dp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/projet1">
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="182dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:id="@+id/lay_descriptprojet1">
 
                         <TextView
@@ -56,7 +56,7 @@
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:id="@+id/lay_resum_projet1">
 
                         <LinearLayout
@@ -77,9 +77,12 @@
                                     android:layout_height="wrap_content"
                                     android:id="@+id/cat_projet1"
                                     tools:text="Branche :" />
-
+                                <Space
+                                    android:layout_width="match_parent"
+                                    android:layout_height="16dp"
+                                    android:layout_weight="2.5"/>
                                 <TextView
-                                    android:text="Objectif :"
+                                    android:text="Lignes :"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/obj_projet1"
@@ -115,7 +118,7 @@
                                     tools:text="Jeux vidéo" />
 
                                 <TextView
-                                    android:text="400 lignes"
+                                    android:text="400"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/cont_objectif_projet1"
@@ -178,10 +181,10 @@
                         android:id="@+id/lay_descriptprojet2">
 
                         <TextView
-                            android:text="Réalisez le très célèbre jeux démineur"
+                            android:id="@+id/descriptionprojet2"
                             android:layout_width="match_parent"
                             android:layout_height="131dp"
-                            android:id="@+id/descriptionprojet2"
+                            android:text="Réalisez le très célèbre jeux démineur"
                             tools:text="Réalisez le très célèbre jeux démineur" />
                     </LinearLayout>
 
@@ -211,7 +214,7 @@
                                     tools:text="Branche :" />
 
                                 <TextView
-                                    android:text="Objectif :"
+                                    android:text="Lignes :"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/obj_projet2"
@@ -247,7 +250,7 @@
                                     tools:text="Jeux vidéo" />
 
                                 <TextView
-                                    android:text="1000 lignes"
+                                    android:text="1000"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/cont_objectif_projet2"
@@ -343,7 +346,7 @@
                                     tools:text="Branche :" />
 
                                 <TextView
-                                    android:text="Objectif :"
+                                    android:text="Lignes :"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/obj_projet3"
@@ -379,7 +382,7 @@
                                     tools:text="Gestion" />
 
                                 <TextView
-                                    android:text="3000 lignes"
+                                    android:text="3000"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/cont_objectif_projet3"

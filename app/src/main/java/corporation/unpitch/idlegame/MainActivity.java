@@ -11,11 +11,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button; //yolo
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.File;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Objects;
 import java.util.logging.Handler;
+
+import static corporation.unpitch.idlegame.R.drawable.ordi_principal_2;
+import static corporation.unpitch.idlegame.R.drawable.ordi_principal_3;
+import static corporation.unpitch.idlegame.R.drawable.ordi_principal_4;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     TextView compteurArgent = null;
     static TextView nom_entreprise = null;
     static TextView projetCourant = null;
+    static LinearLayout principalLayout = null;
     static boolean presence_fichier = false;
     static Donnees donnees = new Donnees(); //On cree la classe de donnees a enregistrer
     static float objectif = 999999999;
@@ -48,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         compteurArgent = (TextView) findViewById(R.id.compteurArgent);
         projetCourant = (TextView) findViewById(R.id.projet_en_cours);
         nom_entreprise = (TextView) findViewById(R.id.textNomEntreprise);
+        principalLayout = (LinearLayout) findViewById(R.id.principalLayout);
 
         // On attribue un listener adapté aux vues qui en ont besoin
         incrementer.setOnClickListener(incrementerListener);
@@ -82,6 +91,13 @@ public class MainActivity extends AppCompatActivity {
             compteurArgent.setText(String.valueOf(donnees.getArgent()));
             objectif = Liste_Projets.getProjet(donnees.getProjet_courant_general()).getObjectif();
             nom_entreprise.setText(String.valueOf(donnees.getNom_entreprise()));
+            if(donnees.getNombre_ordinateurs_badass()==1){
+                principalLayout.setBackground(getResources().getDrawable(ordi_principal_4));
+            }else if(donnees.getNombre_ordinateurs_moyens()==1){
+                principalLayout.setBackground(getResources().getDrawable(ordi_principal_3));
+            } else if(donnees.getNombre_ordinateurs_faibles()==1){
+                principalLayout.setBackground(getResources().getDrawable(ordi_principal_2));
+            }
         }
         catch(Exception exc){
             System.out.println("Erreur lors de l'affectation des variables sauvées aux champs.");
@@ -114,16 +130,18 @@ public class MainActivity extends AppCompatActivity {
             float ib = getCompteurLigneCourant();
             //On l'incrémente
             ib = ib+donnees.getValeur_du_clic();
-            String csb = String.valueOf(ib);
+            //conversion
+            NumberFormat format = new DecimalFormat("0.00");
+            format.format(ib);
             //On affiche la nouvelle valeur à l'ecran
-            compteurLignes.setText(csb);
+            compteurLignes.setText(String.valueOf(ib));
             donnees.setLignes_de_code_courantes(getCompteurLigneCourant());
             //Si l'objectif est atteint, alors on appelle la fonction objectifatteint
             if (ib >= objectif){
                 objectifatteint();
             }
         }
-        };
+    };
     private View.OnClickListener lienRecrutement = new View.OnClickListener() {
         @Override
         public void onClick(View v) {

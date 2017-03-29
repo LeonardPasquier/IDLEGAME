@@ -114,9 +114,9 @@ public class ChoixProjet extends AppCompatActivity {
         cont_branche_projet1.setText(projet1.getBranche());
         cont_branche_projet2.setText(projet2.getBranche());
         cont_branche_projet3.setText(projet3.getBranche());
-        String objp1 = (String.valueOf(projet1.getObjectif())+" lignes");
-        String objp2 = (String.valueOf(projet2.getObjectif())+" lignes");
-        String objp3 = (String.valueOf(projet3.getObjectif())+" lignes");
+        String objp1 = (String.valueOf(projet1.getObjectif()));
+        String objp2 = (String.valueOf(projet2.getObjectif()));
+        String objp3 = (String.valueOf(projet3.getObjectif()));
         cont_objectif_projet1.setText(objp1);
         cont_objectif_projet2.setText(objp2);
         cont_objectif_projet3.setText(objp3);

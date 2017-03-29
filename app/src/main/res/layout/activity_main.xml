@@ -6,10 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="corporation.unpitch.idlegame.MainActivity"
-    android:background="@drawable/ordibouseux">
+    android:background="@drawable/ordi_principal_1">
     <!--android:background="@drawable/onglet_principal_pc1">-->
 
     <LinearLayout
+        android:id="@+id/principalLayout"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@drawable/ordibouseux">
+        android:background="@drawable/ordi_principal_1">
 
         <Space
             android:layout_width="match_parent"
