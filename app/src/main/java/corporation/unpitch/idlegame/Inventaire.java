@@ -109,9 +109,9 @@ public class Inventaire extends AppCompatActivity{
             item_2_3.setOnClickListener(lienAntivirus3);
         }
 /*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
-        item_3.setText(serveurfaible.getNom() + "\n\nPrix : 150.000" + "\n" + serveurfaible.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_faibles());
-        item_3_2.setText(serveurmoyen.getNom() + "\n\nPrix : 150.000" + "\n" + serveurmoyen.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_moyens());
-        item_3_3.setText(serveurbadass.getNom() + "\n\nPrix : 150.000" + "\n" + serveurbadass.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_badass());
+        item_3.setText(serveurfaible.getNom() + "\n\nPrix : 150000" + "\n" + serveurfaible.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_faibles());
+        item_3_2.setText(serveurmoyen.getNom() + "\n\nPrix : 3000000" + "\n" + serveurmoyen.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_moyens());
+        item_3_3.setText(serveurbadass.getNom() + "\n\nPrix : 450000" + "\n" + serveurbadass.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_badass());
         item_3.setOnClickListener(lienServeur);
         item_3_2.setOnClickListener(lienServeur2);
         item_3_3.setOnClickListener(lienServeur3);
@@ -225,7 +225,7 @@ public class Inventaire extends AppCompatActivity{
             if (MainActivity.donnees.getArgent() >= 150000) {
                 MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 150000);
                 MainActivity.donnees.setNombre_serveurs_faibles(MainActivity.donnees.getNombre_serveurs_faibles()+1);
-                item_3.setText(serveurfaible.getNom() + "\n\nPrix : 150.000" + "\n" + serveurfaible.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_faibles());
+                item_3.setText(serveurfaible.getNom() + "\n\nPrix : 150000" + "\n" + serveurfaible.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_faibles());
             }
             else{
                 pasdargent();
@@ -237,8 +237,8 @@ public class Inventaire extends AppCompatActivity{
         public void onClick(View v) {
             if (MainActivity.donnees.getArgent() >= 300000) {
                 MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 300000);
-                MainActivity.donnees.setNombre_serveurs_faibles(MainActivity.donnees.getNombre_serveurs_moyens()+1);
-                item_3_2.setText(serveurmoyen.getNom() + "\n\nPrix : 150.000" + "\n" + serveurmoyen.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_moyens());
+                MainActivity.donnees.setNombre_serveurs_moyens(MainActivity.donnees.getNombre_serveurs_moyens()+1);
+                item_3_2.setText(serveurmoyen.getNom() + "\n\nPrix : 300000" + "\n" + serveurmoyen.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_moyens());
             }
             else{
                 pasdargent();
@@ -250,8 +250,8 @@ public class Inventaire extends AppCompatActivity{
         public void onClick(View v) {
             if (MainActivity.donnees.getArgent() >= 450000) {
                 MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 450000);
-                MainActivity.donnees.setNombre_serveurs_faibles(MainActivity.donnees.getNombre_serveurs_badass()+1);
-                item_3_3.setText(serveurbadass.getNom() + "\n\nPrix : 150.000" + "\n" + serveurbadass.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_badass());
+                MainActivity.donnees.setNombre_serveurs_badass(MainActivity.donnees.getNombre_serveurs_badass()+1);
+                item_3_3.setText(serveurbadass.getNom() + "\n\nPrix : 450000" + "\n" + serveurbadass.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_badass());
             }
             else{
                 pasdargent();
@@ -298,13 +298,3 @@ public class Inventaire extends AppCompatActivity{
 
     };
 }
-
-/*
-if(donnees.getNombre_ordinateurs_badass()==1){
-                principalLayout.setBackground(getResources().getDrawable(ordi_principal_4));
-            }else if(donnees.getNombre_ordinateurs_moyens()==1){
-                principalLayout.setBackground(getResources().getDrawable(ordi_principal_3));
-            } else if(donnees.getNombre_ordinateurs_faibles()==1){
-                principalLayout.setBackground(getResources().getDrawable(ordi_principal_2));
-            }
- */

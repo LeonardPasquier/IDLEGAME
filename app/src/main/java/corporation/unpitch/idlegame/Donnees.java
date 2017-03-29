@@ -10,7 +10,7 @@ class Donnees implements Serializable {
     //On déclare les variables à sauvegarder
     private float lignes_de_code_courantes = 0;
     private float lignes_de_code_total = 0;
-    private float argent = 99999;
+    private float argent = 999999;
     private float argent_total= 750;
     private String projet_courant_general ="null";
     private String projet_courant_general_id = "";
@@ -23,6 +23,12 @@ class Donnees implements Serializable {
     private int nombre_chef_projet_j= 0;
     private int nombre_chef_projet_e= 0;
     private int nombre_chef_projet_s= 0;
+    private int nombre_comptables_j=0;
+    private int nombre_comptables_e=0;
+    private int nombre_comptables_s=0;
+    private int nombre_admin_j=0;
+    private int nombre_admin_e=0;
+    private int nombre_admin_s=0;
     private int valeur_du_clic = 1;
     private String nom_entreprise = "";
     private String nom_joueur = "";
@@ -96,6 +102,29 @@ class Donnees implements Serializable {
 
     void setNombre_chef_projet_s( int  nombre_chef_projet_s){
         this.nombre_chef_projet_s = nombre_chef_projet_s;
+    }
+    void setNombre_comptables_j( int  nombre_comptables_j){
+        this.nombre_comptables_j = nombre_comptables_j;
+    }
+
+    void setNombre_comptables_e( int  nombre_comptables_e){
+        this.nombre_comptables_e = nombre_comptables_e;
+    }
+
+    void setNombre_comptables_s( int  nombre_comptables_s){
+        this.nombre_comptables_s = nombre_comptables_s;
+    }
+    
+    void setNombre_admin_j( int  nombre_admin_j){
+        this.nombre_admin_j = nombre_admin_j;
+    }
+
+    void setNombre_admin_e( int  nombre_admin_e){
+        this.nombre_admin_e = nombre_admin_e;
+    }
+
+    void setNombre_admin_s( int  nombre_admin_s){
+        this.nombre_admin_s = nombre_admin_s;
     }
     
     void setProjet_courant_general_id (String projet_courant_general_id){this.projet_courant_general_id=projet_courant_general_id;}
@@ -172,6 +201,29 @@ class Donnees implements Serializable {
 
      int  getNombre_chef_projet_s(){
         return this.nombre_chef_projet_s;
+    }
+     int  getNombre_comptables_j(){
+        return this.nombre_comptables_j;
+    }
+
+     int  getNombre_comptables_e(){
+        return this.nombre_comptables_e;
+    }
+
+     int  getNombre_comptables_s(){
+        return this.nombre_comptables_s;
+    }
+    
+     int  getNombre_admins_j(){
+        return this.nombre_admin_j;
+    }
+
+     int  getNombre_admins_e(){
+        return this.nombre_admin_e;
+    }
+
+     int  getNombre_admins_s(){
+        return this.nombre_admin_s;
     }
 
     String getProjet_courant_general_id(){ return this.projet_courant_general_id;}

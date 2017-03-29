@@ -1,11 +1,13 @@
 package corporation.unpitch.idlegame;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import static corporation.unpitch.idlegame.Liste_Recrue.*;
 
@@ -59,25 +61,34 @@ public class Recruter extends AppCompatActivity{
         entreprise.setOnClickListener(lienEntreprise);
         inventaire.setOnClickListener(lienInventaire);
 
-        recrue1.setText(developpeurJunior.getNom() + "\n Prix : 500" + "\n" + developpeurJunior.getDesc() + "\n Actuellement possédés : " + developpeurJunior.getPossede());
-        recrue2.setText(developpeurExpert.getNom() + "\n Prix : 4500" + "\n" + developpeurExpert.getDesc() + "\n Actuellement possédés : " + developpeurExpert.getPossede());
-        recrue3.setText(developpeurSenior.getNom() + "\n Prix : 20000" + "\n" + developpeurSenior.getDesc() + "\n Actuellement possédés : " + developpeurSenior.getPossede());
+        recrue1.setText(developpeurJunior.getNom() + "\n Prix : 500" + "\n" + developpeurJunior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_dev_j());
+        recrue2.setText(developpeurExpert.getNom() + "\n Prix : 4500" + "\n" + developpeurExpert.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_dev_e());
+        recrue3.setText(developpeurSenior.getNom() + "\n Prix : 20000" + "\n" + developpeurSenior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_dev_s());
         //recrue4.setText(chefProjet.getNom() + " Junior \n Prix : " + chefProjet.getPrix() + "\n" + chefProjet.getDesc());
-        recrue4.setText("Niveau Junior prochainement");
-        recrue5.setText("Niveau Expert prochainement");
-        recrue6.setText("Niveau Senior prochainement");
+        recrue4.setText(chefProjetJunior.getNom() + "\n Prix : 500" + "\n" + chefProjetJunior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_chef_projet_j());
+        recrue5.setText(chefProjetExpert.getNom() + "\n Prix : 500" + "\n" + chefProjetExpert.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_chef_projet_e());
+        recrue6.setText(chefProjetSenior.getNom() + "\n Prix : 500" + "\n" + chefProjetSenior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_chef_projet_s());
         //recrue7.setText(comptable.getNom() + " Junior \n Prix : " + comptable.getPrix() + "\n" + comptable.getDesc());
-        recrue7.setText("Niveau Junior prochainement");
-        recrue8.setText("Niveau Expert prochainement");
-        recrue9.setText("Niveau Senior prochainement");
+        recrue7.setText(comptableJunior.getNom() + "\n Prix : 500" + "\n" + comptableJunior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_comptables_j());
+        recrue8.setText(comptableExpert.getNom() + "\n Prix : 500" + "\n" + comptableExpert.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_comptables_e());
+        recrue9.setText(comptableSenior.getNom() + "\n Prix : 500" + "\n" + comptableSenior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_comptables_s());
         //recrue10.setText(adminReseau.getNom() + " Junior \n Prix : " + adminReseau.getPrix() + "\n" + adminReseau.getDesc());
-        recrue10.setText("Niveau Junior prochainement");
-        recrue11.setText("Niveau Expert prochainement");
-        recrue12.setText("Niveau Senior prochainement");
+        recrue10.setText(adminReseauJunior.getNom() + "\n Prix : 500" + "\n" + adminReseauJunior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_admins_j());
+        recrue11.setText(adminReseauExpert.getNom() + "\n Prix : 500" + "\n" + adminReseauExpert.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_admins_e());
+        recrue12.setText(adminReseauSenior.getNom() + "\n Prix : 500" + "\n" + adminReseauSenior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_admins_s());
 
         recrue1.setOnClickListener(lienDevJunior);
         recrue2.setOnClickListener(lienDevExpert);
         recrue3.setOnClickListener(lienDevSenior);
+        recrue4.setOnClickListener(lienChefJunior);
+        recrue5.setOnClickListener(lienChefExpert);
+        recrue6.setOnClickListener(lienChefSenior);
+        recrue7.setOnClickListener(lienComptableJunior);
+        recrue8.setOnClickListener(lienComptableExpert);
+        recrue9.setOnClickListener(lienComptableSenior);
+        recrue10.setOnClickListener(lienAdminJunior);
+        recrue11.setOnClickListener(lienAdminExpert);
+        recrue12.setOnClickListener(lienAdminSenior);
     }
 
     private View.OnClickListener lienRecrutement = new View.OnClickListener() {
@@ -113,38 +124,170 @@ public class Recruter extends AppCompatActivity{
         @Override
         public void onClick(View v){
             if (MainActivity.donnees.getArgent() >= 750) {
-                recrue1.setText(developpeurJunior.getNom() + "\n Prix : 500" + "\n" + developpeurJunior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_dev_j());
                 MainActivity.donnees.setNombre_dev_j(MainActivity.donnees.getNombre_dev_j()+1);
+                recrue1.setText(developpeurJunior.getNom() + "\n Prix : 500" + "\n" + developpeurJunior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_dev_j());
                 MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-750);
-
             }
-
+            else{
+                pasdargent();
+            }
         }
     };
     private View.OnClickListener lienDevExpert = new View.OnClickListener(){
         @Override
         public void onClick(View v){
             if (MainActivity.donnees.getArgent() >= 4500) {
-                recrue2.setText(developpeurExpert.getNom() + "\n Prix : 4500" + "\n" + developpeurExpert.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_dev_e());
                 MainActivity.donnees.setNombre_dev_e(MainActivity.donnees.getNombre_dev_e()+1);
+                recrue2.setText(developpeurExpert.getNom() + "\n Prix : 4500" + "\n" + developpeurExpert.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_dev_e());
                 MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-4500);
-
             }
-
+            else{
+                pasdargent();
+            }
         }
     };
     private View.OnClickListener lienDevSenior = new View.OnClickListener(){
         @Override
         public void onClick(View v){
             if (MainActivity.donnees.getArgent() >= 20000) {
-                recrue3.setText(developpeurSenior.getNom() + "\n Prix : 20000" + "\n" + developpeurSenior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_dev_s());
                 MainActivity.donnees.setNombre_dev_s(MainActivity.donnees.getNombre_dev_s()+1);
+                recrue3.setText(developpeurSenior.getNom() + "\n Prix : 20000" + "\n" + developpeurSenior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_dev_s());
                 MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-20000);
-
             }
-
+            else{
+                pasdargent();
+            }
         }
     };
+
+    private View.OnClickListener lienChefJunior = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            if (MainActivity.donnees.getArgent() >= 750) {
+                MainActivity.donnees.setNombre_chef_projet_j(MainActivity.donnees.getNombre_chef_projet_j()+1);
+                recrue4.setText(chefProjetJunior.getNom() + "\n Prix : 500" + "\n" + chefProjetJunior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_chef_projet_j());
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-750);
+            }
+            else{
+                pasdargent();
+            }
+        }
+    };
+    private View.OnClickListener lienChefExpert = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            if (MainActivity.donnees.getArgent() >= 4500) {
+                MainActivity.donnees.setNombre_chef_projet_e(MainActivity.donnees.getNombre_chef_projet_e()+1);
+                recrue5.setText(chefProjetExpert.getNom() + "\n Prix : 500" + "\n" + chefProjetExpert.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_chef_projet_e());
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-4500);
+            }
+            else{
+                pasdargent();
+            }
+        }
+    };
+    private View.OnClickListener lienChefSenior = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            if (MainActivity.donnees.getArgent() >= 20000) {
+                MainActivity.donnees.setNombre_chef_projet_s(MainActivity.donnees.getNombre_chef_projet_s()+1);
+                recrue6.setText(chefProjetSenior.getNom() + "\n Prix : 500" + "\n" + chefProjetSenior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_chef_projet_s());
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-20000);
+            }
+            else{
+                pasdargent();
+            }
+        }
+    };
+
+    private View.OnClickListener lienComptableJunior = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            if (MainActivity.donnees.getArgent() >= 750) {
+                MainActivity.donnees.setNombre_comptables_j(MainActivity.donnees.getNombre_comptables_j()+1);
+                recrue7.setText(comptableJunior.getNom() + "\n Prix : 500" + "\n" + comptableJunior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_comptables_j());
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-750);
+            }
+            else{
+                pasdargent();
+            }
+        }
+    };
+    private View.OnClickListener lienComptableExpert = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            if (MainActivity.donnees.getArgent() >= 4500) {
+                MainActivity.donnees.setNombre_comptables_e(MainActivity.donnees.getNombre_comptables_e()+1);
+                recrue8.setText(comptableExpert.getNom() + "\n Prix : 500" + "\n" + comptableExpert.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_comptables_e());
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-4500);
+            }
+            else{
+                pasdargent();
+            }
+        }
+    };
+    private View.OnClickListener lienComptableSenior = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            if (MainActivity.donnees.getArgent() >= 20000) {
+                MainActivity.donnees.setNombre_comptables_s(MainActivity.donnees.getNombre_comptables_s()+1);
+                recrue9.setText(comptableSenior.getNom() + "\n Prix : 500" + "\n" + comptableSenior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_comptables_s());
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-20000);
+            }
+            else{
+                pasdargent();
+            }
+        }
+    };
+
+    private View.OnClickListener lienAdminJunior = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            if (MainActivity.donnees.getArgent() >= 750) {
+                MainActivity.donnees.setNombre_admin_j(MainActivity.donnees.getNombre_admins_j()+1);
+                recrue10.setText(adminReseauJunior.getNom() + "\n Prix : 500" + "\n" + adminReseauJunior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_admins_j());
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-750);
+            }
+            else{
+                pasdargent();
+            }
+        }
+    };
+    private View.OnClickListener lienAdminExpert = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            if (MainActivity.donnees.getArgent() >= 4500) {
+                MainActivity.donnees.setNombre_admin_e(MainActivity.donnees.getNombre_admins_e()+1);
+                recrue11.setText(adminReseauExpert.getNom() + "\n Prix : 500" + "\n" + adminReseauExpert.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_admins_e());
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-4500);
+            }
+            else{
+                pasdargent();
+            }
+        }
+    };
+    private View.OnClickListener lienAdminSenior = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            if (MainActivity.donnees.getArgent() >= 20000) {
+                MainActivity.donnees.setNombre_admin_s(MainActivity.donnees.getNombre_admins_s()+1);
+                recrue12.setText(adminReseauSenior.getNom() + "\n Prix : 500" + "\n" + adminReseauSenior.getDesc() + "\n Actuellement possédés : " + MainActivity.donnees.getNombre_admins_s());
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-20000);
+            }
+            else{
+                pasdargent();
+            }
+        }
+    };
+
+    public void pasdargent(){
+        Context context = getApplicationContext();
+        CharSequence text = "Vous n'avez pas assez d'argent !";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }
+
     @Override
     public void onBackPressed(){
         this.finish();

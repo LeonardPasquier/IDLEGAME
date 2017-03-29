@@ -69,17 +69,17 @@ public class Incrementation_automatique {
     private static float Mult_chef_projet(float n, float j, float e, float s){
         float x = 0;
         while (x<j){
-            n = n+n;
+            n = 2*n;
             x ++;
         }
         x = 0;
         while (x<e){
-            n = n+n+n;
+            n = 3*n;
             x++;
         }
         x = 0;
         while (x<s){
-            n = n+n+n+n;
+            n = 4*n;
             x++;
         }
         return n;

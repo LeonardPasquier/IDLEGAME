@@ -185,8 +185,14 @@ public class MainActivity extends AppCompatActivity {
         //On affiche un message de félicitations
 
         //on rend l'argent aux abonnés
-        System.out.println(Liste_Projets.getProjet(donnees.getProjet_courant_general()).getGainFinal());
-        donnees.setArgent(donnees.getArgent()+Liste_Projets.getProjet(donnees.getProjet_courant_general()).getGainFinal());
+        int c_j = donnees.getNombre_comptables_j();
+        int c_e = donnees.getNombre_comptables_e();
+        int c_s = donnees.getNombre_comptables_s();
+        int gainFinal = Liste_Projets.getProjet(donnees.getProjet_courant_general()).getGainFinal();
+        gainFinal = 2*c_j*gainFinal;
+        gainFinal = 4*c_e*gainFinal;
+        gainFinal = 8*c_s*gainFinal;
+        donnees.setArgent(donnees.getArgent()+gainFinal);
         //On actualise les projets courants, de manière à passer par exemple de jeux_video1 à jeux_video2
         actprojetcourant();
         //on reset le projet courant general
