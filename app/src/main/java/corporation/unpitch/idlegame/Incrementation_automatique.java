@@ -21,6 +21,7 @@ public class Incrementation_automatique {
     private static float maligne=0;
     static float duree = 60;
     static float tempsrestantvirus = -1;
+    static float lignes_en_moins = 0;
     public static void attendre(final MainActivity myActivity){
 
 
@@ -63,7 +64,8 @@ public class Incrementation_automatique {
                                     lafinduvirus();
                                 }
                                 else{
-                                    float yata = lignes-compteur;
+
+                                    float yata = lignes-calcul_lignes_virus(compteur);
                                     if (yata > 0){
                                         myActivity.compteurLignes.setText(String.valueOf(yata));
                                         myActivity.compteurArgent.setText(String.valueOf(argent));
@@ -185,5 +187,31 @@ public class Incrementation_automatique {
         else{
             ouaisouaisouaislevirus(myActivity);
         }
+    }
+
+    static private float calcul_lignes_virus(float compteur){
+        int admin_j = MainActivity.donnees.getNombre_admins_j();
+        int admin_e = MainActivity.donnees.getNombre_admins_e();
+        int admin_s = MainActivity.donnees.getNombre_admins_s();
+        int total = admin_e + admin_j + admin_s;
+        lignes_en_moins = compteur;
+        if (total == 0){
+            return compteur;
+        }
+        else{
+            while(admin_j != 0){
+                lignes_en_moins = lignes_en_moins-(5*compteur/100);
+                admin_j --;
+            }
+            while(admin_e != 0){
+                lignes_en_moins = lignes_en_moins-(10*compteur/100);
+                admin_e --;
+            }
+            while(admin_s != 0){
+                lignes_en_moins = lignes_en_moins-(20*compteur/100);
+                admin_s --;
+            }
+        }
+        return lignes_en_moins;
     }
 }
