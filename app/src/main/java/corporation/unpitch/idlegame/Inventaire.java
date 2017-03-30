@@ -101,7 +101,7 @@ public class Inventaire extends AppCompatActivity{
             item_2.setOnClickListener(itemIndispo);
         }
         else {
-            item_2.setText(antivirusfaible.getNom() + "\nPrix : 15000" + "\n" + antivirusfaible.getDesc());
+            item_2.setText(antivirusfaible.getNom() + "\nPrix : 500" + "\n" + antivirusfaible.getDesc());
             item_2.setOnClickListener(lienAntivirus);
         }
         if (MainActivity.donnees.getNombre_antivirus_moyens() == 1){
@@ -109,7 +109,7 @@ public class Inventaire extends AppCompatActivity{
             item_2_2.setOnClickListener(itemIndispo);
         }
         else {
-            item_2_2.setText(antivirusmoyen.getNom() + "\nPrix : 30000" + "\n" + antivirusmoyen.getDesc());
+            item_2_2.setText(antivirusmoyen.getNom() + "\nPrix : 5500" + "\n" + antivirusmoyen.getDesc());
             item_2_2.setOnClickListener(lienAntivirus2);
         }
         if (MainActivity.donnees.getNombre_antivirus_badass() == 1){
@@ -117,7 +117,7 @@ public class Inventaire extends AppCompatActivity{
             item_2_3.setOnClickListener(itemIndispo);
         }
         else {
-            item_2_3.setText(antivirusbadass.getNom() + "\nPrix : 45000" + "\n" + antivirusbadass.getDesc());
+            item_2_3.setText(antivirusbadass.getNom() + "\nPrix : 50000" + "\n" + antivirusbadass.getDesc());
             item_2_3.setOnClickListener(lienAntivirus3);
         }
 /*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
@@ -188,8 +188,8 @@ public class Inventaire extends AppCompatActivity{
     private View.OnClickListener lienAntivirus = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if (MainActivity.donnees.getArgent() >= 15000) {
-                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-15000);
+            if (MainActivity.donnees.getArgent() >= 500) {
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-500);
                 MainActivity.donnees.setNombre_antivirus_faibles(1);
                 item_2.setText("Vous avez déjà acheté cet antivirus ! Les virus ont un peut moins de chance de vous atteindre.");
                 item_2.setOnClickListener(itemIndispo);
@@ -203,8 +203,8 @@ public class Inventaire extends AppCompatActivity{
     private View.OnClickListener lienAntivirus2 = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if (MainActivity.donnees.getArgent() >= 30000) {
-                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-30000);
+            if (MainActivity.donnees.getArgent() >= 5500) {
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-5500);
                 MainActivity.donnees.setNombre_antivirus_moyens(1);
                 item_2_2.setText("Vous avez déjà acheté cet antivirus ! Les virus ont moins de chance de vous atteindre.");
                 item_2_2.setOnClickListener(itemIndispo);
@@ -218,8 +218,8 @@ public class Inventaire extends AppCompatActivity{
     private View.OnClickListener lienAntivirus3 = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if (MainActivity.donnees.getArgent() >= 45000) {
-                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-45000);
+            if (MainActivity.donnees.getArgent() >= 50000) {
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent()-50000);
                 MainActivity.donnees.setNombre_antivirus_badass(1);
                 item_2_3.setText("Vous avez déjà acheté cet antivirus ! Les virus n'ont aucune chance de vous atteindre.");
                 item_2_3.setOnClickListener(itemIndispo);
@@ -234,10 +234,10 @@ public class Inventaire extends AppCompatActivity{
     private View.OnClickListener lienServeur = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if (MainActivity.donnees.getArgent() >= 150000) {
-                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 150000);
+            if (MainActivity.donnees.getArgent() >= 500) {
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 500);
                 MainActivity.donnees.setNombre_serveurs_faibles(MainActivity.donnees.getNombre_serveurs_faibles()+1);
-                item_3.setText(serveurfaible.getNom() + "\n\nPrix : 150000" + "\n" + serveurfaible.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_faibles());
+                item_3.setText(serveurfaible.getNom() + "\n\nPrix : 500" + "\n" + serveurfaible.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_faibles());
             }
             else{
                 pasdargent();
@@ -247,10 +247,10 @@ public class Inventaire extends AppCompatActivity{
     private View.OnClickListener lienServeur2 = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if (MainActivity.donnees.getArgent() >= 300000) {
-                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 300000);
+            if (MainActivity.donnees.getArgent() >= 1200) {
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 1200);
                 MainActivity.donnees.setNombre_serveurs_moyens(MainActivity.donnees.getNombre_serveurs_moyens()+1);
-                item_3_2.setText(serveurmoyen.getNom() + "\n\nPrix : 300000" + "\n" + serveurmoyen.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_moyens());
+                item_3_2.setText(serveurmoyen.getNom() + "\n\nPrix : 1200" + "\n" + serveurmoyen.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_moyens());
             }
             else{
                 pasdargent();
@@ -260,10 +260,10 @@ public class Inventaire extends AppCompatActivity{
     private View.OnClickListener lienServeur3 = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if (MainActivity.donnees.getArgent() >= 450000) {
-                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 450000);
+            if (MainActivity.donnees.getArgent() >= 5000) {
+                MainActivity.donnees.setArgent(MainActivity.donnees.getArgent() - 5000);
                 MainActivity.donnees.setNombre_serveurs_badass(MainActivity.donnees.getNombre_serveurs_badass()+1);
-                item_3_3.setText(serveurbadass.getNom() + "\n\nPrix : 450000" + "\n" + serveurbadass.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_badass());
+                item_3_3.setText(serveurbadass.getNom() + "\n\nPrix : 5000" + "\n" + serveurbadass.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_badass());
             }
             else{
                 pasdargent();
