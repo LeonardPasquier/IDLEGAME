@@ -205,9 +205,16 @@ public class MainActivity extends AppCompatActivity {
         int c_e = donnees.getNombre_comptables_e();
         int c_s = donnees.getNombre_comptables_s();
         int gainFinal = Liste_Projets.getProjet(donnees.getProjet_courant_general()).getGainFinal();
-        gainFinal = 2*c_j*gainFinal;
-        gainFinal = 4*c_e*gainFinal;
-        gainFinal = 8*c_s*gainFinal;
+        if (c_j>0){
+            gainFinal = 2*c_j*gainFinal;
+        }
+        else if (c_e>0){
+            gainFinal = 4*c_e*gainFinal;
+        }
+        else if (c_s>0){
+            gainFinal = 8*c_s*gainFinal;
+        }
+
         donnees.setArgent(donnees.getArgent()+gainFinal);
         donnees.setArgent_total(donnees.getArgent_total()+gainFinal);
         //On actualise les projets courants, de manière à passer par exemple de jeux_video1 à jeux_video2

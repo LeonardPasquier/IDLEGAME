@@ -10,7 +10,7 @@ class Donnees implements Serializable {
     //On déclare les variables à sauvegarder
     private float lignes_de_code_courantes = 0;
     private float lignes_de_code_total = 0;
-    private float argent = 750;
+    private float argent = 5000;
     private float argent_total= 750;
     private String projet_courant_general ="null";
     private String projet_courant_general_id = "";
