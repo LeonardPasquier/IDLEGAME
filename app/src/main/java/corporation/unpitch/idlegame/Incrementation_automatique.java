@@ -15,8 +15,10 @@ import java.util.TimerTask;
 public class Incrementation_automatique {
 
     static int virusencours = 0;
-    static int timerVirus = 0;
-    static float maligne=0;
+    private static int timerVirus = 0;
+    private static float maligne=0;
+    static float duree = 60;
+    private static float tempsrestantvirus = -1;
     public static void attendre(final MainActivity myActivity){
 
 
@@ -46,18 +48,44 @@ public class Incrementation_automatique {
                     @Override
                     public void run() {
                         if (!Objects.equals(MainActivity.donnees.getProjet_courant_general(), "null")) {
-                            float yata = compteur + lignes;
-                            myActivity.compteurLignes.setText(String.valueOf(yata));
-                            myActivity.compteurArgent.setText(String.valueOf(argent));
-                            MainActivity.donnees.setLignes_de_code_courantes(myActivity.getCompteurLigneCourant());
-                            MainActivity.donnees.setLignes_de_code_total(myActivity.donnees.getLignes_de_code_total()+compteur);
-                            if (yata >= objectif) {
-                                myActivity.objectifatteint();
-                            }
+
                             timerVirus += 1;
-                            if (timerVirus == 10){
+                            tempsrestantvirus -= 1;
+                            if (timerVirus == 30){
                                 if (virusencours==0){
-                                    //ouaisouaisouaislevirus(3, myActivity);
+                                    ouaisouaisouaislevirus(myActivity);
+                                    calculDureeVirus();
+                                }
+                            }
+                            if (virusencours == 1) {
+                                if (tempsrestantvirus <= 0) {
+                                    lafinduvirus();
+                                }
+                                else{
+                                    float yata = lignes-compteur;
+                                    if (yata > 0){
+                                        myActivity.compteurLignes.setText(String.valueOf(yata));
+                                        myActivity.compteurArgent.setText(String.valueOf(argent));
+                                        MainActivity.donnees.setLignes_de_code_courantes(myActivity.getCompteurLigneCourant());
+                                        MainActivity.donnees.setLignes_de_code_total(MainActivity.donnees.getLignes_de_code_total()+compteur);
+                                        if (yata >= objectif) {
+                                            myActivity.objectifatteint();
+                                        }
+                                    }
+                                    else{
+                                        lafinduvirus();
+                                    }
+                                    MainActivity.compteurvirus.setText(String.valueOf(tempsrestantvirus));
+                                }
+                            }
+                            else {
+                                float yata = compteur + lignes;
+                                myActivity.compteurLignes.setText(String.valueOf(yata));
+                                myActivity.compteurArgent.setText(String.valueOf(argent));
+                                MainActivity.donnees.setLignes_de_code_courantes(myActivity.getCompteurLigneCourant());
+                                MainActivity.donnees.setLignes_de_code_total(MainActivity.donnees.getLignes_de_code_total()+compteur);
+                                if (yata >= objectif) {
+                                    myActivity.objectifatteint();
                                 }
                             }
                         }
@@ -92,11 +120,38 @@ public class Incrementation_automatique {
         }
         return n;
     }
-    private static void ouaisouaisouaislevirus(int duree, final MainActivity myActivity){
+    private static void ouaisouaisouaislevirus(final MainActivity myActivity){
         myActivity.afficherVirus();
         virusencours = 1;
         timerVirus = 0;
-
+        duree = 60;
+        tempsrestantvirus = duree;
+    }
+    private static void lafinduvirus(){
+        MainActivity.attaquer.performClick();
+        MainActivity.tuer.performClick();
+        timerVirus = 0;
+        duree = 60;
     }
 
+    static private void calculDureeVirus(){
+        int serv_f = MainActivity.donnees.getNombre_serveurs_faibles();
+        int serv_m = MainActivity.donnees.getNombre_serveurs_moyens();
+        int serv_b = MainActivity.donnees.getNombre_serveurs_badass();
+        while (serv_f !=0){
+            duree = duree - (5*duree/100);
+            serv_f -= 1;
+        }
+        while (serv_m != 0){
+            duree = duree - (10*duree/100);
+            serv_m -= 1;
+
+        }
+        while (serv_b != 0){
+            duree = duree - (15*duree/100);
+            serv_b -= 1;
+
+        }
+        tempsrestantvirus = duree;
+    }
 }

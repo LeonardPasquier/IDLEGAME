@@ -2,6 +2,7 @@ package corporation.unpitch.idlegame;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -42,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
     static boolean presence_fichier = false;
     static Donnees donnees = new Donnees(); //On cree la classe de donnees a enregistrer
     static float objectif = 999999999;
+    int nombreClic = 0;
+    static Button attaquer = null;
+    static Button tuer = null;
+    static TextView compteurvirus = null;
+
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -274,18 +280,38 @@ public class MainActivity extends AppCompatActivity {
 
     public void afficherVirus(){
         LayoutInflater inflater = getLayoutInflater();
-        View alertLayout = inflater.inflate(R.layout.layout_virus, null);
-        final TextView virus = (TextView) alertLayout.findViewById(R.id.textView2);
-        final Button tuer = (Button) alertLayout.findViewById(R.id.button2);
+        final View alertLayout = inflater.inflate(R.layout.layout_virus, null);
+        compteurvirus = (TextView) alertLayout.findViewById(R.id.textView4);
+        tuer = (Button) alertLayout.findViewById(R.id.button2);
+        attaquer = (Button) alertLayout.findViewById(R.id.button3);
 
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Virus");
+        final AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setView(alertLayout);
         alert.setCancelable(false);
 
-        AlertDialog dialog = alert.create();
+        final AlertDialog dialog = alert.create();
         dialog.show();
 
+        attaquer.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                attaquer.setVisibility(View.INVISIBLE);
+                attaquer.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        System.out.println("lalala");
+                    }
+                });
+                tuer.setVisibility(View.VISIBLE);
+            }
+        });
+        tuer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Incrementation_automatique.virusencours = 0;
+                dialog.cancel();
+            }
+        });
     }
 
 
