@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
             donnees.setCompteur_lgiciels(donnees.getCompteur_lgiciels()+1);
         }
         else {
-            System.out.println("blc");
+            System.out.println("balancoire");
         }
     }
 
