@@ -45,6 +45,7 @@ class Donnees implements Serializable {
     private int compteur_jeux_videos = 0;
     private int compteur_lgiciels = 0;
     private int compteur_sites = 0;
+    private int possedeAntiv = 0;
     
 
 
@@ -153,6 +154,8 @@ class Donnees implements Serializable {
     void setCompteur_jeux_videos(int s) {this.compteur_jeux_videos = s;}
     void setCompteur_lgiciels(int s) {this.compteur_lgiciels = s;}
     void setCompteur_sites(int s) {this.compteur_sites = s;}
+
+    void setPossedeAntiv(int s){this.possedeAntiv = 5;}
 
     //Puis les getter pour récupérer leur valeur depuis une autre classe
     float getLignes_de_code_courantes(){
@@ -274,4 +277,5 @@ class Donnees implements Serializable {
     int getCompteur_jeux_videos() {return this.compteur_jeux_videos;}
     int getCompteur_lgiciels() {return this.compteur_lgiciels;}
     int getCompteur_sites() {return this.compteur_sites;}
+    int getPossedeAntiv(){return this.possedeAntiv;}
 }
