@@ -14,6 +14,8 @@ import java.util.TimerTask;
 
 public class Incrementation_automatique {
 
+    static int virusencours = 0;
+    static int timerVirus = 0;
     static float maligne=0;
     public static void attendre(final MainActivity myActivity){
 
@@ -52,6 +54,12 @@ public class Incrementation_automatique {
                             if (yata >= objectif) {
                                 myActivity.objectifatteint();
                             }
+                            timerVirus += 1;
+                            if (timerVirus == 10){
+                                if (virusencours==0){
+                                    //ouaisouaisouaislevirus(3, myActivity);
+                                }
+                            }
                         }
                     }
                 };
@@ -84,8 +92,9 @@ public class Incrementation_automatique {
         }
         return n;
     }
-    private static void ouaisouaisouaislevirus(int duree){
-
+    private static void ouaisouaisouaislevirus(int duree, final MainActivity myActivity){
+        myActivity.afficherVirus();
+        virusencours = 1;
     }
 
 }

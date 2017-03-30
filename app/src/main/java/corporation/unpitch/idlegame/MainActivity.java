@@ -275,6 +275,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     public void setFont(TextView textView) {
             try {
                 Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/policePerso.TTF");
