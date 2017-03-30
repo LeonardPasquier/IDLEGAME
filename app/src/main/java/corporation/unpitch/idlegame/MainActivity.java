@@ -82,11 +82,11 @@ public class MainActivity extends AppCompatActivity {
             Intent introduction = new Intent (MainActivity.this, Introduction.class);
             startActivity(introduction);
         }
-        if (donnees.getNom_entreprise().equals(null)){
+        else if (donnees.getNom_entreprise().equals(null)){
             Intent introduction = new Intent (MainActivity.this, Introduction.class);
             startActivity(introduction);
         }
-        if (donnees.getNom_joueur().equals(null)){
+        else if (donnees.getNom_joueur().equals(null)){
             Intent introduction = new Intent (MainActivity.this, Introduction.class);
             startActivity(introduction);
         }

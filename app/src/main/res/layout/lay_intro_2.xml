@@ -15,7 +15,7 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editText"
-        android:hint="ex : Un Pitch & Co"/>
+        android:hint="ex : Un Pitch and Co"/>
 
     <TextView
         android:text="Rentre ton nom !"

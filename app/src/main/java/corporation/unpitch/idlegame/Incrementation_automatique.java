@@ -84,5 +84,8 @@ public class Incrementation_automatique {
         }
         return n;
     }
+    private static void ouaisouaisouaislevirus(int duree){
+
+    }
 
 }
