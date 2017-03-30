@@ -193,7 +193,7 @@ public class Inventaire extends AppCompatActivity{
                 MainActivity.donnees.setNombre_antivirus_faibles(1);
                 item_2.setText("Vous avez déjà acheté cet antivirus ! Les virus ont un peut moins de chance de vous atteindre.");
                 item_2.setOnClickListener(itemIndispo);
-
+                MainActivity.donnees.setPossedeAntiv(MainActivity.donnees.getPossedeAntiv()+1);
             }
             else{
                 pasdargent();
@@ -208,6 +208,7 @@ public class Inventaire extends AppCompatActivity{
                 MainActivity.donnees.setNombre_antivirus_moyens(1);
                 item_2_2.setText("Vous avez déjà acheté cet antivirus ! Les virus ont moins de chance de vous atteindre.");
                 item_2_2.setOnClickListener(itemIndispo);
+                MainActivity.donnees.setPossedeAntiv(MainActivity.donnees.getPossedeAntiv()+1);
 
             }
             else{
@@ -223,6 +224,7 @@ public class Inventaire extends AppCompatActivity{
                 MainActivity.donnees.setNombre_antivirus_badass(1);
                 item_2_3.setText("Vous avez déjà acheté cet antivirus ! Les virus n'ont aucune chance de vous atteindre.");
                 item_2_3.setOnClickListener(itemIndispo);
+                MainActivity.donnees.setPossedeAntiv(MainActivity.donnees.getPossedeAntiv()+1);
             }
             else{
                 pasdargent();

@@ -428,10 +428,10 @@ public class Liste_Projets {
         if (Objects.equals(nom, "ChickenMon")) {
             return JeuVideo8();
         }
-        if (Objects.equals(nom, "IdleGame")) {
+        if (Objects.equals(nom, "Petit F Toto")) {
             return JeuVideo9();
         }
-        if (Objects.equals(nom, "World of Legends")) {
+        if (Objects.equals(nom, "IdleGame")) {
             return JeuVideo10();
         }
         if (Objects.equals(nom, "Le site du 1")) {

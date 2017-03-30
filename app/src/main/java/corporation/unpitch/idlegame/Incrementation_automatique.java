@@ -16,6 +16,7 @@ public class Incrementation_automatique {
 
     static int virusencours = 0;
     private static int timerVirus = 0;
+    private static int apparitionVirus = 30;
     private static float maligne=0;
     static float duree = 60;
     private static float tempsrestantvirus = -1;
@@ -51,7 +52,7 @@ public class Incrementation_automatique {
 
                             timerVirus += 1;
                             tempsrestantvirus -= 1;
-                            if (timerVirus == 30){
+                            if (timerVirus == apparitionVirus){
                                 if (virusencours==0){
                                     ouaisouaisouaislevirus(myActivity);
                                     calculDureeVirus();
@@ -153,5 +154,12 @@ public class Incrementation_automatique {
 
         }
         tempsrestantvirus = duree;
+    }
+
+    static private void calculApparitionVirus(){
+        int nombreAntiv = MainActivity.donnees.getPossedeAntiv();
+        if (nombreAntiv == 0){
+            apparitionVirus = 20;
+        }
     }
 }
