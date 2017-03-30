@@ -48,7 +48,7 @@ public class Liste_Projets {
         JeuVideo3.setMethode_gain_final("OS");
         JeuVideo3.setNom("Call of Global");
         JeuVideo3.setObjectif(5000);
-        JeuVideo3.setProjet_suivant("Pro football amelioration");
+        JeuVideo3.setProjet_suivant("Pro Football Amelioration");
         JeuVideo3.setProjetSuivantID("JeuVideo4");
         return JeuVideo3;
     }

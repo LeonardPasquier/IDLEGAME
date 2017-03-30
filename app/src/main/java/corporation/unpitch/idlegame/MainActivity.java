@@ -196,6 +196,8 @@ public class MainActivity extends AppCompatActivity {
     public void objectifatteint(){
         //On reset le compteur de lignes courantes
         compteurLignes.setText("0");
+        //augmente le compteur du nombre de projet terminé
+        donnees.setCompteur_projet(donnees.getCompteur_projet()+1);
         //On affiche un message de félicitations
 
         //on rend l'argent aux abonnés
@@ -221,12 +223,15 @@ public class MainActivity extends AppCompatActivity {
         Projet courant = Liste_Projets.getProjet(donnees.getProjet_courant_general());
         if (Objects.equals(courant.getBranche(), "Jeux videos")){
             donnees.setProjet_courant_jeux_video(courant.getProjet_suivant());
+            donnees.setCompteur_jeux_videos(donnees.getCompteur_jeux_videos()+1);
         }
         if (Objects.equals(courant.getBranche(), "Sites Web")){
             donnees.setProjet_courant_site_web(courant.getProjet_suivant());
+            donnees.setCompteur_sites(donnees.getCompteur_sites()+1);
         }
         if (Objects.equals(courant.getBranche(), "Logiciel")){
             donnees.setProjet_courant_logiciel(courant.getProjet_suivant());
+            donnees.setCompteur_lgiciels(donnees.getCompteur_lgiciels()+1);
         }
         else {
             System.out.println("blc");

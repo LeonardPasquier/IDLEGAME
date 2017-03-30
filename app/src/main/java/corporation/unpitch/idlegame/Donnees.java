@@ -41,6 +41,10 @@ class Donnees implements Serializable {
     private int nombre_serveurs_faibles = 0;
     private int nombre_serveurs_moyens = 0;
     private int nombre_serveurs_badass = 0;
+    private int compteur_projet = 0;
+    private int compteur_jeux_videos = 0;
+    private int compteur_lgiciels = 0;
+    private int compteur_sites = 0;
     
 
 
@@ -145,6 +149,10 @@ class Donnees implements Serializable {
     void setNombre_serveurs_moyens(int s) { this.nombre_serveurs_moyens = s;}
     void setNombre_serveurs_badass(int s) { this.nombre_serveurs_badass = s;}
 
+    void setCompteur_projet(int s) {this.compteur_projet = s;}
+    void setCompteur_jeux_videos(int s) {this.compteur_jeux_videos = s;}
+    void setCompteur_lgiciels(int s) {this.compteur_lgiciels = s;}
+    void setCompteur_sites(int s) {this.compteur_sites = s;}
 
     //Puis les getter pour récupérer leur valeur depuis une autre classe
     float getLignes_de_code_courantes(){
@@ -261,4 +269,9 @@ class Donnees implements Serializable {
     int getNombre_serveurs_badass(){
         return this.nombre_serveurs_badass;
     }
+
+    int getCompteur_projet() {return this.compteur_projet;}
+    int getCompteur_jeux_videos() {return this.compteur_jeux_videos;}
+    int getCompteur_lgiciels() {return this.compteur_lgiciels;}
+    int getCompteur_sites() {return this.compteur_sites;}
 }
