@@ -96,6 +96,15 @@ public class Introduction  extends AppCompatActivity implements View.OnClickList
             Toast toast = Toast.makeText(getApplicationContext(), "Veuillez rentrer un nom de joueur", LENGTH_SHORT);
             toast.show();
         }
+        else if(enterprise_name.length()>20){
+            Toast toast = Toast.makeText(getApplicationContext(), "Le nom de l'entreprise ne doit pas excéder 20 caractères ", LENGTH_SHORT);
+            toast.show();
+        }
+
+        else if(player_name.length()>20){
+            Toast toast = Toast.makeText(getApplicationContext(), "Le nom du joueur ne doit pas excéder 20 caractères ", LENGTH_SHORT);
+            toast.show();
+        }
         else {
             MainActivity.donnees.setnom_entreprise(enterprise_name);
             MainActivity.donnees.setNom_joueur(player_name);
