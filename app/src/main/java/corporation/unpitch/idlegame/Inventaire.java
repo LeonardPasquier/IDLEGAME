@@ -121,9 +121,9 @@ public class Inventaire extends AppCompatActivity{
             item_2_3.setOnClickListener(lienAntivirus3);
         }
 /*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
-        item_3.setText(serveurfaible.getNom() + "\n\nPrix : 150000" + "\n" + serveurfaible.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_faibles());
-        item_3_2.setText(serveurmoyen.getNom() + "\n\nPrix : 3000000" + "\n" + serveurmoyen.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_moyens());
-        item_3_3.setText(serveurbadass.getNom() + "\n\nPrix : 450000" + "\n" + serveurbadass.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_badass());
+        item_3.setText(serveurfaible.getNom() + "\n\nPrix : 500" + "\n" + serveurfaible.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_faibles());
+        item_3_2.setText(serveurmoyen.getNom() + "\n\nPrix : 1200" + "\n" + serveurmoyen.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_moyens());
+        item_3_3.setText(serveurbadass.getNom() + "\n\nPrix : 5000" + "\n" + serveurbadass.getDesc()+"\nActuellement possédés :"+MainActivity.donnees.getNombre_serveurs_badass());
         item_3.setOnClickListener(lienServeur);
         item_3_2.setOnClickListener(lienServeur2);
         item_3_3.setOnClickListener(lienServeur3);
