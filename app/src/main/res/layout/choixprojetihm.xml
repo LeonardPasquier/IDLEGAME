@@ -122,7 +122,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/cont_objectif_projet1"
-                                    tools:text="400 lignes" />
+                                    tools:text="400" />
 
                                 <TextView
                                     android:text="200$"

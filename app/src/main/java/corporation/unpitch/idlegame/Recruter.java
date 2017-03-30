@@ -3,10 +3,13 @@ package corporation.unpitch.idlegame;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static corporation.unpitch.idlegame.Liste_Recrue.*;
@@ -34,6 +37,11 @@ public class Recruter extends AppCompatActivity{
     Button recrue11 = null;
     Button recrue12 = null;
 
+    TextView textDev = null;
+    TextView textChefs = null;
+    TextView textAdmin = null;
+    TextView textComptable = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +64,10 @@ public class Recruter extends AppCompatActivity{
         recrue11 = (Button)findViewById(R.id.recrue11);
         recrue12 = (Button)findViewById(R.id.recrue12);
 
+        textDev = (TextView)findViewById(R.id.textDev);
+        textComptable = (TextView)findViewById(R.id.textComptable);
+        textAdmin = (TextView)findViewById(R.id.textAdmin);
+        textChefs = (TextView)findViewById(R.id.textChefs);
 
         recruter.setOnClickListener(lienRecrutement);
         entreprise.setOnClickListener(lienEntreprise);
@@ -89,6 +101,8 @@ public class Recruter extends AppCompatActivity{
         recrue10.setOnClickListener(lienAdminJunior);
         recrue11.setOnClickListener(lienAdminExpert);
         recrue12.setOnClickListener(lienAdminSenior);
+
+        mettrePolices();
     }
 
     private View.OnClickListener lienRecrutement = new View.OnClickListener() {
@@ -288,8 +302,27 @@ public class Recruter extends AppCompatActivity{
         toast.show();
     }
 
+    public void setFont(TextView textView) {
+        try {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/policePerso.TTF");
+            textView.setTypeface(typeface);
+        } catch (Exception e) {
+            Log.e("FONT", "Font not found", e);
+        }
+    }
+
+    public void mettrePolices (){
+        setFont(textAdmin);
+        setFont(textChefs);
+        setFont(textComptable);
+        setFont(textDev);
+    }
+
     @Override
     public void onBackPressed(){
         this.finish();
     }
-}
+    }
+
+
+

@@ -3,10 +3,12 @@ package corporation.unpitch.idlegame;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button; //yolo
@@ -63,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
         recruter.setOnClickListener(lienRecrutement);
         entreprise.setOnClickListener(lienEntreprise);
         inventaire.setOnClickListener(lienInventaire);
+
+        //polices des TextView
+        mettrePolices();
 
         try {
             //on charge le fichier de sauvegarde
@@ -269,4 +274,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void setFont(TextView textView) {
+            try {
+                Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/policePerso.TTF");
+                textView.setTypeface(typeface);
+            } catch (Exception e) {
+                Log.e("FONT", "Font not found", e);
+            }
+    }
+
+    public void mettrePolices (){
+        setFont(nom_entreprise);
+        setFont(projetCourant);
+        setFont(compteurArgent);
+        setFont(compteurLignes);
+    }
 }

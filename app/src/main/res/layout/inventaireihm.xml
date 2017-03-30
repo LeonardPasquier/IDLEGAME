@@ -103,7 +103,7 @@
                 android:text="Serveurs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textComptable"
+                android:id="@+id/textServeur"
                 android:gravity="center"
                 android:textSize="25sp"
                 android:textColor="@android:color/white" />

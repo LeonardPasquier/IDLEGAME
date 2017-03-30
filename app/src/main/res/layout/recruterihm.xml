@@ -24,7 +24,7 @@
             >
 
             <TextView
-                android:text="Développeurs"
+                android:text="Developpeurs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textDev"
@@ -140,7 +140,7 @@
                 />
 
             <TextView
-                android:text="Admin. réseaux"
+                android:text="Admin. reseaux"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textAdmin"

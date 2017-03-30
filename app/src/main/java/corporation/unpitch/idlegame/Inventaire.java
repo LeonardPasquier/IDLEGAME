@@ -2,11 +2,14 @@ package corporation.unpitch.idlegame;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static corporation.unpitch.idlegame.Liste_Item.*;
@@ -35,6 +38,9 @@ public class Inventaire extends AppCompatActivity{
     Button item_3_2 = null;
     Button item_3_3 = null;
 
+    TextView textOrdi = null;
+    TextView textAntivirus = null;
+    TextView textServeur = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +60,12 @@ public class Inventaire extends AppCompatActivity{
         item_3 = (Button)findViewById(R.id.Item3_1);
         item_3_2 = (Button)findViewById(R.id.Item3_2);
         item_3_3 = (Button)findViewById(R.id.Item3_3);
+
+        textAntivirus = (TextView)findViewById(R.id.textAntivirus);
+        textOrdi = (TextView)findViewById(R.id.textOrdi);
+        textServeur = (TextView)findViewById(R.id.textServeur);
+
+        mettrePolices();
 
         recruter.setOnClickListener(lienRecrutement);
         entreprise.setOnClickListener(lienEntreprise);
@@ -277,6 +289,21 @@ public class Inventaire extends AppCompatActivity{
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
+    }
+
+    public void setFont(TextView textView) {
+        try {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/policePerso.TTF");
+            textView.setTypeface(typeface);
+        } catch (Exception e) {
+            Log.e("FONT", "Font not found", e);
+        }
+    }
+
+    public void mettrePolices (){
+        setFont(textAntivirus);
+        setFont(textOrdi);
+        setFont(textServeur);
     }
 
     private View.OnClickListener lienRecrutement = new View.OnClickListener() {

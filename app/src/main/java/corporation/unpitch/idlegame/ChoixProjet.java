@@ -2,11 +2,13 @@ package corporation.unpitch.idlegame;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.MainThread;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -50,6 +52,19 @@ public class ChoixProjet extends AppCompatActivity {
     TextView cont_debloque_projet1 = null;
     TextView cont_debloque_projet2 = null;
     TextView cont_debloque_projet3 = null;
+    //Zones de texte des énoncés
+    TextView cat_projet1 = null;
+    TextView Obj_projet1 = null;
+    TextView rec_projet1 = null;
+    TextView debloque_projet1 = null;
+    TextView cat_projet2 = null;
+    TextView Obj_projet2 = null;
+    TextView rec_projet2 = null;
+    TextView debloque_projet2 = null;
+    TextView cat_projet3 = null;
+    TextView Obj_projet3 = null;
+    TextView rec_projet3 = null;
+    TextView debloque_projet3 = null;
 
     boolean projet_choisi = true;
 
@@ -86,6 +101,19 @@ public class ChoixProjet extends AppCompatActivity {
         cont_debloque_projet1 = (TextView) findViewById(R.id.cont_debloque_projet1);
         cont_debloque_projet2 = (TextView) findViewById(R.id.cont_debloque_projet2);
         cont_debloque_projet3 = (TextView) findViewById(R.id.cont_debloque_projet3);
+
+        cat_projet1 = (TextView) findViewById(R.id.cat_projet1);
+        Obj_projet1 = (TextView) findViewById(R.id.obj_projet1);
+        rec_projet1 = (TextView) findViewById(R.id.rec_projet1);
+        debloque_projet1 = (TextView) findViewById(R.id.debloque_projet1);
+        cat_projet2 = (TextView) findViewById(R.id.cat_projet2);
+        Obj_projet2 = (TextView) findViewById(R.id.obj_projet2);
+        rec_projet2 = (TextView) findViewById(R.id.rec_projet2);
+        debloque_projet2 = (TextView) findViewById(R.id.debloque_projet2);
+        cat_projet3 = (TextView) findViewById(R.id.cat_projet3);
+        Obj_projet3 = (TextView) findViewById(R.id.obj_projet3);
+        rec_projet3 = (TextView) findViewById(R.id.rec_projet3);
+        debloque_projet3 = (TextView) findViewById(R.id.debloque_projet3);
 
         if (Objects.equals(MainActivity.donnees.getProjet_courant_general(), "null")){
             //Rendre les boutons visibles
@@ -127,6 +155,8 @@ public class ChoixProjet extends AppCompatActivity {
         cont_debloque_projet2.setText(projet2.getProjet_suivant());
         cont_debloque_projet3.setText(projet3.getProjet_suivant());
 
+        mettrePolices();
+
     }
     private View.OnClickListener accepterProjetjeux_video = new View.OnClickListener() {
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -163,6 +193,23 @@ public class ChoixProjet extends AppCompatActivity {
         MainActivity.objectif = courant.getObjectif();
         onBackPressed();
     }
+
+    public void setFont(TextView textView) {
+        try {
+            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/policePerso.TTF");
+            textView.setTypeface(typeface);
+        } catch (Exception e) {
+            Log.e("FONT", "Font not found", e);
+        }
+    }
+
+    public void mettrePolices (){
+        setFont(nom_projet1);
+        setFont(nom_projet2);
+        setFont(nom_projet3);
+
+    }
+
     @Override
     public void onBackPressed(){
         if (!projet_choisi){
