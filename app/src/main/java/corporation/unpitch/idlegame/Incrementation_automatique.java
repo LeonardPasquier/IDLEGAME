@@ -48,7 +48,7 @@ public class Incrementation_automatique {
                             myActivity.compteurLignes.setText(String.valueOf(yata));
                             myActivity.compteurArgent.setText(String.valueOf(argent));
                             MainActivity.donnees.setLignes_de_code_courantes(myActivity.getCompteurLigneCourant());
-                            MainActivity.donnees.setLignes_de_code_total(myActivity.getCompteurLigneCourant()+compteur);
+                            MainActivity.donnees.setLignes_de_code_total(myActivity.donnees.getLignes_de_code_total()+compteur);
                             if (yata >= objectif) {
                                 myActivity.objectifatteint();
                             }

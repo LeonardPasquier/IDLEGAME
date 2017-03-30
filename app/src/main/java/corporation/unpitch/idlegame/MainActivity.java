@@ -149,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
             //On affiche la nouvelle valeur à l'ecran
             compteurLignes.setText(String.valueOf(ib));
             donnees.setLignes_de_code_courantes(getCompteurLigneCourant());
+            donnees.setLignes_de_code_total(donnees.getLignes_de_code_total()+donnees.getValeur_du_clic());
             //Si l'objectif est atteint, alors on appelle la fonction objectifatteint
             if (ib >= objectif){
                 objectifatteint();
