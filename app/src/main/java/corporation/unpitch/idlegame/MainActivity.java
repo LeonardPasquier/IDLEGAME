@@ -295,14 +295,21 @@ public class MainActivity extends AppCompatActivity {
         attaquer.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                attaquer.setVisibility(View.INVISIBLE);
-                attaquer.setOnClickListener(new View.OnClickListener(){
-                    @Override
-                    public void onClick(View v) {
-                        System.out.println("lalala");
-                    }
-                });
-                tuer.setVisibility(View.VISIBLE);
+                nombreClic ++;
+                if (nombreClic == 100){
+                    attaquer.setVisibility(View.INVISIBLE);
+                    attaquer.setOnClickListener(new View.OnClickListener(){
+                        @Override
+                        public void onClick(View v) {
+                            System.out.println("lalala");
+                        }
+                    });
+                    tuer.setVisibility(View.VISIBLE);
+                    nombreClic = 0;
+                }
+                else{
+                    attaquer.setText("Cliquez "+(100-nombreClic)+" fois pour tuer le virus");
+                }
             }
         });
         tuer.setOnClickListener(new View.OnClickListener() {

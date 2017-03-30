@@ -138,21 +138,21 @@ public class Incrementation_automatique {
     }
 
     static private float calculDureeVirus(){
-        int serv_f = MainActivity.donnees.getNombre_serveurs_faibles();
-        int serv_m = MainActivity.donnees.getNombre_serveurs_moyens();
-        int serv_b = MainActivity.donnees.getNombre_serveurs_badass();
-        while (serv_f !=0){
+        int admin_j = MainActivity.donnees.getNombre_admins_j();
+        int admin_e = MainActivity.donnees.getNombre_admins_e();
+        int admin_s = MainActivity.donnees.getNombre_admins_s();
+        while (admin_j !=0){
             duree = duree - (5*duree/100);
-            serv_f -= 1;
+            admin_j -= 1;
         }
-        while (serv_m != 0){
+        while (admin_e != 0){
             duree = duree - (10*duree/100);
-            serv_m -= 1;
+            admin_e -= 1;
 
         }
-        while (serv_b != 0){
-            duree = duree - (15*duree/100);
-            serv_b -= 1;
+        while (admin_s != 0){
+            duree = duree - (20*duree/100);
+            admin_s -= 1;
 
         }
         return duree;
@@ -190,26 +190,27 @@ public class Incrementation_automatique {
     }
 
     static private float calcul_lignes_virus(float compteur){
-        int admin_j = MainActivity.donnees.getNombre_admins_j();
-        int admin_e = MainActivity.donnees.getNombre_admins_e();
-        int admin_s = MainActivity.donnees.getNombre_admins_s();
-        int total = admin_e + admin_j + admin_s;
+        int serv_f = MainActivity.donnees.getNombre_serveurs_faibles();
+        int serv_m = MainActivity.donnees.getNombre_serveurs_moyens();
+        int serv_b = MainActivity.donnees.getNombre_serveurs_badass();
+
+        int total = serv_f + serv_m + serv_b;
         lignes_en_moins = compteur;
         if (total == 0){
             return compteur;
         }
         else{
-            while(admin_j != 0){
+            while(serv_f != 0){
                 lignes_en_moins = lignes_en_moins-(5*compteur/100);
-                admin_j --;
+                serv_f --;
             }
-            while(admin_e != 0){
+            while(serv_m != 0){
                 lignes_en_moins = lignes_en_moins-(10*compteur/100);
-                admin_e --;
+                serv_m --;
             }
-            while(admin_s != 0){
+            while(serv_b != 0){
                 lignes_en_moins = lignes_en_moins-(20*compteur/100);
-                admin_s --;
+                serv_b --;
             }
         }
         return lignes_en_moins;
