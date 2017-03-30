@@ -95,6 +95,8 @@ public class Incrementation_automatique {
     private static void ouaisouaisouaislevirus(int duree, final MainActivity myActivity){
         myActivity.afficherVirus();
         virusencours = 1;
+        timerVirus = 0;
+
     }
 
 }
