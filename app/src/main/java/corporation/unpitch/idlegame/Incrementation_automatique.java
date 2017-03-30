@@ -5,6 +5,7 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 
 import java.util.Objects;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -15,11 +16,11 @@ import java.util.TimerTask;
 public class Incrementation_automatique {
 
     static int virusencours = 0;
-    private static int timerVirus = 0;
-    private static int apparitionVirus = 30;
+    static int timerVirus = 0;
+    private static int apparitionVirus = 10;
     private static float maligne=0;
     static float duree = 60;
-    private static float tempsrestantvirus = -1;
+    static float tempsrestantvirus = -1;
     public static void attendre(final MainActivity myActivity){
 
 
@@ -54,8 +55,7 @@ public class Incrementation_automatique {
                             tempsrestantvirus -= 1;
                             if (timerVirus == apparitionVirus){
                                 if (virusencours==0){
-                                    ouaisouaisouaislevirus(myActivity);
-                                    calculDureeVirus();
+                                    calculPopVirus(myActivity);
                                 }
                             }
                             if (virusencours == 1) {
@@ -122,20 +122,20 @@ public class Incrementation_automatique {
         return n;
     }
     private static void ouaisouaisouaislevirus(final MainActivity myActivity){
-        myActivity.afficherVirus();
         virusencours = 1;
         timerVirus = 0;
         duree = 60;
-        tempsrestantvirus = duree;
+        tempsrestantvirus = calculDureeVirus();
+        myActivity.afficherVirus();
     }
-    private static void lafinduvirus(){
+    static void lafinduvirus(){
         MainActivity.attaquer.performClick();
         MainActivity.tuer.performClick();
         timerVirus = 0;
         duree = 60;
     }
 
-    static private void calculDureeVirus(){
+    static private float calculDureeVirus(){
         int serv_f = MainActivity.donnees.getNombre_serveurs_faibles();
         int serv_m = MainActivity.donnees.getNombre_serveurs_moyens();
         int serv_b = MainActivity.donnees.getNombre_serveurs_badass();
@@ -153,13 +153,37 @@ public class Incrementation_automatique {
             serv_b -= 1;
 
         }
-        tempsrestantvirus = duree;
+        return duree;
     }
 
-    static private void calculApparitionVirus(){
-        int nombreAntiv = MainActivity.donnees.getPossedeAntiv();
-        if (nombreAntiv == 0){
-            apparitionVirus = 20;
+    static private void calculPopVirus(final MainActivity myActivity){
+
+        if (MainActivity.donnees.getNombre_antivirus_badass() != 0){
+            System.out.println("apavirus");
+        }
+        else if (MainActivity.donnees.getNombre_antivirus_moyens() != 0){
+            Random r = new Random();
+            int nombreAleatoire = 1 + r.nextInt(4 - 1);
+            if (nombreAleatoire == 1){
+                ouaisouaisouaislevirus(myActivity);
+            }
+            else{
+                timerVirus = 0;
+            }
+        }
+        else if (MainActivity.donnees.getNombre_antivirus_faibles() != 0){
+            Random r = new Random();
+            int nombreAleatoire = 1 + r.nextInt(3 - 1);
+            System.out.println(nombreAleatoire);
+            if (nombreAleatoire == 1){
+                ouaisouaisouaislevirus(myActivity);
+            }
+            else{
+                timerVirus = 0;
+            }
+        }
+        else{
+            ouaisouaisouaislevirus(myActivity);
         }
     }
 }

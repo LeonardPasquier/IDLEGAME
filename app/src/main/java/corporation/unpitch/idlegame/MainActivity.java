@@ -308,6 +308,8 @@ public class MainActivity extends AppCompatActivity {
         tuer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Incrementation_automatique.timerVirus = 0;
+                Incrementation_automatique.duree = 60;
                 Incrementation_automatique.virusencours = 0;
                 dialog.cancel();
             }
