@@ -1,40 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/intro_choix"
+    android:weightSum="100">
 
-    <TextView
-        android:text="Rentre le nom de ton Entreprise !"
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        android:layout_height="0dp"
+        android:layout_weight="26.36"/>
+
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editText"
-        android:hint="ex : Un Pitch and Co"/>
+        android:hint="ex : Un Pitch and Co"
+        android:layout_weight="10"
+        android:textSize="24sp"
+        android:layout_marginLeft="35dp"
+        android:background="@android:color/transparent"/>
 
-    <TextView
-        android:text="Rentre ton nom !"
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3" />
+        android:layout_height="0dp"
+        android:layout_weight="12.71"/>
+
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editText2"
-        android:hint="ex : Jean-Jacques Goldman"/>
+        android:hint="ex : Jean-Jacques Goldman"
+        android:layout_weight="16.83"
+        android:textSize="24sp"
+        android:layout_marginLeft="35dp"
+        android:background="@android:color/transparent"
+        />
 
-    <Button
-        android:text="Valider"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:onClick="onClickValider"/>
+        android:layout_height="0dp"
+        android:layout_weight="9.01"
+        android:weightSum="100">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="27" />
+
+        <Button
+            android:text=""
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/button"
+            android:onClick="onClickValider"
+            android:gravity="center"
+            android:layout_weight="46"
+            android:background="@null"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="27" />
+
+    </LinearLayout>
 </LinearLayout>

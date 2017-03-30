@@ -68,7 +68,7 @@ public class Introduction  extends AppCompatActivity implements View.OnClickList
                 compteur -= 1;
             }
             else{
-                int image = R.drawable.introduction2;
+                int image = R.drawable.reflechissement;
                 imageFond.setImageResource(image);
                 compteur -= 1;
             }
@@ -87,7 +87,7 @@ public class Introduction  extends AppCompatActivity implements View.OnClickList
             }
             else {
                 compteur += 1;
-                int image = R.drawable.introduction2;
+                int image = R.drawable.reflechissement;
                 imageFond.setImageResource(image);
             }
         }
