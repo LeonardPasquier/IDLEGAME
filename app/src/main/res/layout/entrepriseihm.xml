@@ -4,7 +4,8 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/mon_entreprise"
-    android:weightSum="115">
+    android:weightSum="115"
+    >
 
     <Space
         android:layout_width="match_parent"

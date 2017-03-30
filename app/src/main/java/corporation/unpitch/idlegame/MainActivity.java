@@ -82,6 +82,14 @@ public class MainActivity extends AppCompatActivity {
             Intent introduction = new Intent (MainActivity.this, Introduction.class);
             startActivity(introduction);
         }
+        if (donnees.getNom_entreprise().equals(null)){
+            Intent introduction = new Intent (MainActivity.this, Introduction.class);
+            startActivity(introduction);
+        }
+        if (donnees.getNom_joueur().equals(null)){
+            Intent introduction = new Intent (MainActivity.this, Introduction.class);
+            startActivity(introduction);
+        }
 
         try {
             //On affecte les differentes variables du fichier de donnees presentes dans la fenetre

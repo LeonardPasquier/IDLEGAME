@@ -46,6 +46,8 @@ public class Introduction  extends AppCompatActivity implements View.OnClickList
         boutonRetour.setOnClickListener(this);
         boutonSuivant.setOnClickListener(this);
 
+        int image = R.drawable.diplome;
+        imageFond.setImageResource(image);
 
 
     }
@@ -60,18 +62,28 @@ public class Introduction  extends AppCompatActivity implements View.OnClickList
             if (compteur == 1){
                 System.out.println("non");
             }
+            else if (compteur == 2){
+                int image = R.drawable.diplome;
+                imageFond.setImageResource(image);
+                compteur -= 1;
+            }
             else{
-                int image = R.drawable.introduction1;
+                int image = R.drawable.introduction2;
                 imageFond.setImageResource(image);
                 compteur -= 1;
             }
         }
         else if (v.getId() == R.id.buttonSuivant)
         {
-            if (compteur == 2){
+            if (compteur == 3){
                 this.setContentView(R.layout.lay_intro_2);
                 nom_ent = (EditText) findViewById(R.id.editText);
                 nom_joueur = (EditText) findViewById(R.id.editText2);
+            }
+            else if (compteur==2){
+                compteur += 1;
+                int image = R.drawable.wouhouidee;
+                imageFond.setImageResource(image);
             }
             else {
                 compteur += 1;

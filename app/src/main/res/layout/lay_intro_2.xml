@@ -15,7 +15,7 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editText"
-        android:hint="Un pitch Corporation"/>
+        android:hint="ex : Un Pitch & Co"/>
 
     <TextView
         android:text="Rentre ton nom !"
@@ -29,7 +29,7 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editText2"
-        android:hint="Jean-Jacques Goldman"/>
+        android:hint="ex : Jean-Jacques Goldman"/>
 
     <Button
         android:text="Valider"

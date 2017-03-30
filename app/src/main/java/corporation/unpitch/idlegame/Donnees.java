@@ -30,8 +30,8 @@ class Donnees implements Serializable {
     private int nombre_admin_e=0;
     private int nombre_admin_s=0;
     private int valeur_du_clic = 1;
-    private String nom_entreprise = "";
-    private String nom_joueur = "";
+    private String nom_entreprise = null;
+    private String nom_joueur = null;
     private int nombre_ordinateurs_faibles = 0;
     private int nombre_ordinateurs_moyens = 0;
     private int nombre_ordinateurs_badass = 0;
