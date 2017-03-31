@@ -11,7 +11,7 @@ class Donnees implements Serializable {
     private float lignes_de_code_courantes = 0;
     private float lignes_de_code_total = 0;
     private float argent = 999999;
-    private float argent_total= 750;
+    private float argent_total= argent;
     private String projet_courant_general ="null";
     private String projet_courant_general_id = "";
     private String projet_courant_jeux_video = "Wyrm Quest";

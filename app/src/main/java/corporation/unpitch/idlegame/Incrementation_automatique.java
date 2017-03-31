@@ -17,7 +17,7 @@ public class Incrementation_automatique {
 
     static int virusencours = 0;
     static int timerVirus = 0;
-    private static int apparitionVirus = 10;
+    private static int apparitionVirus = 60;
     private static float maligne=0;
     static float duree = 60;
     static float tempsrestantvirus = -1;
@@ -108,17 +108,17 @@ public class Incrementation_automatique {
     private static float Mult_chef_projet(float n, float j, float e, float s){
         float x = 0;
         while (x<j){
-            n = 2*n;
+            n = (11/10)*n;
             x ++;
         }
         x = 0;
         while (x<e){
-            n = 3*n;
+            n = (17/10)*n;
             x++;
         }
         x = 0;
         while (x<s){
-            n = 4*n;
+            n = 10*n;
             x++;
         }
         return n;

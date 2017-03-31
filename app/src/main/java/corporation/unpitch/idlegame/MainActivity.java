@@ -210,15 +210,24 @@ public class MainActivity extends AppCompatActivity {
         int c_j = donnees.getNombre_comptables_j();
         int c_e = donnees.getNombre_comptables_e();
         int c_s = donnees.getNombre_comptables_s();
-        int gainFinal = Liste_Projets.getProjet(donnees.getProjet_courant_general()).getGainFinal();
+        float gainFinal = Liste_Projets.getProjet(donnees.getProjet_courant_general()).getGainFinal();
         if (c_j>0){
-            gainFinal = 2*c_j*gainFinal;
+            while (c_j>0){
+                gainFinal = gainFinal-(10*gainFinal/100);
+                c_j--;
+            }
         }
         else if (c_e>0){
-            gainFinal = 4*c_e*gainFinal;
+            while (c_e>0){
+                gainFinal = gainFinal-(20*gainFinal/100);
+                c_e--;
+            }
         }
         else if (c_s>0){
-            gainFinal = 8*c_s*gainFinal;
+            while (c_s>0){
+                gainFinal = gainFinal-(30*gainFinal/100);
+                c_s--;
+            }
         }
 
         donnees.setArgent(donnees.getArgent()+gainFinal);
